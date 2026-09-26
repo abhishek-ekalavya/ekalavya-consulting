@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: abhishek-ekalavya/ekalavya-consulting
+  branch: main
+  auth_scope: repo
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - file: "content/settings/general.json"
+        label: "General Settings"
+        name: "general"
+        fields:
+          - {label: "Site Name", name: "site_name", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string"}
+
+  - name: "home_page"
+    label: "Home Page"
+    files:
+      - file: "content/pages/home.json"
+        label: "Edit Home Page"
+        name: "home"
+        fields:
+          - {label: "Hero Badge", name: "hero_badge", widget: "string"}
+          - {label: "Hero Headline", name: "hero_headline", widget: "string"}
+          - {label: "Hero Subheadline", name: "hero_sub", widget: "text"}
+          - {label: "Hero CTA", name: "hero_cta", widget: "string"}
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "desc", widget: "text"}
+          - {label: "About", name: "about_content", widget: "markdown"}
+
+  - name: "blogs"
+    label: "Blogs"
+    folder: "content/blogs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "SEO Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "FAQ"
+        name: "faq"
+        widget: "list"
+        fields:
+          - {label: "Question", name: "question", widget: "string"}
+          - {label: "Answer", name: "answer", widget: "text"}

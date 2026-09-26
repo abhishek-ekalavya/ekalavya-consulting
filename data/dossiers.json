@@ -1,0 +1,573 @@
+[
+  {
+    "id": "01",
+    "slug": "sparta-life",
+    "title": "SPARTA LIFE",
+    "subtitle": "Sparta Life \u2014 Turnkey Brand Architecture & Integrated Commercial Launch",
+    "tags": [
+      "Sports Infrastructure & Regional Lifestyle Ecosystem",
+      "Full-Funnel Brand Architecture",
+      "PR & Field Outreach"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/sparta-01.jpg",
+      "/images/sparta-02.jpg"
+    ],
+    "context": "\u2022 High-capital regional infrastructure initiative spanning multiple acres in Thane District.\n\u2022 Facility design integrated 15+ athletic disciplines, sports recovery hubs, and junior coaching academies under a unified roof.\n\u2022 High fixed operating overhead required rapid, high-margin membership acquisition prior to physical launch.",
+    "challenge": "\u2022 Mass market consumer perception tended to equate large-scale multi-sport venues with conventional fitness gyms, depressing willingness to pay.\n\u2022 Absence of an overarching commercial packaging framework to cross-sell youth coaching, athlete recovery suites, and lifestyle recreation.\n\u2022 Fragmented local competition competing purely on discount rates rather than high-performance community value.\n\u2022 Lack of narrative momentum across regional press, educational institutes, and premium housing societies within the target catchment.",
+    "concept": "\"Thane District's Crown Jewel of Sports & Performance.\" Shift the brand narrative from facility square footage to an elite athletic institution. Position Sparta Life as a premier regional benchmark combining elite physical conditioning, scientific recovery, and structured youth pathways.",
+    "execution": [
+      "Identity Engineering & Brand Origin: Built the master visual identity, trademark design system, typography standards, and positioning narrative establishing institutional authority.",
+      "Commercial Tiering & Pricing Architecture: Structured service packaging, VIP memberships, multi-sport seasonal passes, and academy registration tiers to balance upfront cash flow with long-term retention.",
+      "Collateral & Production Engine: Authored and produced executive sales prospectuses, institutional brochures, highway hoardings, and a suite of high-tempo cinematic promotional films.",
+      "High-Decibel Launch PR: Orchestrated on-site media days, VIP walkthroughs, and regional civic partnerships to generate earned media authority across the district.",
+      "Grassroots Feeder Programs: Partnered with surrounding academic schools and residential complexes to establish seasonal sports clinics, driving immediate baseline enrollments."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Market Positioning",
+          "Generic multi-sport gym facility",
+          "Thane District's premier athletic and lifestyle ecosystem"
+        ],
+        [
+          "Monetization Model",
+          "Unstructured single-service drop-in pricing",
+          "Tiered annual memberships, bundled academy passes, and recovery packages"
+        ],
+        [
+          "Sales Enablement",
+          "Zero brand collateral or sales collateral",
+          "High-impact sales prospectuses, cinematic films, and highway OOH assets"
+        ],
+        [
+          "Community Pipeline",
+          "Passive walk-in dependence",
+          "Structured school feeder clinics and high-turnout youth academies"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: Large infrastructure ventures require senior commercial leadership that connects architectural space planning to balance-sheet returns. Ekalavya Consulting bridges the gap between high-level brand strategy and tactical on-ground execution, eliminating expensive agency layers to drive launch momentum with solopreneur agility."
+  },
+  {
+    "id": "02",
+    "slug": "pinto-electronics",
+    "title": "PINTO ELECTRONICS",
+    "subtitle": "Pinto Electronics \u2014 Brand Asset Overhaul & Market Elevation",
+    "tags": [
+      "Electronics & Hardware Manufacturing",
+      "Digital Product Infrastructure",
+      "B2B Collateral Architecture"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "\u2022 Domestic electronics and hardware manufacturer with mature engineering capabilities and an extensive, diverse product portfolio.\n\u2022 Build quality and aesthetic design directly comparable to established tier-1 category leaders.\n\u2022 Commercial operations reliant on manual dealer distribution networks and legacy physical trade relationships.",
+    "challenge": "\u2022 Inadequate digital footprint and unorganized product listings obscured the true scope of the product catalog.\n\u2022 Low visual credibility across dealer touchpoints forced the brand to compete on razor-thin distributor margins.\n\u2022 Absence of functional sales literature, product specification sheets, or structured buyer catalogs for industrial procurement teams.\n\u2022 Low-profile trade show presence featuring fragmented, outdated display materials that failed to generate qualified buyer footfall.",
+    "concept": "\"Engineering Excellence Made Visible.\" Elevate Pinto Electronics from an unheralded original equipment vendor into a design-led category contender. Build a cohesive, modern visual ecosystem that highlights industrial precision and finish, commanding immediate parity with market incumbents.",
+    "execution": [
+      "Industrial & Commercial Photography: Directed multi-angle commercial photoshoots capturing tactile material finishes, engineering tolerances, and ergonomic details to replace generic distributor snaps.",
+      "Web Product Catalog Architecture: Designed and deployed a contemporary web interface organized around intuitive taxonomy, clear electrical specifications, and fast downloadable spec sheets.",
+      "Master B2B Sales Prospectuses: Authored structured trade catalogs and technical product brochures tailored for enterprise distributors and direct institutional buyers.",
+      "Exhibition Architecture & Display Systems: Engineered large-format booth visuals, structural backdrop panels, and high-visibility directional signage for deployment across national industrial expos.",
+      "Standardized Specification Sheets: Formatted comprehensive, single-sheet product spec summaries enabling procurement managers to rapidly approve technical orders."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Brand Perception",
+          "Low-cost white-label alternative",
+          "Premium, design-forward category contender matching tier-1 rivals"
+        ],
+        [
+          "Product Discovery",
+          "Unstructured lists with missing product data",
+          "High-speed, structured digital catalog with instant specification access"
+        ],
+        [
+          "Sales Collateral",
+          "Zero dedicated print or PDF pitch materials",
+          "Master commercial catalogs and technical brochures engineered for conversions"
+        ],
+        [
+          "Trade Presence",
+          "Low-visibility booth panels",
+          "Unified, large-format exhibition systems designed for high footfall"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: Hardware and electronics brands cannot scale on product engineering alone; they require clear commercial presentation that communicates reliability to buyers. Ekalavya Consulting transforms complex hardware catalogs into high-converting commercial assets, handling every detail from photography direction to dealer enablement."
+  },
+  {
+    "id": "03",
+    "slug": "castrol-magnatec",
+    "title": "CASTROL MAGNATEC",
+    "subtitle": "Castrol Magnatec \u2014 Multi-City Mobile Experience & Mechanic Activation",
+    "tags": [
+      "Automotive Lubricants & B2B Trade Engagement",
+      "Custom Vehicle Engineering",
+      "Multi-Metro Roadshow"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "\u2022 Flagship engine oil product line operating within an intensely contested aftermarket lubrication sector.\n\u2022 Key brand advocates and retail gatekeepers were local garage mechanics and independent workshop owners.\n\u2022 Campaign carried out at enterprise scale across major metropolitan centers: Mumbai, Delhi, Chennai, Bangalore, and Kolkata.",
+    "challenge": "\u2022 Independent mechanics favored legacy lubrication brands based purely on transactional margins rather than technical engine protection.\n\u2022 The central product differentiator\u2014molecular cling technology mitigating cold-start friction\u2014was too abstract for conventional counter flyers.\n\u2022 Mechanics maintained packed daily repair schedules, making traditional evening hotel conferences poorly attended and expensive.\n\u2022 Conventional distributor networks lacked the narrative training to communicate technical tribology concepts to workshop technicians.",
+    "concept": "\"The Workshop On Wheels: Molecular Science Brought to the Pit.\" Eliminate venue friction by taking the laboratory directly to the mechanic. Convert a production passenger vehicle into a self-contained mobile activation and educational center that interfaces directly with garage clusters during operational downtime.",
+    "execution": [
+      "Specialized Vehicle Engineering: Re-engineered a Ford Figo into a custom mobile experience rig, integrating rear-mounted high-definition LED displays, specialized sound equipment, and demo stations.",
+      "Technical Narrative Translation: Collaborated directly with Castrol R&D teams to convert molecular testing data into high-retention audio-visual films and live friction-demonstration rigs.",
+      "Promoter Training Curricula: Developed behavioral scripts and objection-handling playbooks, training technical facilitators to interface fluently in regional workshop environments.",
+      "Cluster Deployment Protocol: Executed daily route schedules targeting high-density garage belts across Mumbai, Delhi, Chennai, Bangalore, and Kolkata.",
+      "Interactive Benchmarking Contests: Hosted rapid-fire technical quizzes and diagnostic challenges on-ground, incentivizing attendance with branded trade utility toolkits."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Trade Engagement",
+          "Low-yield off-site dealer dinners",
+          "High-impact, zero-friction mobile activation deployed directly at mechanic hubs"
+        ],
+        [
+          "Product Education",
+          "Dense, unread technical specification sheets",
+          "Tangible, visual demonstrations of molecular wear and cold-start damage"
+        ],
+        [
+          "Geographic Scale",
+          "Fragmented regional city activations",
+          "Standardized multi-metro campaign spanning 5 top commercial automotive markets"
+        ],
+        [
+          "Brand Advocacy",
+          "Price-driven mechanic recommendations",
+          "High-recall technical advocacy backed by hands-on product validation"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: Executing multi-metro B2B brand activations demands rigorous operational engineering, technical fluency, and tight vendor governance. Ekalavya Consulting bridges enterprise corporate marketing directives with practical field-level execution, driving commercial preference deep inside informal retail trade clusters."
+  },
+  {
+    "id": "04",
+    "slug": "indishield-labs",
+    "title": "INDISHIELD LABS",
+    "subtitle": "Indishield Labs \u2014 International Market Entry & B2B Demand Engine",
+    "tags": [
+      "Industrial Chemicals & Cold-Welding Solutions",
+      "Global Market Architecture",
+      "LinkedIn B2B Pipeline Engine"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "\u2022 Indian manufacturer of specialized epoxy compounds, metal-repair putties, and cold-welding industrial maintenance products.\n\u2022 High technical efficacy across heavy processing environments (marine, power plants, mining, and oil refining).\n\u2022 Corporate initiative to penetrate high-value export distribution territories across Europe and North Africa.",
+    "challenge": "\u2022 International procurement teams often categorized Indian chemical manufacturers as low-grade, commodity suppliers.\n\u2022 A complex catalog of 15\u201320 technical formulations confused overseas buyers regarding exact application suitability.\n\u2022 Complete absence of localized, multilingual technical documentation required for European compliance and trade discussions.\n\u2022 Zero outbound digital discovery systems targeting plant maintenance directors, marine engineers, and specialty chemical distributors.",
+    "concept": "\"Structural Integrity Without Hot Work.\" Reposition the product lineup from general maintenance supplies to mission-critical asset preservation systems. Frame cold-welding polymers around operational uptime, safety compliance, and rapid turnaround for heavy industries facing costly plant shutdowns.",
+    "execution": [
+      "Portfolio Architecture & Taxonomy: Re-engineered 15\u201320 chemical formulations into a modular, matrix-based product catalog categorized by substrate, temperature threshold, and mechanical load.",
+      "Multilingual Sales Documentation: Authored and produced technical sales brochures, safety data sheets, and application guides localized into key European and North African trade languages.",
+      "LinkedIn B2B Demand Engine: Built an Account-Based content funnel on LinkedIn targeting maintenance directors, operations heads, and industrial supply distributors across target geographies.",
+      "Distributor Enablement Toolkits: Designed complete commercial partner kits containing margin calculators, case summaries, competitive comparison matrixes, and distributor onboarding flows.",
+      "Outbound Pipeline Workflows: Structured outbound qualification frameworks to filter international distributor applications and schedule qualified technical discovery sessions."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Market Footprint",
+          "Domestic manufacturing focus",
+          "Systematic distributor pipeline targeting Europe and North Africa"
+        ],
+        [
+          "Catalog Usability",
+          "Dense, unorganized formulation data",
+          "Streamlined, application-led technical matrix covering 15\u201320 specialized SKUs"
+        ],
+        [
+          "Collateral Reach",
+          "Monolingual domestic documentation",
+          "High-grade multilingual collateral tailored for export compliance"
+        ],
+        [
+          "Customer Acquisition",
+          "Passive inbound inquiries",
+          "Outbound LinkedIn demand generation funnel targeting industrial buyers"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: Expanding industrial operations into international territories requires a unified balance of technical positioning, localized documentation, and precise digital pipeline design. Ekalavya Consulting delivers export-grade marketing structures without the bureaucratic lag of traditional cross-border agency networks."
+  },
+  {
+    "id": "05",
+    "slug": "syngenta-nk6607",
+    "title": "SYNGENTA NK6607",
+    "subtitle": "Syngenta NK6607 \u2014 \"Makkey Ki Adalat\" Experiential Rural Campaign",
+    "tags": [
+      "Agricultural Inputs & Crop Science",
+      "Rural Brand Activation",
+      "Street Theater Strategy"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "\u2022 Syngenta holds a premier global footprint in agricultural biotechnology and high-yield seed development.\n\u2022 Focused push on NK6607, a high-yielding hybrid corn seed engineered for drought resilience and high cob weight.\n\u2022 Primary campaign deployment focused across the competitive rural agricultural belts of Maharashtra.",
+    "challenge": "\u2022 Deep-seated farmer skepticism driven by competing claims from local and multinational seed brands.\n\u2022 Traditional rural marketing techniques (van campaigns, static handbills, dealer meetings) produced diminishing audience attention.\n\u2022 Agronomic performance indicators\u2014such as root anchorage and husk coverage\u2014were difficult to explain through abstract technical terms.\n\u2022 Low village gathering turnouts when events were openly promoted as corporate sales seminars.",
+    "concept": "\"Makkey Ki Adalat (Corn On Trial).\" Subvert conventional rural demonstrations by staging a high-energy community courtroom drama modeled on popular televised courtroom formats. Put the seed itself in the witness box to answer charges of \"disrupting the harvest with unprecedented yields.\"",
+    "execution": [
+      "Theatrical Summons Pre-Buzz: Field teams dressed in formal court attire visited farming households across target villages, serving official mock summons requiring attendance at the village square.",
+      "Village Courtroom Staging: Transformed central community spaces into complete open-air courtrooms featuring a judge's bench, witness stand, defense tables, and procedural gavels.",
+      "Live Scripted Theater: Actors playing prosecuting counsels challenged the seed\u2014personified by live pack-shot icon walkers\u2014forcing the product to defend its root strength, cob size, and heat resilience.",
+      "Agronomic Demonstration Desks: Paired theatrical performances with technical demonstration zones, displaying root comparisons and grain density metrics alongside local agronomists.",
+      "Retailer Tie-In Closures: Established direct fulfillment counters with local village krishi kendras (agri-dealers), enabling farmers to place immediate booking orders post-show."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Farmer Engagement",
+          "Low-turnout, passive technical meetings",
+          "High-capacity village audiences driven by curiosity-led judicial summons"
+        ],
+        [
+          "Message Retention",
+          "Abstract agronomic jargon forgotten quickly",
+          "High-retention dramatic courtroom metaphor explaining crop resilience"
+        ],
+        [
+          "Campaign Identity",
+          "Standard product catalog promotion",
+          "Multi-award-winning rural marketing activation property"
+        ],
+        [
+          "Commercial Transition",
+          "Disconnected trade follow-ups",
+          "Direct-to-retail booking counters linking drama to immediate dealer sales"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: Rural activations require deep cultural empathy paired with structured narrative architecture to move community markets. Ekalavya Consulting builds branded experiential concepts that break through commercial fatigue, transforming ordinary technical demonstrations into high-converting regional events."
+  },
+  {
+    "id": "06",
+    "slug": "off-plan-residential-launch",
+    "title": "OFF-PLAN RESIDENTIAL LAUNCH",
+    "subtitle": "Off-Plan Residential Launch \u2014 Direct Acquisition & Qualification Funnel",
+    "tags": [
+      "Real Estate Performance Marketing",
+      "Search Intent Acquisition",
+      "Lead Scoring & Pipeline Optimization"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "\u2022 Client: Dubai-based Real Estate Developer (Off-Plan Residential Project, Dubai South) \u2014 NDA Protected.\n\u2022 Duration: 30-Day Acquisition Sprint.\n\u2022 Objective: Acquire pre-qualified property buyer leads below an aggressive target of AED 60 CPL.",
+    "challenge": "\u2022 Legacy paid channels generated poor-quality inquiries averaging AED 120 per lead via broad Google Search campaigns.\n\u2022 Over 70% of inbound submissions were unreachable or financially unqualified, wasting sales agent call capacity.\n\u2022 Campaign relied on a single, static English web form with high user friction and slow conversion response times.\n\u2022 Ad creative leaned heavily on generic architectural renders indistinguishable from hundreds of competing regional developments.",
+    "concept": "\"Financial Accessibility Over Vague Opulence.\" Pivot the core campaign message from generic luxury claims to concrete financial structure: a verified \"1% Monthly Payment Plan\" situated near the high-growth Al Maktoum Airport corridor. Introduce structured friction inside the funnel to filter casual clickers from genuine investors.",
+    "execution": [
+      "Intent-Based Search Architecture: Replaced broad industry queries with hyper-targeted long-tail terms focusing strictly on specific unit types, locations, and structured financing models.",
+      "Bilingual Conversion Portals: Built dedicated, mobile-optimized landing environments in English and Arabic, establishing direct WhatsApp chat as the primary low-friction call-to-action.",
+      "Multi-Step Qualification Engine: Implemented a mandatory 3-step screening questionnaire capturing capital budget, purchase horizon, and investment versus end-use motivation prior to contact submission.",
+      "UGC-Style Creative Deployment: Produced and tested short walkthrough-style videos focusing on unit scale and payment predictability rather than generic rendered skylines.",
+      "Algorithmic Budget Governance: Allocated an AED 8,500 budget across Meta (60%), Google Performance Max (30%), and Snapchat (10%), backed by dayparting and daily negative keyword exclusions."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Cost Per Lead (CPL)",
+          "AED 120",
+          "AED 39.7 (66.9% reduction)"
+        ],
+        [
+          "Total Inbound Leads",
+          "Unstructured",
+          "214 Leads"
+        ],
+        [
+          "Qualified Buyer Leads",
+          "Low baseline",
+          "87 Verified Leads"
+        ],
+        [
+          "Lead Qualification Rate",
+          "~30%",
+          "40.6%"
+        ],
+        [
+          "Cost Per Qualified Lead",
+          "Not tracked",
+          "AED 97"
+        ],
+        [
+          "Direct Project Showings Booked",
+          "Negligible",
+          "22 Scheduled Showings"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: High-ticket performance marketing fails when paid spend is decoupled from sales qualification mechanics. Ekalavya Consulting engineers high-precision acquisition funnels that prioritize qualified balance-sheet pipeline over hollow vanity metrics, maximizing return on ad spend with zero operational bloat."
+  },
+  {
+    "id": "07",
+    "slug": "boutique-hospitality-fb",
+    "title": "BOUTIQUE HOSPITALITY & F&B",
+    "subtitle": "Boutique Hospitality & F&B \u2014 Direct Acquisition & Booking Funnel",
+    "tags": [
+      "Hospitality & F&B Performance Marketing",
+      "Direct Booking Engine",
+      "Localized Content Strategy"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "\u2022 Client: Boutique Hotel & Specialty Dining Group, Downtown Dubai \u2014 NDA Protected.\n\u2022 Duration: 45-Day Performance Campaign.\n\u2022 Objective: Cut per-reservation acquisition costs and shift bookings away from high-commission Online Travel Agencies (OTAs).",
+    "challenge": "\u2022 Booking acquisition on Google Search averaged AED 160 per transaction alongside a 25% revenue commission paid to third-party travel aggregators.\n\u2022 Advertising creative relied on static, polished hotel photography that failed to stand out in saturated travel feeds.\n\u2022 A single, unsegmented landing funnel failed to distinguish between domestic staycationers and international tourists.\n\u2022 The fine-dining arm lacked direct, fast table reservation channels, losing reservations to cumbersome email forms.",
+    "concept": "\"Direct Value & Real Atmosphere.\" Break OTA dependency by offering clear financial advantages for booking direct (\"Book Direct, Save AED 100\"). Split campaign traffic into targeted traveler cohorts while swapping sterile stock photography for authentic, POV-driven mobile video.",
+    "execution": [
+      "Dual-Track Funnel Segmentation: Separated campaign funnels into domestic residents (focused on weekend staycation bundles) and inbound international visitors (focused on long-stay itineraries with airport transit).",
+      "Direct Value Messaging: Positioned direct booking benefits across paid search ad copy, guaranteeing room upgrades and lower rates than aggregator platforms.",
+      "Short-Form Content Production: Replaced corporate imagery with 15-second social reels capturing chef plating, authentic suite tours, and dynamic rooftop lounge footage.",
+      "Instant F&B Booking Workflows: Launched click-to-WhatsApp direct reservation channels for the dining room, allowing guests to confirm tables in real time.",
+      "Audience Retargeting: Retargeted past landing visitors with time-sensitive weekend culinary and suite packages, reducing drop-off."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Hotel Cost Per Reservation",
+          "AED 160",
+          "AED 64 (60% reduction)"
+        ],
+        [
+          "Direct Room Bookings",
+          "Baseline",
+          "148 Reservations"
+        ],
+        [
+          "Direct F&B Table Covers",
+          "Negligible direct volume",
+          "312 Table Covers"
+        ],
+        [
+          "Booking Channel Mix",
+          "82% OTA / 18% Direct",
+          "44% Direct Booking Share"
+        ],
+        [
+          "Blended Ad Spend Return (ROAS)",
+          "1.8x",
+          "4.6x"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: Hospitality margins erode quickly when marketing relies passively on aggregator platforms. Ekalavya Consulting restores margin independence by deploying high-converting direct-acquisition channels and nimble creative testing, keeping acquisition spend directly accountable to net operating revenue."
+  },
+  {
+    "id": "08",
+    "slug": "fitbit-vertical-marathon",
+    "title": "FITBIT VERTICAL MARATHON",
+    "subtitle": "Fitbit Vertical Marathon \u2014 Bespoke Sports IP & Experiential Architecture",
+    "tags": [
+      "Sports Intellectual Property & Experiential Marketing",
+      "IP Conceptualization & Identity Systems",
+      "Sponsorship Packaging & Media Plan"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "Context Note: Specialized IP concept and master blueprint developed for Globosport (founded by tennis icon Mahesh Bhupathi) to pitch and secure title sponsorship with Fitbit India.\n\n\u2022 Globosport sought to build a premier proprietary sports asset to expand its corporate and brand partnership portfolio.\n\u2022 Target title brand was Fitbit India, seeking to prove wearable accuracy in high-exertion athletic settings.\n\u2022 Conceptualized for deployment inside Mumbai's luxury commercial skyline at the 38-story St. Regis Hotel.",
+    "challenge": "\u2022 Traditional road marathons suffered from category fatigue and heavy logistical headaches, including city-wide road closures and civic permits.\n\u2022 Mass road races diluted brand integration down to passive logo placement on competitor bibs and water stations.\n\u2022 Fitbit required a format that visibly highlighted core biometric tracking features\u2014real-time pulse peaks, floors climbed, and extreme endurance.\n\u2022 The property needed to attract an elite corporate, cultural, and athletic crowd to establish premium brand associations.",
+    "concept": "\"From Distance to Elevation: Conquering the Vertical Mile.\" Turn the marathon model 90 degrees upward into an exclusive vertical footrace. Participants scale 38 stories and 1,200 stairs, turning the race into a high-octane demonstration of physical grit and real-time biometric tracking.",
+    "execution": [
+      "IP Identity & Visual Language: Designed dynamic logo assets integrating stair geometry, Mumbai architectural landmarks, and pulse telemetry graphics.",
+      "The 10-Fraternity Draft System: Structured competition cohorts across 10 elite sectors\u2014Corporate, Bollywood, Media, Finance, and Olympians\u2014led by captains like Milind Soman, Rahul Bose, and Mary Kom.",
+      "Guerrilla Pre-Launch Engine: Staged a midnight launch press conference on the steps of Mumbai\u2019s historic Asiatic Library Town Hall. Built elevation-themed hoardings at Mahim Causeway and handed out race-bib toll slips at the Bandra-Worli Sea Link.",
+      "Raceway Safety & Telemetry Systems: Engineered the fire-stairwell course into a monitored raceway with staggered wave releases, hydration pit-stops every 4 floors, and medical rapid-response teams.",
+      "Biometric Broadcast Integration: Streamed live runner pulse and pacing metrics from wearable units directly to spectator screens in the VIP ground and rooftop zones.",
+      "Commercial Partner Integration: Built utility-first sponsorship integrations: G-Shock (Official Timekeeper), Asics (Apparel & Footwear), and CalorieCare (Athlete Recovery Nutrition)."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Course Architecture",
+          "Flat, horizontal street running requiring civic road shutdowns",
+          "Controlled 38-story, 1,200-step vertical stairwell inside an urban luxury hotel"
+        ],
+        [
+          "Product Integration",
+          "Passive brand logo placement on shirts and course flags",
+          "Central product utility: Real-time telemetry, stair counts, and pulse monitoring"
+        ],
+        [
+          "Participant Profile",
+          "Broad, unsegmented mass public entry",
+          "Curated draft across 10 elite professional fraternities"
+        ],
+        [
+          "Media Narrative",
+          "Routine single-day local sports coverage",
+          "Multi-stage PR narrative: Town Hall launch, Sea Link stunts, and rooftop finish"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: High-value sports and entertainment intellectual properties require sharp commercial framing, cultural relevance, and meticulous operational planning. Ekalavya Consulting structures sports IP frameworks that convert corporate sponsorship from transactional signage into lasting brand equity."
+  },
+  {
+    "id": "09",
+    "slug": "artisanal-spice-brand",
+    "title": "ARTISANAL SPICE BRAND",
+    "subtitle": "Artisanal Spice Brand \u2014 Flagship Launch & Omnichannel Scale",
+    "tags": [
+      "FMCG, Specialty Food Retail & E-Commerce",
+      "Fractional CMO Engagement",
+      "Custom Web Architecture & Packaging"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "\u2022 Client: Nashik-based Spice & Masala Manufacturer \u2014 NDA Protected.\n\u2022 Engagement: Fractional CMO (Full-Funnel Commercial Growth).\n\u2022 Objective: Establish the brand in Thane District, launch an experiential 4,000 sq. ft. flagship store, and build a high-margin direct-to-consumer and marketplace sales engine.",
+    "challenge": "\u2022 Packaged spice retail is saturated with legacy players competing heavily on wholesale trade promotions and commodity pricing.\n\u2022 The client possessed extensive manufacturing facilities and a novel 4,000 sq. ft. retail space, but lacked market positioning, brand identity, and packaging sophistication.\n\u2022 Zero digital footprint, e-commerce infrastructure, or marketplace listings on national platforms.\n\u2022 Traditional brand-launch playbooks lacked the storytelling needed to draw foot traffic into an experiential retail space.",
+    "concept": "\"Bespoke Flavors, Freshly Ground.\" Transform spices from a packaged commodity into a customized culinary service. Anchor the brand around \"Make Your Own Masala\"\u2014allowing consumers to customize ingredient blends to their exact regional palate both in the flagship store and online.",
+    "execution": [
+      "Flagship Experience Launch: Staged an inaugural launch event featuring regional dignitaries and civic figures, supported by hyper-local broadcast and paid social buzz showcasing live in-store spice grinding.",
+      "Interactive D2C Web Architecture: Architected a custom e-commerce portal with a real-time recipe-builder tool, allowing shoppers to alter spice proportions for regional tastes and receive personalized named packaging.",
+      "Packaging Design Modernization: Overhauled the visual hierarchy, labeling, and packaging materials across all retail SKUs, upgrading presentation to export-grade retail standards.",
+      "Marketplace Operations: Handled complete business onboarding, regulatory food compliance, catalog indexing, and fulfillment setup across Amazon and Flipkart.",
+      "Targeted Performance & Creator Campaigns: Scripted and deployed campaigns with local culinary creators, supported by targeted Meta performance ads driving direct online purchases.",
+      "Tiered Customer Retention Program: Built an integrated offline-to-online customer loyalty system, issuing smart membership cards to drive repeat purchases across both the physical store and web store.",
+      "Hyperlocal Community Initiatives:\n  o School Culinary Contests: Ran interactive engagement contests across 5 schools within a 10 km store radius to build household brand recognition.\n  o Maternity Care Programs: Partnered with local maternity centers to distribute nutritional guidance files titled \"Less Masala Over The Next Quarter\", establishing brand trust by advising new mothers against spice consumption during early nursing."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Retail Infrastructure",
+          "Unopened 4,000 sq. ft. commercial space",
+          "High-footfall destination store featuring live custom spice grinding"
+        ],
+        [
+          "Distribution Footprint",
+          "Offline regional focus only",
+          "Integrated omnichannel model: Flagship Retail + D2C + Amazon & Flipkart"
+        ],
+        [
+          "Digital Customer Journey",
+          "Zero online presence",
+          "Interactive \"Make Your Own Masala\" e-commerce portal with custom packaging"
+        ],
+        [
+          "Community Trust",
+          "Unfamiliar regional label",
+          "High household recognition across local schools and healthcare networks"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: Instead of hiring fragmented agencies or bearing executive overhead, growing FMCG businesses benefit from an embedded marketing partner who manages everything from product positioning to digital funnel execution. Ekalavya Consulting combines brand strategy with hands-on technical and operational delivery."
+  },
+  {
+    "id": "10",
+    "slug": "precision-industrial-connectivity",
+    "title": "PRECISION INDUSTRIAL CONNECTIVITY",
+    "subtitle": "Precision Industrial Connectivity \u2014 Strategic Category Audit & 12-Month Scale Engine",
+    "tags": [
+      "B2B Industrial Manufacturing & Automation",
+      "Category Audit",
+      "Fractional CMO Roadmap"
+    ],
+    "status": "ACTIVE // TURNKEY LAUNCH",
+    "heroImages": [
+      "/images/placeholder.jpg"
+    ],
+    "context": "Disclaimer: This is NOT an active or past client engagement. This is an independent category audit and speculative 12-month roadmap developed to illustrate Ekalavya Consulting's diagnostic approach and Fractional CMO methodology for global industrial players.\n\n\u2022 Tier-1 Indian industrial manufacturer producing DIN Rail Terminal Blocks, Interface Modules, SMPS, and wiring tools.\n\u2022 Dombivli-headquartered engineering organization with a 40+ year heritage, distribution across 80+ export countries, and international certifications (UL, CSA, VDE, ATEX).\n\u2022 Strong engineering pedigree anchored by the brand promise of \"The Right Connection,\" competing with European peers like Phoenix Contact and Wago.",
+    "challenge": "\u2022 High-precision connection hardware is frequently commoditized, inviting pricing pressure from lower-spec competitors.\n\u2022 Thousands of complex technical SKUs are locked inside heavy, static 500-page PDF catalogs, creating friction for electrical engineers.\n\u2022 Over-reliance on traditional distributor networks with limited visibility into end-user control-panel specifications.\n\u2022 An understated digital presence that under-represents the company's high-spec international engineering certifications.",
+    "concept": "\"From Component Seller to Uptime Partner.\" Move the sales narrative away from component piece-prices toward complete cabinet reliability and assembly speed. Position the brand as an essential engineering partner that prevents plant downtime, accelerates switchboard fabrication, and guarantees international regulatory compliance.",
+    "execution": [
+      "Application Narrative Architecture: Shift marketing from spec sheets to application-focused case summaries across high-risk operating environments: Solar Energy, Rail Transit, Marine Systems, and Hazardous ATEX Zones.",
+      "Proprietary Panel Configurator & BOM Tool: Build an intuitive web application where panel designers drag and drop terminal blocks and power modules onto virtual DIN rails, generating instant 3D schematics and automated Bill-of-Materials (BOM) for 1-click sample ordering.",
+      "Export-Grade Catalog & Packaging Modernization: Replace static PDFs with searchable digital libraries. Redesign physical packaging with high-contrast labeling, color-coded identification, and QR codes linking directly to CAD models and wiring diagrams.",
+      "Distributor Portal & Marketplace Cleanup: Establish a direct B2B partner portal with live stock levels, tiered volume pricing, and automated spec-sheet generation, while rationalizing listings on domestic B2B portals.",
+      "Account-Based Marketing & Expo Strategy: Execute targeted ABM outreach to Chief Electrical Engineers at leading panel builders and EPC contractors, paired with a live \"Panel Speed Challenge\" booth at Automation Expo.",
+      "Tiered Loyalty & Certification Ecosystem: Introduce a loyalty framework offering scan-and-earn tool rewards for workshop electricians and annual performance rebates and marketing funds for authorized distributors.",
+      "Technical Grassroots Initiatives:\n  o Polytechnic Wiring Contests: Sponsor practical panel-wiring competitions across technical institutes to train upcoming engineers on the brand's modular connections.\n  o MIDC Free Panel Health Audits: Run on-site thermographic inspection clinics across major industrial estates (MIDC Dombivli, Ambernath, Bhosari) to detect poor terminations and win retrofit orders."
+    ],
+    "impactTable": {
+      "headers": [
+        "Dimension",
+        "Initial State",
+        "With Fractional CMO Ecosystem"
+      ],
+      "rows": [
+        [
+          "Value Perception",
+          "Commodity hardware compared purely on piece price",
+          "Strategic plant-uptime partner commanding price parity with European brands"
+        ],
+        [
+          "Catalog Usability",
+          "Dense 500-page static PDFs with high ordering friction",
+          "Interactive 3D panel configurator with automated 1-click BOM generation"
+        ],
+        [
+          "Channel Relations",
+          "Fragmented distributor network without end-user visibility",
+          "Dedicated distributor portal + tiered loyalty program driving steady re-orders"
+        ],
+        [
+          "Business Development",
+          "Passive trade directories and reactive quotes",
+          "Systematic ABM pipeline, live trade-show demos, and on-site industrial audits"
+        ]
+      ]
+    },
+    "advantage": "The Ekalavya Advantage: Industrial manufacturers require strategic leadership that understands both technical engineering parameters and commercial growth strategies. Ekalavya Consulting bridges engineering precision and commercial execution, aligning catalog design, web tools, channel incentives, and field technical programs without enterprise management bloat."
+  }
+]

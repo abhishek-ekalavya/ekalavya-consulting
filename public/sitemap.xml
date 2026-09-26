@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ekalavya-consulting.ai.studio/" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/services</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/services" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/case-studies</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/case-studies" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/blogs</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/blogs" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/blogs/why-most-saas-demos-dont-convert</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/blogs/why-most-saas-demos-dont-convert" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/blogs/ecom-landing-page-that-prints-money</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/blogs/ecom-landing-page-that-prints-money" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/blogs/ai-sdr-that-books-meetings-while-you-sleep</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/blogs/ai-sdr-that-books-meetings-while-you-sleep" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/about</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/about" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/team</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/team" />
+  </url>
+  <url>
+    <loc>https://ekalavya-consulting.ai.studio/contact</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ekalavya-consulting.ai.studio/contact" />
+  </url>
+</urlset>
