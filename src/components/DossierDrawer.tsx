@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, Crosshair } from 'lucide-react';
 import { Dossier } from '../types/dossier';
+import { VaultImageSlider } from './VaultImageSlider';
 
 interface DossierDrawerProps {
   dossier: Dossier | null;
@@ -98,35 +99,17 @@ export const DossierDrawer: React.FC<DossierDrawerProps> = ({
             </div>
           </div>
 
-          {/* HERO: FIGURE {id}.01, {id}.02 with dark figure border #1E293B, caption mono emerald */}
-          <div className="space-y-4">
-            {dossier.heroImages.map((imgSrc, idx) => {
-              const figNum = String(idx + 1).padStart(2, '0');
-              const caption = idx === 0 
-                ? `FIGURE ${dossier.id}.${figNum} // FACILITY VIEW` 
-                : `FIGURE ${dossier.id}.${figNum} // RECEPTION & ATHLETIC HUB`;
-              return (
-                <figure 
-                  key={idx}
-                  className="overflow-hidden rounded border border-[#1E293B] bg-[#0A1931]"
-                >
-                  <img 
-                    src={imgSrc} 
-                    alt={`${dossier.title} - Fractional CMO Services & Market Leadership Case Study Figure ${figNum}`}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-auto max-h-[360px] object-cover object-center"
-                    onError={(e) => {
-                      // Fallback gracefully to placeholder if file path ever shifts
-                      (e.target as HTMLImageElement).src = '/images/placeholder.jpg';
-                    }}
-                  />
-                  <figcaption className="border-t border-[#1E293B] px-3.5 py-2 font-mono text-[11px] font-bold tracking-wider text-[#00D084] bg-[#0F172A]/90">
-                    {caption}
-                  </figcaption>
-                </figure>
-              );
-            })}
+          {/* HERO IMAGE SLIDER: 16:9 interactive slider with framer-motion, arrows, dots and captions */}
+          <div className="w-full">
+            <VaultImageSlider 
+              images={dossier.heroImages.map((imgSrc, idx) => ({
+                src: imgSrc,
+                label: idx === 0 
+                  ? `FIGURE ${dossier.id}.${String(idx + 1).padStart(2, '0')} // FACILITY VIEW` 
+                  : `FIGURE ${dossier.id}.${String(idx + 1).padStart(2, '0')} // RECEPTION & ATHLETIC HUB`
+              }))} 
+              caseStudyId={dossier.id}
+            />
           </div>
 
           {/* BODY: Split 60/40 */}
