@@ -4,8 +4,10 @@ backend:
   branch: main
   base_url: https://www.ekalavyaconsulting.com
   auth_endpoint: api/auth
+
 media_folder: "public/uploads"
 public_folder: "/uploads"
+
 collections:
     - name: "settings"
     label: "Settings"
