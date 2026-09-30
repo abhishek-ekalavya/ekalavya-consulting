@@ -15,11 +15,3 @@ collections:
         file: content/settings/general.json
         fields:
                     - {label: Site Name, name: site_name, widget: string}
-    - name: blogs
-    label: Blogs
-    folder: content/blogs
-    create: true
-    slug: '{{slug}}'
-    fields:
-            - {label: Title, name: title, widget: string}
-            - {label: Body, name: body, widget: markdown}
