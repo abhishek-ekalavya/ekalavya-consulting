@@ -4,24 +4,22 @@ backend:
   branch: main
   base_url: https://www.ekalavyaconsulting.com
   auth_endpoint: api/auth
-
-media_folder: "public/uploads"
-public_folder: "/uploads"
-
+media_folder: public/uploads
+public_folder: /uploads
 collections:
-    - name: "settings"
-    label: "Settings"
+    - name: settings
+    label: Settings
     files:
-            - name: "general"
-        label: "General"
-        file: "content/settings/general.json"
+            - name: general
+        label: General
+        file: content/settings/general.json
         fields:
-                    - {label: "Site Name", name: "site_name", widget: "string"}
-    - name: "blogs"
-    label: "Blogs"
-    folder: "content/blogs"
+                    - {label: Site Name, name: site_name, widget: string}
+    - name: blogs
+    label: Blogs
+    folder: content/blogs
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "Body", name: "body", widget: "markdown"}
+            - {label: Title, name: title, widget: string}
+            - {label: Body, name: body, widget: markdown}
