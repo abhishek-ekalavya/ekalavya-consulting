@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: abhishek-ek/ekalavya-consulting
+  repo: abhishek-ekalavya/ekalavya-consulting
   branch: main
   base_url: https://www.ekalavyaconsulting.com
   auth_endpoint: api/auth
