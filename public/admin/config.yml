@@ -18,17 +18,46 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Client Name", name: "client", widget: "string" }
-      - { label: "Industry", name: "industry", widget: "string" }
-      - { label: "Display Order", name: "order", widget: "number", default: 1 }
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
-      - { label: "Summary Excerpt", name: "summary", widget: "text" }
-      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
-      - { label: "The Challenge", name: "challenge", widget: "markdown", required: false }
-      - { label: "The Solution", name: "solution", widget: "markdown", required: false }
-      - { label: "Key Results / Metrics", name: "metrics", widget: "list", required: false }
-      - { label: "Full Body / Details", name: "body", widget: "markdown", required: false }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Client Name"
+        name: "client"
+        widget: "string"
+      - label: "Industry"
+        name: "industry"
+        widget: "string"
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Featured on Homepage"
+        name: "featured"
+        widget: "boolean"
+        default: false
+      - label: "Summary Excerpt"
+        name: "summary"
+        widget: "text"
+      - label: "Cover Image"
+        name: "cover_image"
+        widget: "image"
+        required: false
+      - label: "The Challenge"
+        name: "challenge"
+        widget: "markdown"
+        required: false
+      - label: "The Solution"
+        name: "solution"
+        widget: "markdown"
+        required: false
+      - label: "Key Results / Metrics"
+        name: "metrics"
+        widget: "list"
+        required: false
+      - label: "Full Body / Details"
+        name: "body"
+        widget: "markdown"
+        required: false
 
   # ==========================================
   # 2. BLOGS / ARTICLES (Create, Edit & Delete)
@@ -39,13 +68,30 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Article Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", default: "Abhishek Bhowmick" }
-      - { label: "Category / Tag", name: "category", widget: "string", default: "Marketing Strategy" }
-      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
-      - { label: "Excerpt / Teaser", name: "excerpt", widget: "text" }
-      - { label: "Article Body", name: "body", widget: "markdown" }
+      - label: "Article Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Abhishek Bhowmick"
+      - label: "Category / Tag"
+        name: "category"
+        widget: "string"
+        default: "Marketing Strategy"
+      - label: "Cover Image"
+        name: "cover_image"
+        widget: "image"
+        required: false
+      - label: "Excerpt / Teaser"
+        name: "excerpt"
+        widget: "text"
+      - label: "Article Body"
+        name: "body"
+        widget: "markdown"
 
   # ==========================================
   # 3. WEBSITE SECTIONS (Page by Page)
@@ -58,77 +104,167 @@ collections:
         label: "01. Home / Hero"
         file: "content/pages/home.json"
         fields:
-          - { label: "Ticker Bar Top Text", name: "ticker_text", widget: "string", default: "VETTED DIRECTLY • Q1/Q2 SELECTIVE INTAKE OPEN" }
-          - { label: "Main Hero Badge", name: "hero_badge", widget: "string" }
-          - { label: "Main Headline", name: "hero_headline", widget: "string" }
-          - { label: "Sub-headline / Paragraph", name: "hero_subheadline", widget: "text" }
-          - { label: "CTA Button Text", name: "hero_cta_text", widget: "string", default: "LOCK THE TARGET" }
-          - { label: "CTA Button Link", name: "hero_cta_link", widget: "string", default: "#contact" }
+          - label: "Ticker Bar Top Text"
+            name: "ticker_text"
+            widget: "string"
+            default: "VETTED DIRECTLY • Q1/Q2 SELECTIVE INTAKE OPEN"
+          - label: "Main Hero Badge"
+            name: "hero_badge"
+            widget: "string"
+          - label: "Main Headline"
+            name: "hero_headline"
+            widget: "string"
+          - label: "Sub-headline / Paragraph"
+            name: "hero_subheadline"
+            widget: "text"
+          - label: "CTA Button Text"
+            name: "hero_cta_text"
+            widget: "string"
+            default: "LOCK THE TARGET"
+          - label: "CTA Button Link"
+            name: "hero_cta_link"
+            widget: "string"
+            default: "#contact"
 
       # --- ABOUT US SECTION ---
       - name: "about_section"
         label: "02. About Us"
         file: "content/pages/about.json"
         fields:
-          - { label: "Section Subtitle / Tag", name: "tagline", widget: "string", default: "THE ARCHER PHILOSOPHY" }
-          - { label: "About Heading", name: "heading", widget: "string" }
-          - { label: "About Description", name: "description", widget: "markdown" }
-          - { label: "Pillars / Core Values", name: "pillars", widget: "list", fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "desc", widget: "text" }
-            }
+          - label: "Section Subtitle / Tag"
+            name: "tagline"
+            widget: "string"
+            default: "THE ARCHER PHILOSOPHY"
+          - label: "About Heading"
+            name: "heading"
+            widget: "string"
+          - label: "About Description"
+            name: "description"
+            widget: "markdown"
+          - label: "Pillars / Core Values"
+            name: "pillars"
+            widget: "list"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Description"
+                name: "desc"
+                widget: "text"
 
       # --- OUR TEAM SECTION ---
       - name: "team_section"
         label: "03. Our Team"
         file: "content/pages/team.json"
         fields:
-          - { label: "Section Pre-tag", name: "pre_tag", widget: "string", default: "02 • COMMAND LEADERSHIP" }
-          - { label: "Section Heading", name: "heading", widget: "string", default: "Our Team" }
-          - { label: "Section Intro Subtext", name: "intro_text", widget: "text", default: "Not junior account managers or layers of agency coordinators. You interface exclusively with seasoned marketing governors and elite specialized executors." }
+          - label: "Section Pre-tag"
+            name: "pre_tag"
+            widget: "string"
+            default: "02 • COMMAND LEADERSHIP"
+          - label: "Section Heading"
+            name: "heading"
+            widget: "string"
+            default: "Our Team"
+          - label: "Section Intro Subtext"
+            name: "intro_text"
+            widget: "text"
+            default: "Not junior account managers or layers of agency coordinators. You interface exclusively with seasoned marketing governors and elite specialized executors."
           - label: "Team Members"
             name: "members"
             widget: "list"
             fields:
-              - { label: "Full Name", name: "name", widget: "string" }
-              - { label: "Role / Title", name: "role", widget: "string" }
-              - { label: "Portrait Photo", name: "photo", widget: "image", default: "/founder.jpg" }
-              - { label: "Bio / Narrative", name: "bio", widget: "markdown" }
-              - { label: "LinkedIn Profile URL", name: "linkedin", widget: "string", required: false }
+              - label: "Full Name"
+                name: "name"
+                widget: "string"
+              - label: "Role / Title"
+                name: "role"
+                widget: "string"
+              - label: "Portrait Photo"
+                name: "photo"
+                widget: "image"
+                default: "/founder.jpg"
+              - label: "Bio / Narrative"
+                name: "bio"
+                widget: "markdown"
+              - label: "LinkedIn Profile URL"
+                name: "linkedin"
+                widget: "string"
+                required: false
 
       # --- SERVICES SECTION ---
       - name: "services_section"
         label: "04. Services"
         file: "content/pages/services.json"
         fields:
-          - { label: "Section Sub-tag", name: "sub_tag", widget: "string", default: "CORE CAPABILITIES" }
-          - { label: "Services Heading", name: "heading", widget: "string" }
-          - { label: "Services Description", name: "description", widget: "text" }
+          - label: "Section Sub-tag"
+            name: "sub_tag"
+            widget: "string"
+            default: "CORE CAPABILITIES"
+          - label: "Services Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Services Description"
+            name: "description"
+            widget: "text"
           - label: "Service Offerings"
             name: "services_list"
             widget: "list"
             fields:
-              - { label: "Service Name", name: "name", widget: "string" }
-              - { label: "Service Summary", name: "summary", widget: "text" }
-              - { label: "Deliverables / Bullets", name: "deliverables", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+              - label: "Service Name"
+                name: "name"
+                widget: "string"
+              - label: "Service Summary"
+                name: "summary"
+                widget: "text"
+              - label: "Deliverables / Bullets"
+                name: "deliverables"
+                widget: "list"
+                field:
+                  label: "Item"
+                  name: "item"
+                  widget: "string"
 
       # --- CONTACT US SECTION ---
       - name: "contact_section"
         label: "05. Contact Us"
         file: "content/pages/contact.json"
         fields:
-          - { label: "Contact Heading", name: "heading", widget: "string", default: "Initiate Engagement" }
-          - { label: "Subtext", name: "subtext", widget: "text" }
-          - { label: "Direct Email", name: "email", widget: "string", default: "abhishek@ekalavyaconsulting.com" }
-          - { label: "Phone / WhatsApp", name: "phone", widget: "string", required: false }
-          - { label: "Location", name: "location", widget: "string", default: "Mumbai / Dombivli, India" }
-          - { label: "Form Button Label", name: "button_text", widget: "string", default: "LOCK THE TARGET" }
+          - label: "Contact Heading"
+            name: "heading"
+            widget: "string"
+            default: "Initiate Engagement"
+          - label: "Subtext"
+            name: "subtext"
+            widget: "text"
+          - label: "Direct Email"
+            name: "email"
+            widget: "string"
+            default: "abhishek@ekalavyaconsulting.com"
+          - label: "Phone / WhatsApp"
+            name: "phone"
+            widget: "string"
+            required: false
+          - label: "Location"
+            name: "location"
+            widget: "string"
+            default: "Mumbai / Dombivli, India"
+          - label: "Form Button Label"
+            name: "button_text"
+            widget: "string"
+            default: "LOCK THE TARGET"
 
       # --- GLOBAL HEADER & FOOTER ---
       - name: "global_settings"
         label: "06. Navigation & Footer"
         file: "content/pages/global.json"
         fields:
-          - { label: "Top Nav Button Text", name: "nav_cta_label", widget: "string", default: "LOCK TARGET" }
-          - { label: "Footer Tagline", name: "footer_tagline", widget: "string" }
-          - { label: "Copyright Statement", name: "copyright", widget: "string" }
+          - label: "Top Nav Button Text"
+            name: "nav_cta_label"
+            widget: "string"
+            default: "LOCK TARGET"
+          - label: "Footer Tagline"
+            name: "footer_tagline"
+            widget: "string"
+          - label: "Copyright Statement"
+            name: "copyright"
+            widget: "string"
