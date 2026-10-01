@@ -3,22 +3,21 @@ backend:
   repo: abhishek-ekalavya/ekalavya-consulting
   branch: main
 
-media_folder: "public/uploads"
-public_folder: "/uploads"
+media_folder: public/uploads
+public_folder: /uploads
 
 collections:
-  # 1. DYNAMIC CASE STUDIES (Add 11th, 12th, or more anytime)
-  - name: "case_studies"
-    label: "Case Studies"
-    folder: "content/case-studies"
+  - name: case_studies
+    label: Case Studies
+    folder: content/case-studies
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Client", name: "client", widget: "string" }
       - { label: "Industry", name: "industry", widget: "string" }
-      - { label: "Display Order", name: "order", widget: "number", default: 1 }
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
+      - { label: "Order", name: "order", widget: "number", default: 1 }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
       - { label: "Challenge", name: "challenge", widget: "markdown", required: false }
@@ -26,59 +25,38 @@ collections:
       - { label: "Results / Metrics", name: "metrics", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
 
-  # 2. SITE SECTIONS & COPY
-  - name: "pages"
-    label: "Page Sections"
+  - name: pages
+    label: Page Sections
     files:
-      - name: "landing_page"
-        label: "Landing Page Copy"
-        file: "content/pages/home.json"
+      - name: landing_page
+        label: Landing Page Copy
+        file: content/pages/home.json
         fields:
-          - label: "Hero Badge"
-            name: "hero_badge"
-            widget: "string"
-          - label: "Hero Headline"
-            name: "hero_headline"
-            widget: "string"
-          - label: "Hero Sub-headline"
-            name: "hero_subheadline"
-            widget: "text"
-          - label: "Philosophy Tagline"
-            name: "philosophy_tagline"
-            widget: "string"
-          - label: "Philosophy Body"
-            name: "philosophy_body"
-            widget: "text"
+          - { label: "Hero Badge", name: "hero_badge", widget: "string" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Sub-headline", name: "hero_subheadline", widget: "text" }
+          - { label: "Philosophy Tagline", name: "philosophy_tagline", widget: "string" }
+          - { label: "Philosophy Body", name: "philosophy_body", widget: "text" }
 
-      # 3. FOUNDER & TEAM PROFILE
-      - name: "founder_profile"
-        label: "Founder & Team"
-        file: "content/pages/team.json"
+      - name: founder_profile
+        label: Founder & Team
+        file: content/pages/team.json
         fields:
-          - label: "Team Members"
-            name: "members"
-            widget: "list"
+          - label: Team Members
+            name: members
+            widget: list
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role / Designation", name: "role", widget: "string" }
-              - { label: "Portrait Photo", name: "photo", widget: "image", default: "/founder.jpg" }
-              - { label: "Bio Paragraphs", name: "bio", widget: "markdown" }
+              - { label: "Photo", name: "photo", widget: "image", default: "/founder.jpg" }
+              - { label: "Bio", name: "bio", widget: "markdown" }
               - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
 
-      # 4. GLOBAL SETTINGS (Nav & Footer)
-      - name: "global_settings"
-        label: "Global Header & Footer"
-        file: "content/pages/global.json"
+      - name: global_settings
+        label: Global Header & Footer
+        file: content/pages/global.json
         fields:
-          - label: "Header CTA Label"
-            name: "nav_cta_label"
-            widget: "string"
-          - label: "Header CTA Link"
-            name: "nav_cta_link"
-            widget: "string"
-          - label: "Footer Tagline"
-            name: "footer_tagline"
-            widget: "string"
-          - label: "Copyright Notice"
-            name: "copyright"
-            widget: "string"
+          - { label: "Header CTA Label", name: "nav_cta_label", widget: "string" }
+          - { label: "Header CTA Link", name: "nav_cta_link", widget: "string" }
+          - { label: "Footer Tagline", name: "footer_tagline", widget: "string" }
+          - { label: "Copyright Notice", name: "copyright", widget: "string" }
