@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
           <img 
             src={EC_SHIELD_LOGO} 
             alt="Ekalavya Consulting" 
-            style={{ height: '52px', width: 'auto' }} 
+            className="h-9 sm:h-12 w-auto object-contain"
           />
         </Link>
 

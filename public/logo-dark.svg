@@ -1,78 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <defs>
-    <!-- Emerald Arrow Gradient -->
-    <linearGradient id="emeraldArrow" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00D084" />
-      <stop offset="100%" stop-color="#05F29B" />
-    </linearGradient>
-  </defs>
+  <rect width="512" height="512" fill="#071428" />
 
-  <!-- Solid #0F172A dark navy background -->
-  <rect width="512" height="512" fill="#0F172A" />
-
-  <!-- ================= EMBLEM ================= -->
-  <!-- Centered Emblem icon scaled into top section -->
-  <g transform="translate(148, 48) scale(1.02)">
-    <!-- Swirl Arc 1: Thin light grey #94A3B8 -->
-    <path 
-      d="M 125 15 C 65 20, 20 68, 18 128 C 16 162, 32 192, 58 208 C 42 194, 34 168, 36 138 C 38 90, 75 42, 130 32 Z" 
-      fill="#94A3B8"
-      opacity="0.95"
-    />
+  <!-- EC SHIELD EMBLEM CENTERED -->
+  <g id="ec-shield-emblem" transform="translate(151, 60) scale(1.05)">
+    <!-- Top-Left Crest & Top Bar of E -->
+    <path d="M 42 36 L 105 12 L 105 34 L 42 56 Z" fill="#FFFFFF" />
     
-    <!-- Swirl Arc 2: Thin light grey #94A3B8 -->
-    <path 
-      d="M 148 24 C 95 38, 54 84, 52 142 C 50 178, 68 206, 96 218 C 76 204, 66 178, 68 148 C 71 106, 102 62, 152 42 Z" 
-      fill="#94A3B8"
-      opacity="0.85"
-    />
+    <!-- Top-Right Crest -->
+    <path d="M 105 12 L 168 36 L 168 56 L 105 34 Z" fill="#FFFFFF" />
 
-    <!-- Swirl Arc 3: Thin light grey #94A3B8 -->
-    <path 
-      d="M 75 190 C 105 218, 155 224, 192 205 C 162 216, 118 210, 92 190 Z" 
-      fill="#94A3B8"
-      opacity="0.9"
-    />
+    <!-- Left Outer Spine (Vertical of E / Left Wall of Shield) -->
+    <path d="M 20 44 L 42 36 L 42 164 L 20 156 Z" fill="#FFFFFF" />
 
-    <!-- Emerald #00D084 Soaring Arrow -->
-    <path 
-      d="M 5 168 C 35 174, 85 162, 122 118 C 142 94, 158 64, 168 38 L 140 46 L 195 2 L 202 68 L 176 54 C 166 82, 146 116, 118 144 C 78 184, 32 188, 5 168 Z" 
-      fill="url(#emeraldArrow)"
-    />
+    <!-- Middle Bar of E -->
+    <path d="M 42 89 L 88 89 L 88 111 L 42 111 Z" fill="#FFFFFF" />
 
-    <!-- White star highlight on arrow tip -->
-    <path 
-      d="M 172 38 Q 172 45, 178 45 Q 172 45, 172 52 Q 172 45, 166 45 Q 172 45, 172 38 Z" 
-      fill="#FFFFFF"
-    />
+    <!-- Bottom-Left Base & Bottom Bar of E -->
+    <path d="M 42 144 L 105 166 L 105 188 L 42 164 Z" fill="#FFFFFF" />
+
+    <!-- Bottom-Right Base -->
+    <path d="M 105 166 L 168 144 L 168 164 L 105 188 Z" fill="#FFFFFF" />
+
+    <!-- Right Outer Wall of Shield (Right Spine of C) -->
+    <path d="M 168 36 L 190 44 L 190 156 L 168 164 Z" fill="#FFFFFF" />
+
+    <!-- Geometric Intertwined C -->
+    <path d="M 168 60 L 115 60 L 98 76 L 98 124 L 115 140 L 168 140 L 168 118 L 126 118 L 120 112 L 120 88 L 126 82 L 168 82 Z" fill="#FFFFFF" />
+    
+    <!-- C 3D Inner Bevel / Fold Accent in Light Silver -->
+    <path d="M 98 76 L 120 88 L 120 112 L 98 124 Z" fill="#CBD5E1" />
   </g>
 
-  <!-- ================= TYPOGRAPHY ================= -->
-  <!-- EKALAVYA -->
+  <!-- TYPOGRAPHY -->
   <text 
     x="256" 
-    y="345" 
+    y="350" 
     text-anchor="middle"
     fill="#FFFFFF" 
-    font-family="Cinzel, serif" 
-    font-size="52" 
+    font-family="'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+    font-size="48" 
     font-weight="800" 
     letter-spacing="5"
-  >
-    EKALAVYA
-  </text>
+  >EKALAVYA</text>
 
-  <!-- CONSULTING -->
   <text 
     x="256" 
-    y="410" 
+    y="395" 
     text-anchor="middle"
     fill="#FFFFFF" 
-    font-family="sans-serif" 
-    font-size="34" 
+    font-family="'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+    font-size="20" 
     font-weight="600" 
     letter-spacing="14"
-  >
-    CONSULTING
-  </text>
+  >CONSULTING</text>
 </svg>

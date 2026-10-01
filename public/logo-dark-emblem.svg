@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="48" fill="#071428" />
+
+  <g id="ec-shield-emblem" transform="translate(23, 28)">
+    <path d="M 42 36 L 105 12 L 105 34 L 42 56 Z" fill="#FFFFFF" />
+    <path d="M 105 12 L 168 36 L 168 56 L 105 34 Z" fill="#FFFFFF" />
+    <path d="M 20 44 L 42 36 L 42 164 L 20 156 Z" fill="#FFFFFF" />
+    <path d="M 42 89 L 88 89 L 88 111 L 42 111 Z" fill="#FFFFFF" />
+    <path d="M 42 144 L 105 166 L 105 188 L 42 164 Z" fill="#FFFFFF" />
+    <path d="M 105 166 L 168 144 L 168 164 L 105 188 Z" fill="#FFFFFF" />
+    <path d="M 168 36 L 190 44 L 190 156 L 168 164 Z" fill="#FFFFFF" />
+    <path d="M 168 60 L 115 60 L 98 76 L 98 124 L 115 140 L 168 140 L 168 118 L 126 118 L 120 112 L 120 88 L 126 82 L 168 82 Z" fill="#FFFFFF" />
+    <path d="M 98 76 L 120 88 L 120 112 L 98 124 Z" fill="#CBD5E1" />
+  </g>
+</svg>
