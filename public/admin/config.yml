@@ -2,7 +2,7 @@ backend:
   name: github
   repo: abhishek-ek/ekalavya-consulting
   branch: main
-  base_url: https://decap-oauth.vercel.app
+  base_url: https://www.ekalavyaconsulting.com
 
 media_folder: public/uploads
 public_folder: /uploads
