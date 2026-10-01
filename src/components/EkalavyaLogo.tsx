@@ -5,7 +5,7 @@ export const EkalavyaLogo: React.FC<{ className?: string }> = ({ className = 'h-
     <img 
       src="/logo.png" 
       alt="Ekalavya Consulting" 
-      className={`${className} object-contain`} 
+      className={`${className} object-contain invert brightness-200 mix-blend-screen`} 
     />
   );
 };
