@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Crosshair, Menu, X } from 'lucide-react';
-import { EC_SHIELD_LOGO } from '../assets/logo';
+import { EkalavyaLogo } from './EkalavyaLogo';
 
 interface NavbarProps {
   onLockTarget: () => void;
@@ -37,20 +37,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
 
   return (
     <header id="navbar" className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#0A1931]/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         
-        {/* Brand Logo */}
+        {/* Brand Logo - 100% transparent vector SVG */}
         <Link 
           to="/" 
           onClick={handleMobileNavClick}
           aria-label="Ekalavya Consulting"
           className="flex items-center transition-opacity hover:opacity-95"
         >
-          <img 
-            src={EC_SHIELD_LOGO} 
-            alt="Ekalavya Consulting" 
-            className="h-9 sm:h-12 w-auto object-contain"
-          />
+          <EkalavyaLogo className="h-10 sm:h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation Menu (6 Links on right side of logo) + LOCK THE TARGET CTA */}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 176" width="860" height="176" fill="none">
+  <!-- ================= EC SHIELD EMBLEM ================= -->
+  <g id="ec-shield-emblem" transform="translate(5, 5)">
+    <path d="M 36 28 L 88 4 L 88 26 L 36 48 Z" fill="#071428" />
+    <path d="M 88 4 L 140 28 L 140 48 L 88 26 Z" fill="#071428" />
+    <path d="M 16 36 L 36 28 L 36 138 L 16 130 Z" fill="#071428" />
+    <path d="M 36 74 L 75 74 L 75 94 L 36 94 Z" fill="#071428" />
+    <path d="M 36 120 L 88 142 L 88 164 L 36 142 Z" fill="#071428" />
+    <path d="M 88 142 L 140 120 L 140 142 L 88 164 Z" fill="#071428" />
+    <path d="M 140 28 L 160 36 L 160 130 L 140 138 Z" fill="#071428" />
+    <path d="M 140 48 L 96 48 L 82 62 L 82 106 L 96 120 L 140 120 L 140 100 L 105 100 L 100 95 L 100 73 L 105 68 L 140 68 Z" fill="#071428" />
+    <path d="M 82 62 L 100 73 L 100 95 L 82 106 Z" fill="#475569" />
+  </g>
+
+  <!-- ================= TYPOGRAPHY ================= -->
+  <text 
+    x="205" 
+    y="92" 
+    fill="#071428" 
+    font-family="'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+    font-size="82" 
+    font-weight="800" 
+    letter-spacing="5"
+  >EKALAVYA</text>
+
+  <text 
+    x="208" 
+    y="150" 
+    fill="#071428" 
+    font-family="'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+    font-size="30" 
+    font-weight="600" 
+    letter-spacing="18.8"
+  >CONSULTING</text>
+</svg>

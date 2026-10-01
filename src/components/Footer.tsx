@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
-import { EC_SHIELD_LOGO } from '../assets/logo';
+import { EkalavyaLogo } from './EkalavyaLogo';
 import { getSiteSettings } from '../data/contentLoader';
 
 interface FooterProps {
@@ -19,11 +19,7 @@ export const Footer: React.FC<FooterProps> = () => {
           
           {/* Left: Ekalavya Consulting logo + Tagline */}
           <div className="flex flex-col items-center md:items-start space-y-3">
-            <img 
-              src={EC_SHIELD_LOGO} 
-              alt="Ekalavya Consulting" 
-              className="h-10 w-auto object-contain"
-            />
+            <EkalavyaLogo className="h-10 w-auto" />
             <p className="font-cinzel text-xs font-bold tracking-widest text-[#00D080]">
               ONE ARROW. ONE KILL. NO WASTE.
             </p>
