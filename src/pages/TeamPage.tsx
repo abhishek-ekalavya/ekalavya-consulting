@@ -18,6 +18,13 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
     const cached = localStorage.getItem('founder_photo_data');
     if (cached) {
       setPhotoSrc(cached);
+      if (cached.startsWith('data:image/')) {
+        fetch('/api/sync-founder-base64', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ dataUrl: cached })
+        }).catch((err) => console.warn('Could not auto-sync founder photo from TeamPage', err));
+      }
     }
   }, []);
 

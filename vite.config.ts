@@ -32,15 +32,54 @@ export default defineConfig(() => {
                 res.end(fs.readFileSync(configPath));
                 return;
               }
-            } else if (url === '/api/upload-founder-photo' && req.method === 'POST') {
+            } else if ((url === '/api/upload-founder-photo' || url === '/api/sync-founder-base64') && req.method === 'POST') {
               const chunks: Buffer[] = [];
               req.on('data', (chunk: any) => chunks.push(Buffer.from(chunk)));
               req.on('end', () => {
-                const buffer = Buffer.concat(chunks);
-                const file1 = path.resolve(__dirname, 'public/IMG_20260928_191429.jpg');
-                const file2 = path.resolve(__dirname, 'public/IMG-20260928-WA3261.jpg');
-                fs.writeFileSync(file1, buffer);
-                fs.writeFileSync(file2, buffer);
+                let buffer: Buffer;
+                const raw = Buffer.concat(chunks);
+                const str = raw.toString('utf8');
+                if (str.startsWith('{') && str.includes('dataUrl')) {
+                  try {
+                    const parsed = JSON.parse(str);
+                    const b64 = parsed.dataUrl.split(',')[1];
+                    buffer = Buffer.from(b64, 'base64');
+                  } catch {
+                    buffer = raw;
+                  }
+                } else if (str.startsWith('data:image/')) {
+                  const b64 = str.split(',')[1];
+                  buffer = Buffer.from(b64, 'base64');
+                } else {
+                  buffer = raw;
+                }
+
+                const targets = [
+                  'src/assets/founder.jpg',
+                  'public/IMG_20260928_191429.jpg',
+                  'public/IMG-20260928-WA3261.jpg',
+                  'public/founder.jpg',
+                  'public/profile.jpg'
+                ];
+                targets.forEach(t => {
+                  try {
+                    fs.writeFileSync(path.resolve(__dirname, t), buffer);
+                  } catch (e) {
+                    console.error('Error writing target', t, e);
+                  }
+                });
+
+                // Also update src/assets/founder.ts with fresh base64 string
+                const b64String = buffer.toString('base64');
+                const tsContent = `// Bundled founder photo with base64 embedded fallback to guarantee availability on all live deployments
+import founderAssetUrl from './founder.jpg';
+
+export const FOUNDER_ASSET_URL = founderAssetUrl;
+export const FOUNDER_PHOTO_DATA_URL = 'data:image/jpeg;base64,${b64String}';
+export const DEFAULT_FOUNDER_PHOTO = founderAssetUrl || FOUNDER_PHOTO_DATA_URL;
+`;
+                fs.writeFileSync(path.resolve(__dirname, 'src/assets/founder.ts'), tsContent);
+
                 res.setHeader('Content-Type', 'application/json');
                 res.end(JSON.stringify({ success: true, size: buffer.length }));
               });
