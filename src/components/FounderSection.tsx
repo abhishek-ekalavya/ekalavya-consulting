@@ -1,26 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Camera, UploadCloud } from 'lucide-react';
+import { Camera } from 'lucide-react';
+import { DEFAULT_FOUNDER_PHOTO, FOUNDER_PHOTO_DATA_URL } from '../assets/founder';
 
 export const FounderSection: React.FC = () => {
-  const [photoSrc, setPhotoSrc] = useState<string>('/IMG_20260928_191429.jpg');
-  const [loadError, setLoadError] = useState<boolean>(false);
+  // Use bundled asset URL with immediate embedded base64 fallback to ensure 100% reliability on GitHub and live deploys
+  const [photoSrc, setPhotoSrc] = useState<string>(DEFAULT_FOUNDER_PHOTO);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // Check local storage for previously uploaded photo data URL
+    // Check local storage for user-uploaded custom photo if present
     const cached = localStorage.getItem('founder_photo_data');
     if (cached) {
       setPhotoSrc(cached);
-      setLoadError(false);
     }
   }, []);
 
   const handleImageError = () => {
-    // Try WA3261 filename if 191429 fails, otherwise show graceful upload dropzone
-    if (photoSrc.includes('191429')) {
-      setPhotoSrc('/IMG-20260928-WA3261.jpg');
-    } else {
-      setLoadError(true);
+    // Never fall back to an infographic; fall back to the embedded base64 founder portrait data URL
+    if (photoSrc !== FOUNDER_PHOTO_DATA_URL) {
+      setPhotoSrc(FOUNDER_PHOTO_DATA_URL);
     }
   };
 
@@ -28,21 +26,18 @@ export const FounderSection: React.FC = () => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // 1. Instantly show via data URL
     const reader = new FileReader();
     reader.onload = async () => {
       const dataUrl = reader.result as string;
       setPhotoSrc(dataUrl);
-      setLoadError(false);
       try {
         localStorage.setItem('founder_photo_data', dataUrl);
       } catch {
-        // quota ignore
+        // ignore quota
       }
     };
     reader.readAsDataURL(file);
 
-    // 2. Persist to dev server public/ folder via API
     try {
       await fetch('/api/upload-founder-photo', {
         method: 'POST',
@@ -62,7 +57,7 @@ export const FounderSection: React.FC = () => {
       aria-label="Founder and Fractional Marketer"
       className="my-12 rounded-2xl border border-white/10 bg-[#071326]/90 p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden text-left"
     >
-      {/* Hidden file input for uploading the original file */}
+      {/* Hidden file input for uploading an alternate file if desired */}
       <input 
         type="file"
         ref={fileInputRef}
@@ -74,7 +69,7 @@ export const FounderSection: React.FC = () => {
       {/* Subtle ambient lighting */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute -top-32 right-10 h-72 w-72 rounded-full bg-[#00D084]/5 blur-[100px]" 
+        className="pointer-events-none absolute -top-32 right-10 h-72 w-72 rounded-full bg-[#00D080]/5 blur-[100px]" 
       />
       <div 
         aria-hidden="true" 
@@ -83,58 +78,46 @@ export const FounderSection: React.FC = () => {
 
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14 relative z-10">
         
-        {/* Left Column: Real photograph with soft shadow, 12px radius, subtle desaturation */}
+        {/* Left Column: Founder photograph with 4:5 portrait ratio, no head cropping */}
         <div className="lg:col-span-5 flex justify-center">
           <div className="relative w-full max-w-[380px] group">
             
-            {!loadError ? (
-              <div className="relative overflow-hidden rounded-[12px] border border-white/15 bg-black/40 shadow-2xl shadow-black/80">
-                <img
-                  src={photoSrc}
-                  alt="Abhishek Bhowmick - Founder and Fractional Marketer"
-                  onError={handleImageError}
-                  className="w-full h-auto object-contain rounded-[12px] filter grayscale-[80%] contrast-[1.05] transition-all duration-500 group-hover:grayscale-[30%]"
-                  style={{
-                    borderRadius: '12px',
-                    boxShadow: '0 20px 45px -10px rgba(0, 0, 0, 0.8)'
-                  }}
-                />
-                
-                {/* Subtle discrete replace button on hover */}
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  title="Click to update / reload original photograph"
-                  className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 font-mono text-[10px] font-semibold text-white/80 opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 hover:bg-black hover:text-[#00D084]"
-                >
-                  <Camera className="h-3 w-3" />
-                  <span>Update Photo</span>
-                </button>
-              </div>
-            ) : (
-              /* If file is not yet saved to public directory, allow 1-click select of IMG_20260928_191429.jpg */
-              <div 
+            <div 
+              className="relative overflow-hidden rounded-[16px] border border-[#00D080]/30 bg-[#0A1931] shadow-[0_0_35px_rgba(0,208,128,0.18)] p-2 flex items-center justify-center"
+              style={{
+                aspectRatio: '4 / 5',
+                maxHeight: '480px',
+                borderRadius: '16px',
+                backgroundColor: '#0A1931',
+                borderColor: 'rgba(0, 208, 128, 0.3)',
+                padding: '8px',
+              }}
+            >
+              <img
+                src={photoSrc}
+                alt="Abhishek Bhowmick - Founder and Fractional Marketer"
+                onError={handleImageError}
+                className="w-full h-full object-cover rounded-[12px] filter grayscale-[80%] contrast-[1.05] transition-all duration-500 group-hover:grayscale-[20%]"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'top center',
+                  borderRadius: '12px',
+                }}
+              />
+              
+              {/* Discrete update button on hover */}
+              <button
+                type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="flex flex-col items-center justify-center rounded-[12px] border-2 border-dashed border-[#00D084]/40 bg-white/[0.02] p-8 text-center cursor-pointer transition-colors hover:border-[#00D084] hover:bg-white/[0.04]"
-                style={{ minHeight: '380px', borderRadius: '12px' }}
+                title="Update photograph"
+                className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 font-mono text-[10px] font-semibold text-white/80 opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 hover:bg-black hover:text-[#00D080]"
               >
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#00D084]/10 text-[#00D084]">
-                  <UploadCloud className="h-7 w-7" />
-                </div>
-                <h3 className="font-sans text-lg font-bold text-white">
-                  Abhishek Bhowmick
-                </h3>
-                <p className="mt-1 font-mono text-xs text-[#00D084]">
-                  IMG_20260928_191429.jpg
-                </p>
-                <p className="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">
-                  Click here to attach your original photograph file directly into the website.
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 rounded bg-[#00D084] px-4 py-2 font-mono text-xs font-bold text-black shadow-md hover:bg-[#00ba76]">
-                  Select Photograph File
-                </span>
-              </div>
-            )}
+                <Camera className="h-3 w-3" />
+                <span>Update Photo</span>
+              </button>
+            </div>
 
           </div>
         </div>
@@ -142,11 +125,11 @@ export const FounderSection: React.FC = () => {
         {/* Right Column: Founder & Fractional Marketer content */}
         <div className="lg:col-span-7 flex flex-col justify-center">
           {/* Heading: FOUNDER AND FRACTIONAL MARKETER */}
-          <span className="font-mono text-xs sm:text-sm font-semibold tracking-[0.2em] text-[#00D084] uppercase block">
+          <span className="font-mono text-xs sm:text-sm font-semibold tracking-[0.2em] text-[#00D080] uppercase block">
             FOUNDER AND FRACTIONAL MARKETER
           </span>
 
-          {/* Sub-heading: Abhishek Bhowmick in Title Case (Bold, slightly larger) */}
+          {/* Sub-heading: Abhishek Bhowmick */}
           <h2 className="font-sans text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl mt-2 mb-6">
             Abhishek Bhowmick
           </h2>
@@ -165,7 +148,7 @@ export const FounderSection: React.FC = () => {
           </div>
 
           {/* Quote line in italic, with left border accent */}
-          <div className="mt-8 border-l-2 border-[#00D084] pl-4 sm:pl-6 py-2">
+          <div className="mt-8 border-l-2 border-[#00D080] pl-4 sm:pl-6 py-2">
             <blockquote className="font-cinzel text-lg sm:text-xl italic text-white/95 leading-relaxed tracking-wide">
               &ldquo;I observe in silence, plan in 360&deg;, and strike with one arrow.&rdquo;
             </blockquote>

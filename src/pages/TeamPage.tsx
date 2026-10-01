@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Crosshair, Compass, Zap } from 'lucide-react';
 import { getTeamContent } from '../data/contentLoader';
+import { DEFAULT_FOUNDER_PHOTO, FOUNDER_PHOTO_DATA_URL } from '../assets/founder';
 
 interface TeamPageProps {
   onLockTarget: () => void;
@@ -10,9 +11,8 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
   const teamData = getTeamContent();
   const show_strike_team = Boolean(teamData.show_strike_team);
 
-  const [photoSrc, setPhotoSrc] = useState<string>(
-    teamData.founder.image || '/IMG_20260928_191429.jpg'
-  );
+  // Use bundled asset URL with immediate embedded base64 fallback to ensure 100% reliability on GitHub and live deploys
+  const [photoSrc, setPhotoSrc] = useState<string>(DEFAULT_FOUNDER_PHOTO);
 
   useEffect(() => {
     const cached = localStorage.getItem('founder_photo_data');
@@ -22,10 +22,9 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
   }, []);
 
   const handleImageError = () => {
-    if (photoSrc.includes('191429')) {
-      setPhotoSrc('/IMG-20260928-WA3261.jpg');
-    } else if (!photoSrc.includes('WA7672')) {
-      setPhotoSrc('/IMG-20260929-WA7672.jpg');
+    // Never fall back to an infographic; fall back directly to the embedded base64 founder portrait data URL
+    if (photoSrc !== FOUNDER_PHOTO_DATA_URL) {
+      setPhotoSrc(FOUNDER_PHOTO_DATA_URL);
     }
   };
 
