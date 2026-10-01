@@ -14,4 +14,4 @@ collections:
         label: General
         file: content/settings/general.json
         fields:
-                    - { label: "Site Name", name: site_name, widget: string }
+                    - {label: "Site Name", name: site_name, widget: string}
