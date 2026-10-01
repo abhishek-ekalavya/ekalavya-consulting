@@ -1,8 +1,8 @@
 {
   "rewrites": [
-    { "source": "/admin/config.yml", "destination": "/admin/config.yml" },
-    { "source": "/admin/:path*", "destination": "/admin/:path*" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "cleanUrls": false
+    {
+      "source": "/((?!admin/|assets/|uploads/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
