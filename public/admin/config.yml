@@ -2,13 +2,15 @@ backend:
   name: github
   repo: abhishek-ek/ekalavya-consulting
   branch: main
+
 media_folder: public/uploads
 public_folder: /uploads
+
 collections:
-    - name: blog
+  - name: blog
     label: Blog
     folder: content/blog
     create: true
     fields:
-            - {label: Title, name: title, widget: string}
-            - {label: Body, name: body, widget: markdown}
+      - { label: Title, name: title, widget: string }
+      - { label: Body, name: body, widget: markdown }
