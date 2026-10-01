@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Crosshair, Menu, X } from 'lucide-react';
-import { EkalavyaEmblem } from './EkalavyaLogo';
-import { getSiteSettings } from '../data/contentLoader';
+import { EC_SHIELD_LOGO } from '../assets/logo';
 
 interface NavbarProps {
   onLockTarget: () => void;
@@ -26,7 +25,6 @@ const navItems: NavItem[] = [
 export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const settings = getSiteSettings();
 
   const handleMobileNavClick = () => {
     setMobileMenuOpen(false);
@@ -41,30 +39,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
     <header id="navbar" className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#0A1931]/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         
-        {/* Brand Logo & Name */}
+        {/* Brand Logo */}
         <Link 
           to="/" 
           onClick={handleMobileNavClick}
-          aria-label="Ekalavya Consulting - Fractional CMO and Marketing Leadership Home"
-          className="flex items-center gap-3.5 group transition-opacity hover:opacity-95"
+          aria-label="Ekalavya Consulting"
+          className="flex items-center transition-opacity hover:opacity-95"
         >
-          <div 
-            className="flex h-11 w-11 items-center justify-center p-1.5 bg-[#0F172A] shadow-sm shadow-black/40 transition-colors group-hover:border-[#00D084]/40"
-            style={{
-              border: '1px solid #1E293B',
-              borderRadius: '8px'
-            }}
-          >
-            <EkalavyaEmblem variant="dark" className="h-full w-full" />
-          </div>
-          <div className="flex flex-col justify-center">
-            <span className="font-cinzel text-lg font-bold tracking-[0.12em] text-white sm:text-xl leading-none">
-              {settings.logo_text || 'EKALAVYA'}
-            </span>
-            <span className="font-mono text-[9.5px] tracking-[0.28em] text-white/70 uppercase mt-1 font-medium">
-              Consulting
-            </span>
-          </div>
+          <img 
+            src={EC_SHIELD_LOGO} 
+            alt="Ekalavya Consulting" 
+            style={{ height: '52px', width: 'auto' }} 
+          />
         </Link>
 
         {/* Desktop Navigation Menu (6 Links on right side of logo) + LOCK THE TARGET CTA */}

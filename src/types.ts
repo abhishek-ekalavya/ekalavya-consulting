@@ -14,6 +14,7 @@ export interface FormAData {
   whatIsBroken: 'No strategy' | 'Spends but no ROI' | 'Team exists but no leader' | 'Scaling to next market' | '';
   sixMonthVision: string;
   phone: string;
+  email: string;
 }
 
 export type ExecutionNeed = 
@@ -32,6 +33,8 @@ export interface FormBData {
   budget: '50k-2L' | '2-5L' | '5-10L' | '10L+' | '';
   timeline: 'Urgent <15 days' | 'This Month' | 'Next 30-60 days' | '';
   phone: string;
+  email: string;
+  challenge?: string;
 }
 
 export interface BriefConfirmation {

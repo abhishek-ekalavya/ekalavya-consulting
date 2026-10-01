@@ -32,6 +32,19 @@ export default defineConfig(() => {
                 res.end(fs.readFileSync(configPath));
                 return;
               }
+            } else if (url === '/api/upload-founder-photo' && req.method === 'POST') {
+              const chunks: Buffer[] = [];
+              req.on('data', (chunk: any) => chunks.push(Buffer.from(chunk)));
+              req.on('end', () => {
+                const buffer = Buffer.concat(chunks);
+                const file1 = path.resolve(__dirname, 'public/IMG_20260928_191429.jpg');
+                const file2 = path.resolve(__dirname, 'public/IMG-20260928-WA3261.jpg');
+                fs.writeFileSync(file1, buffer);
+                fs.writeFileSync(file2, buffer);
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: true, size: buffer.length }));
+              });
+              return;
             }
             next();
           });

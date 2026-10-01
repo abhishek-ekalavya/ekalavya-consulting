@@ -1,0 +1,30 @@
+{
+  "show_strike_team": false,
+  "founder": {
+    "name": "Abhishek Bhowmick",
+    "title": "Founder & Principal Growth Architect",
+    "image": "/IMG_20260928_191429.jpg",
+    "bio_paragraphs": [
+      "21 years of experience with top global brands across India, Middle East and Europe. Started as a copywriter, moved to 360-degree campaign planning, and led gold-standard teams at India's biggest loyalty management company.",
+      "Now as Founder and Fractional Marketer at Ekalavya Consulting, I help ambitious brands fix their go-to-market and drive high-velocity growth."
+    ],
+    "quote": "I observe in silence, plan in 360°, and strike with one arrow.",
+    "stats": [
+      "15+ Years",
+      "Nine-Figure P&Ls",
+      "Zero Waste Governance"
+    ]
+  },
+  "council": {
+    "badge": "02 • FRACTIONAL CMO COUNCIL",
+    "title": "The Fractional CMO Council",
+    "unit": "Strategic Governance Unit",
+    "description": "Senior growth architects with 15+ years steering commercial P&L, brand positioning, and market penetration across tech, enterprise, and high-growth consumer categories."
+  },
+  "strike_team": {
+    "badge": "03 • TACTICAL PRODUCTION",
+    "title": "Surgical Execution Strike Team",
+    "unit": "Tactical Production Unit",
+    "description": "Master AV directors, full-stack digital engineers, performance quant analysts, packaging designers, and physical activation directors deployed on-demand."
+  }
+}

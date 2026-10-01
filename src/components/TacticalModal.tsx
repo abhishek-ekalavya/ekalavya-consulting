@@ -45,8 +45,10 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     whatIsBroken: '',
     sixMonthVision: '',
     phone: '',
+    email: '',
   });
   const [errorA, setErrorA] = useState<string>('');
+  const [isSubmittingA, setIsSubmittingA] = useState<boolean>(false);
 
   // FORM B STATE
   const [formB, setFormB] = useState<FormBData>({
@@ -57,8 +59,11 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     budget: '',
     timeline: '',
     phone: '',
+    email: '',
+    challenge: '',
   });
   const [errorB, setErrorB] = useState<string>('');
+  const [isSubmittingB, setIsSubmittingB] = useState<boolean>(false);
 
   if (view === 'closed') return null;
 
@@ -73,6 +78,16 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     });
   };
 
+  const validatePhone = (phone: string): boolean => {
+    const digits = phone.replace(/\D/g, '');
+    return digits.length === 10 || (digits.length === 11 && digits.startsWith('0')) || (digits.length === 12 && digits.startsWith('91'));
+  };
+
+  const validateEmail = (email: string): boolean => {
+    const trimmed = email.trim();
+    return trimmed.includes('@') && trimmed.includes('.');
+  };
+
   const handleSubmitFormA = (e: React.FormEvent) => {
     e.preventDefault();
     if (
@@ -81,16 +96,44 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
       !formA.monthlySpend ||
       !formA.teamStructure ||
       !formA.whatIsBroken ||
-      !formA.sixMonthVision ||
-      !formA.phone
+      !formA.phone ||
+      !formA.email
     ) {
       setErrorA('All fields are mandatory to evaluate leadership requirements.');
       return;
     }
+
+    if (!validatePhone(formA.phone)) {
+      setErrorA('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    if (!validateEmail(formA.email)) {
+      setErrorA('Please enter a valid email address (must include @ and .)');
+      return;
+    }
+
     setErrorA('');
-    // Master doc: After Submit: Redirect to Calendly Link.
-    onSelectView('thankYouA');
-    onOpenCalendly(formA.name, formA.companyAndUrl);
+    setIsSubmittingA(true);
+
+    const message = [
+      'NEW LEAD - FORM A - THE LONG GAME',
+      `Name: ${formA.name}`,
+      `Company: ${formA.companyAndUrl}`,
+      `Phone: ${formA.phone}`,
+      `Email: ${formA.email}`,
+      `Spend: ${formA.monthlySpend}`,
+      `Challenge: ${formA.whatIsBroken}`
+    ].join('\n');
+
+    // Action on submit:
+    window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
+    window.open('mailto:helloekalavya@gmail.com?subject=New Lead - FORM A - ' + formA.companyAndUrl + '&body=' + encodeURIComponent(message), '_blank');
+
+    setTimeout(() => {
+      setIsSubmittingA(false);
+      onSelectView('thankYouA');
+    }, 600);
   };
 
   const handleSubmitFormB = (e: React.FormEvent) => {
@@ -102,14 +145,48 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
       !formB.briefReady ||
       !formB.budget ||
       !formB.timeline ||
-      !formB.phone
+      !formB.phone ||
+      !formB.email
     ) {
       setErrorB('All fields and at least one execution deliverable are required.');
       return;
     }
+
+    if (!validatePhone(formB.phone)) {
+      setErrorB('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    if (!validateEmail(formB.email)) {
+      setErrorB('Please enter a valid email address (must include @ and .)');
+      return;
+    }
+
     setErrorB('');
-    // Master doc: After Submit: Show message "Brief Received. We will revert with a Sniper Quote in 24 hours."
-    onSelectView('thankYouB');
+    setIsSubmittingB(true);
+
+    const selectedWeapon = formB.whatNeeded.join(', ');
+    const challengeB = formB.challenge || `Timeline: ${formB.timeline} (Brief ready: ${formB.briefReady})`;
+
+    const message = [
+      `NEW LEAD - FORM B - ${selectedWeapon}`,
+      `Name: ${formB.name}`,
+      `Company: ${formB.company}`,
+      `Phone: ${formB.phone}`,
+      `Email: ${formB.email}`,
+      `Spend: ${formB.budget}`,
+      `Weapon: ${selectedWeapon}`,
+      `Challenge: ${challengeB}`
+    ].join('\n');
+
+    // Action on submit:
+    window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
+    window.open('mailto:helloekalavya@gmail.com?subject=New Lead - FORM B - ' + formB.company + '&body=' + encodeURIComponent(message), '_blank');
+
+    setTimeout(() => {
+      setIsSubmittingB(false);
+      onSelectView('thankYouB');
+    }, 600);
   };
 
   return (
@@ -119,17 +196,19 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     >
       <div 
         id="tactical-modal-card"
-        className="relative my-8 w-full max-w-2xl rounded-xl border border-white/20 bg-[#0A1931] p-6 shadow-2xl transition-all sm:p-8"
+        className="relative my-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl border border-white/20 bg-[#0A1931] p-6 shadow-2xl transition-all sm:p-8"
       >
-        {/* Close Button */}
-        <button
-          id="modal-close-btn"
-          onClick={onClose}
-          className="absolute right-4 top-4 rounded border border-white/10 p-1.5 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
-          title="Close"
-        >
-          <X className="h-5 w-5" />
-        </button>
+        {/* Close Button (for Chooser and ThankYou views) */}
+        {(view === 'chooser' || view === 'thankYouA' || view === 'thankYouB') && (
+          <button
+            id="modal-close-btn"
+            onClick={onClose}
+            className="absolute right-4 top-4 z-10 rounded border border-white/10 p-1.5 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+            title="Close"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        )}
 
         {/* 1. CHOOSER POPUP */}
         {view === 'chooser' && (
@@ -149,7 +228,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
             </div>
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {/* BUTTON A: I Need Direction [The Long Game] */}
+              {/* BUTTON A: I Need Direction */}
               <button
                 id="chooser-button-a"
                 onClick={() => onSelectView('formA')}
@@ -168,7 +247,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                     I Need Direction
                   </h4>
                   <div className="font-mono text-xs font-semibold text-[#00D084]">
-                    [The Long Game]
+                    The Long Game
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70">
                     I need a CMO to lead my marketing.
@@ -181,7 +260,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 </div>
               </button>
 
-              {/* BUTTON B: I Need Execution [The Short Game] */}
+              {/* BUTTON B: I Need Execution */}
               <button
                 id="chooser-button-b"
                 onClick={() => onSelectView('formB')}
@@ -200,7 +279,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                     I Need Execution
                   </h4>
                   <div className="font-mono text-xs font-semibold text-[#00D084]">
-                    [The Short Game]
+                    The Short Game
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-white/70">
                     I have direction, I need one campaign/asset nailed.
@@ -216,27 +295,38 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
           </div>
         )}
 
-        {/* 2. FORM A: REQUEST LEADERSHIP AUDIT */}
+        {/* 2. FORM A: THE LONG GAME */}
         {view === 'formA' && (
           <div id="view-form-a">
-            <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-              <div className="flex items-center gap-3">
+            {/* Sticky Top Header Row: Back on left, Labels & Title, X on right */}
+            <div className="sticky -top-6 sm:-top-8 -mx-6 sm:-mx-8 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 mb-6 bg-[#0A1931] border-b border-white/10 z-20">
+              <div className="flex items-center justify-between gap-4">
                 <button
                   type="button"
                   onClick={() => onSelectView('chooser')}
-                  className="rounded border border-white/10 p-1.5 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
-                  title="Back to Chooser"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-[#00D084] hover:bg-[#00D084]/10 hover:text-[#00D084]"
+                  title="Back to Which Battle"
+                  aria-label="Back to Which Battle"
                 >
-                  <ArrowLeft className="h-4 w-4" />
+                  <ArrowLeft className="h-5 w-5" />
                 </button>
-                <div>
-                  <span className="font-mono text-[11px] font-semibold tracking-wider text-[#00D084] uppercase">
+                <div className="flex-1 min-w-0">
+                  <div className="font-mono text-xs font-bold tracking-widest text-[#00D084] uppercase">
                     FORM A &bull; FRACTIONAL CMO
-                  </span>
-                  <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl">
-                    Request Leadership Audit
+                  </div>
+                  <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl mt-0.5 truncate">
+                    THE LONG GAME
                   </h3>
                 </div>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-white/30 hover:bg-white/10 hover:text-white"
+                  title="Close"
+                  aria-label="Close"
+                >
+                  <X className="h-5 w-5" />
+                </button>
               </div>
             </div>
 
@@ -367,47 +457,81 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                   required
                   value={formA.phone}
                   onChange={(e) => setFormA({ ...formA, phone: e.target.value })}
-                  placeholder="+91 98200 XXXXX"
+                  placeholder="e.g. 9820049031 (10 digits)"
                   className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
                 />
               </div>
 
-              {/* CTA: [REQUEST LEADERSHIP AUDIT] */}
+              {/* Field 8: Work / Personal Email */}
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  8. Email Address <span className="text-[#00D084]">*</span>
+                </label>
+                <input
+                  id="forma-email"
+                  type="email"
+                  required
+                  value={formA.email}
+                  onChange={(e) => setFormA({ ...formA, email: e.target.value })}
+                  placeholder="e.g. rahul@company.com or yourname@gmail.com"
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              {/* CTA: LOCK YOUR GROWTH DIRECTION */}
               <div className="pt-3">
                 <button
                   id="forma-submit-btn"
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded bg-[#00D084] py-4 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow-[#00D084]/25 transition-all hover:bg-[#00ba76] active:scale-[0.99]"
+                  disabled={isSubmittingA}
+                  className="flex w-full items-center justify-center gap-2 rounded bg-[#00D084] py-4 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow-[#00D084]/25 transition-all hover:bg-[#00ba76] active:scale-[0.99] disabled:opacity-75 disabled:cursor-not-allowed"
                 >
-                  <Send className="h-4 w-4" />
-                  <span>REQUEST LEADERSHIP AUDIT</span>
+                  {isSubmittingA ? (
+                    <span>LOCKING TARGET...</span>
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4" />
+                      <span>LOCK YOUR GROWTH DIRECTION</span>
+                    </>
+                  )}
                 </button>
               </div>
             </form>
           </div>
         )}
 
-        {/* 3. FORM B: SEND EXECUTION BRIEF */}
+        {/* 3. FORM B: THE SHORT GAME */}
         {view === 'formB' && (
           <div id="view-form-b">
-            <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-              <div className="flex items-center gap-3">
+            {/* Sticky Top Header Row: Back on left, Labels & Title, X on right */}
+            <div className="sticky -top-6 sm:-top-8 -mx-6 sm:-mx-8 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 mb-6 bg-[#0A1931] border-b border-white/10 z-20">
+              <div className="flex items-center justify-between gap-4">
                 <button
                   type="button"
                   onClick={() => onSelectView('chooser')}
-                  className="rounded border border-white/10 p-1.5 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
-                  title="Back to Chooser"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-[#00D084] hover:bg-[#00D084]/10 hover:text-[#00D084]"
+                  title="Back to Which Battle"
+                  aria-label="Back to Which Battle"
                 >
-                  <ArrowLeft className="h-4 w-4" />
+                  <ArrowLeft className="h-5 w-5" />
                 </button>
-                <div>
-                  <span className="font-mono text-[11px] font-semibold tracking-wider text-[#00D084] uppercase">
+                <div className="flex-1 min-w-0">
+                  <div className="font-mono text-xs font-bold tracking-widest text-[#00D084] uppercase">
                     FORM B &bull; SPECIALIZED EXECUTION
-                  </span>
-                  <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl">
-                    Send Execution Brief
+                  </div>
+                  <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl mt-0.5 truncate">
+                    THE SHORT GAME
                   </h3>
                 </div>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-white/30 hover:bg-white/10 hover:text-white"
+                  title="Close"
+                  aria-label="Close"
+                >
+                  <X className="h-5 w-5" />
+                </button>
               </div>
             </div>
 
@@ -451,10 +575,10 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 />
               </div>
 
-              {/* Field 3: What do you need executed? (Multi-select Dropdown) */}
+              {/* Field 3: Select Your Weapon (Multi-select Dropdown) */}
               <div>
                 <label className="mb-1.5 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  3. What do you need executed? <span className="text-[#00D084]">*</span>
+                  3. Select Your Weapon <span className="text-[#00D084]">*</span>
                 </label>
                 <div className="space-y-2">
                   {executionNeedOptions.map((option) => {
@@ -565,75 +689,87 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                   required
                   value={formB.phone}
                   onChange={(e) => setFormB({ ...formB, phone: e.target.value })}
-                  placeholder="+91 98200 XXXXX"
+                  placeholder="e.g. 9820049031 (10 digits)"
                   className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
                 />
               </div>
 
-              {/* CTA: [SEND EXECUTION BRIEF] */}
+              {/* Field 8: Work / Personal Email */}
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  8. Email Address <span className="text-[#00D084]">*</span>
+                </label>
+                <input
+                  id="formb-email"
+                  type="email"
+                  required
+                  value={formB.email}
+                  onChange={(e) => setFormB({ ...formB, email: e.target.value })}
+                  placeholder="e.g. rahul@company.com or yourname@gmail.com"
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              {/* Field 9: Key Challenge / Requirement */}
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  9. Key Challenge / Requirement
+                </label>
+                <textarea
+                  id="formb-challenge"
+                  rows={2}
+                  value={formB.challenge || ''}
+                  onChange={(e) => setFormB({ ...formB, challenge: e.target.value })}
+                  placeholder="Outline key objectives, deliverable nuances, or bottlenecks..."
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              {/* CTA: LOCK YOUR EXECUTION */}
               <div className="pt-3">
                 <button
                   id="formb-submit-btn"
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded bg-[#00D084] py-4 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow-[#00D084]/25 transition-all hover:bg-[#00ba76] active:scale-[0.99]"
+                  disabled={isSubmittingB}
+                  className="flex w-full items-center justify-center gap-2 rounded bg-[#00D084] py-4 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow-[#00D084]/25 transition-all hover:bg-[#00ba76] active:scale-[0.99] disabled:opacity-75 disabled:cursor-not-allowed"
                 >
-                  <Crosshair className="h-4 w-4" />
-                  <span>SEND EXECUTION BRIEF</span>
+                  {isSubmittingB ? (
+                    <span>LOCKING TARGET...</span>
+                  ) : (
+                    <>
+                      <Crosshair className="h-4 w-4" />
+                      <span>LOCK YOUR EXECUTION</span>
+                    </>
+                  )}
                 </button>
               </div>
             </form>
           </div>
         )}
 
-        {/* 4. AFTER SUBMIT FORM A */}
-        {view === 'thankYouA' && (
-          <div id="view-thankyou-a" className="py-6 text-center">
+        {/* 4. SUCCESS STATE IN MODAL: TARGET LOCKED */}
+        {(view === 'thankYouA' || view === 'thankYouB') && (
+          <div id="view-thankyou" className="py-8 text-center">
             <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#00D084] bg-[#00D084]/20 text-[#00D084]">
-              <ShieldCheck className="h-8 w-8" />
+              <ShieldCheck className="h-8 w-8 text-[#00D084]" />
             </div>
 
             <h3 className="font-cinzel text-2xl font-extrabold tracking-wide text-white sm:text-3xl">
-              Request Leadership Audit Submitted
+              TARGET LOCKED
             </h3>
 
-            <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-white/80">
-              Redirecting to Calendly schedule for strategic leadership assessment.
+            <p className="mx-auto mt-4 max-w-lg text-sm sm:text-base leading-relaxed text-white/80">
+              WhatsApp + Email draft opened. Send to confirm.
             </p>
-
-            <div className="mt-6">
-              <button
-                onClick={() => onOpenCalendly(formA.name, formA.companyAndUrl)}
-                className="inline-flex items-center gap-2 rounded bg-[#00D084] px-6 py-3 font-mono text-xs font-bold text-black hover:bg-[#00ba76]"
-              >
-                <Calendar className="h-4 w-4" />
-                <span>OPEN CALENDLY NOW</span>
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* 5. AFTER SUBMIT FORM B */}
-        {view === 'thankYouB' && (
-          <div id="view-thankyou-b" className="py-8 text-center">
-            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#00D084] bg-[#00D084]/20 text-[#00D084]">
-              <Crosshair className="h-8 w-8 text-[#00D084]" />
-            </div>
-
-            <div className="rounded-lg border border-[#00D084]/40 bg-[#00D084]/10 p-6 sm:p-8">
-              <p className="font-cinzel text-xl font-bold text-white sm:text-2xl">
-                Brief Received. We will revert with a Sniper Quote in 24 hours.
-              </p>
-              <p className="mt-3 font-mono text-xs text-white/70">
-                Company: <span className="text-white font-semibold">{formB.company}</span> &bull; Lead: <span className="text-white font-semibold">{formB.name}</span> ({formB.phone})
-              </p>
-            </div>
 
             <div className="mt-8">
               <button
+                type="button"
+                id="modal-close-dossier-btn"
                 onClick={onClose}
-                className="rounded border border-white/20 bg-white/5 px-6 py-2.5 font-mono text-xs text-white/80 transition-colors hover:border-white/40 hover:text-white"
+                className="inline-flex items-center justify-center gap-2 rounded bg-[#00D084] px-8 py-3.5 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow-[#00D084]/25 transition-all hover:bg-[#00ba76] active:scale-[0.99]"
               >
-                CLOSE
+                <span>Close Dossier</span>
               </button>
             </div>
           </div>

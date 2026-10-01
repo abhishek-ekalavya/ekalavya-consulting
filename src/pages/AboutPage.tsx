@@ -1,54 +1,80 @@
 import React from 'react';
-import { Crosshair } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface AboutPageProps {
   onLockTarget?: () => void;
 }
 
-export const AboutPage: React.FC<AboutPageProps> = ({ onLockTarget }) => {
+export const AboutPage: React.FC<AboutPageProps> = () => {
   return (
     <div className="bg-tactical-grid py-16 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         
+        {/* Breadcrumb / Tag */}
+        <div className="mb-4 flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.2em] text-[#00D080] uppercase">
+          <span>01 &bull; INSTITUTIONAL CHARTER</span>
+        </div>
+
         {/* Title */}
         <h1 className="font-cinzel text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
           About Us
         </h1>
 
-        {/* Paragraph 1 */}
-        <p className="mt-8 text-base leading-relaxed text-white sm:text-lg font-medium">
-          We are Ekalavya Consulting.
-        </p>
-
-        {/* Paragraph 2 */}
-        <p className="mt-6 text-base leading-relaxed text-white/80 sm:text-lg">
-          We operate as a Marketing Leadership &amp; Execution Firm. We drive your business growth through two distinct capabilities: Fractional CMO Leadership and Specialized Execution.
-        </p>
-
-        {/* Paragraph 3 */}
-        <p className="mt-6 text-base leading-relaxed text-white/70 sm:text-lg">
-          For businesses seeking long-term direction, we provide the strategic depth and budget governance of a full-time Chief Marketing Officer at a fraction of the cost. For businesses looking to undertake specific, standalone marketing tasks—from corporate AVs and packaging design to custom web applications—we deploy our trusted network of specialized resources to deliver flawless results. From building a complete marketing operating system to nailing an individual project, we take institutional ownership of your market presence.
-        </p>
-
-        {/* Paragraph 4 Center Bold */}
-        <div className="my-12 rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center backdrop-blur-sm sm:p-10">
-          <p className="text-base font-bold text-white sm:text-xl">
-            We don't just offer advice. We offer... <span className="font-cinzel text-xl font-extrabold tracking-wider text-[#00D084] sm:text-2xl lg:text-3xl block mt-2">One Arrow. One Kill. No Waste.</span>
+        {/* Body Container (max-width 720px, light gray 16px, line-height 1.8) */}
+        <div className="mt-10 max-w-[720px] space-y-6 text-[16px] leading-[1.8] text-white/80">
+          
+          {/* Para 1 */}
+          <p className="font-medium text-white/90">
+            We are Ekalavya Consulting.
           </p>
-        </div>
 
-        {/* CTA to Lock Target if handler provided */}
-        {onLockTarget && (
-          <div className="mt-14 flex justify-center">
-            <button
-              onClick={onLockTarget}
-              className="flex items-center gap-2.5 rounded bg-[#00D084] px-6 py-3.5 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow-[#00D084]/20 transition-all hover:bg-[#00ba76]"
-            >
-              <Crosshair className="h-4 w-4" />
-              <span>LOCK THE TARGET</span>
-            </button>
+          {/* Para 2 (bold first sentence) */}
+          <p>
+            <strong className="text-white font-bold">
+              We operate as a Marketing Leadership &amp; Execution Firm.
+            </strong>{' '}
+            We drive growth through two distinct capabilities: Fractional CMO Leadership and Specialized Execution.
+          </p>
+
+          {/* Para 3 */}
+          <p>
+            For businesses seeking long-term direction, we provide the strategic depth and budget governance of a full-time Chief Marketing Officer at a fraction of the cost. For businesses needing a specific task nailed &mdash; from corporate AVs and packaging to custom web apps and integrated campaigns &mdash; we deploy our trusted specialist network to deliver flawless results.
+          </p>
+
+          {/* Para 4 */}
+          <p>
+            From building your complete marketing operating system to nailing one critical project, we take institutional ownership of outcome.
+          </p>
+
+          {/* Para 5: Tagline (emerald, mono, tracking 2px, 14px bold) */}
+          <div className="pt-2">
+            <p className="font-mono text-[14px] font-bold tracking-[2px] text-[#00D080] uppercase">
+              One Arrow. One Kill. No Waste.
+            </p>
           </div>
-        )}
+
+          {/* CTA Block: 24px spacing */}
+          <div className="pt-6">
+            <Link
+              to="/our-team"
+              className="inline-flex items-center gap-2 rounded-lg border border-[#00D080]/30 px-6 py-3 font-mono text-sm font-bold tracking-wider text-[#00D080] transition-colors hover:bg-[#00D080]/10 hover:border-[#00D080]/50"
+              style={{
+                borderColor: 'rgba(0, 208, 128, 0.3)',
+                padding: '12px 24px',
+                borderRadius: '8px',
+                color: '#00D080',
+              }}
+            >
+              <span>Meet Command &rarr;</span>
+            </Link>
+
+            {/* Subtext below button in small gray 12px */}
+            <p className="mt-3 text-[12px] text-white/50 font-mono tracking-wide">
+              Led by Abhishek Bhowmick, Founder &amp; Principal Growth Architect
+            </p>
+          </div>
+
+        </div>
 
       </div>
     </div>

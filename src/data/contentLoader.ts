@@ -1,9 +1,34 @@
 import homeData from '../../content/pages/home.json';
+import teamData from '../../content/pages/team.json';
 import generalData from '../../content/settings/general.json';
 import { BlogPost, BlogFAQ } from './blogs';
 
 // Import all JSON files in /content/blogs
 const blogModules = import.meta.glob('../../content/blogs/*.json', { eager: true });
+
+export interface TeamContent {
+  show_strike_team: boolean;
+  founder: {
+    name: string;
+    title: string;
+    image: string;
+    bio_paragraphs: string[];
+    quote?: string;
+    stats: string[];
+  };
+  council: {
+    badge: string;
+    title: string;
+    unit: string;
+    description: string;
+  };
+  strike_team: {
+    badge: string;
+    title: string;
+    unit: string;
+    description: string;
+  };
+}
 
 export interface HomeContent {
   hero_badge: string;
@@ -28,6 +53,10 @@ export const getSiteSettings = (): SiteSettings => {
 
 export const getHomeContent = (): HomeContent => {
   return homeData as HomeContent;
+};
+
+export const getTeamContent = (): TeamContent => {
+  return teamData as TeamContent;
 };
 
 /**

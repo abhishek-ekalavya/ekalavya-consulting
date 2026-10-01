@@ -93,7 +93,13 @@ function AppContent() {
         <Routes>
           <Route 
             path="/" 
-            element={<HomePage onLockTarget={handleOpenChooser} />} 
+            element={
+              <HomePage 
+                onLockTarget={handleOpenChooser}
+                onSelectLongGame={handleSelectLongGame}
+                onSelectShortGame={handleSelectShortGame}
+              />
+            } 
           />
           <Route 
             path="/about" 
@@ -101,6 +107,10 @@ function AppContent() {
           />
           <Route 
             path="/team" 
+            element={<TeamPage onLockTarget={handleOpenChooser} />} 
+          />
+          <Route 
+            path="/our-team" 
             element={<TeamPage onLockTarget={handleOpenChooser} />} 
           />
           <Route 
@@ -159,6 +169,7 @@ function AppContent() {
   );
 }
 
+// Main App entry point
 export default function App() {
   return (
     <BrowserRouter>
