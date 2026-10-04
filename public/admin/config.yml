@@ -9,9 +9,9 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
-  # ==========================================
-  # CASE STUDIES (Directly bound to data/dossiers.json)
-  # ==========================================
+  # ==========================================================
+  # 1. CASE STUDIES (Bound to data/dossiers.json)
+  # ==========================================================
   - name: "case_studies_collection"
     label: "Case Studies"
     files:
@@ -52,11 +52,11 @@ collections:
                   name: "tag"
                   widget: "string"
 
-              # --- IMAGE SLIDER / CAROUSEL ---
+              # --- HERO IMAGE SLIDER ---
               - label: "Hero Slider Images"
                 name: "heroImages"
                 widget: "list"
-                hint: "Add, reorder, or upload images here. They will cycle in the hero slider on the case study page."
+                hint: "Upload, reorder, or add multiple slides for the top carousel."
                 field:
                   label: "Slide Image"
                   name: "image"
@@ -109,3 +109,75 @@ collections:
               - label: "The Ekalavya Advantage"
                 name: "advantage"
                 widget: "text"
+
+  # ==========================================================
+  # 2. BLOGS / INSIGHTS (With FAQ Schema & Multi-Image Support)
+  # ==========================================================
+  - name: "blogs"
+    label: "Blogs"
+    folder: "content/blogs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Article Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Slug / URL Identifier"
+        name: "slug"
+        widget: "string"
+        hint: "Example: fractional-cmo-vs-agency-guide"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+
+      - label: "Author Name"
+        name: "author"
+        widget: "string"
+        default: "Abhishek Bhowmick"
+
+      - label: "Category / Tag"
+        name: "category"
+        widget: "string"
+        default: "Marketing Strategy"
+
+      - label: "Short Summary / Meta Description"
+        name: "summary"
+        widget: "text"
+        hint: "Used for search engine snippets and social preview cards."
+
+      # --- MULTIPLE IMAGE OPTIONS ---
+      - label: "Primary Cover / Hero Image"
+        name: "cover_image"
+        widget: "image"
+        required: false
+
+      - label: "Additional Gallery / Article Images"
+        name: "gallery_images"
+        widget: "list"
+        required: false
+        hint: "Upload one, two, three, or more images for in-article visual showcases."
+        field:
+          label: "Image"
+          name: "image"
+          widget: "image"
+
+      # --- MAIN BODY ---
+      - label: "Article Body"
+        name: "body"
+        widget: "markdown"
+
+      # --- FAQ SCHEMA ENGINE ---
+      - label: "FAQ Schema Section"
+        name: "faqs"
+        widget: "list"
+        required: false
+        hint: "Add questions & answers here. These populate the FAQ accordion and power Google FAQ Schema (Schema.org/FAQPage)."
+        fields:
+          - label: "Question"
+            name: "question"
+            widget: "string"
+          - label: "Answer"
+            name: "answer"
+            widget: "text"
