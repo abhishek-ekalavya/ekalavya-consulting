@@ -1,68 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Camera } from 'lucide-react';
+import React, { useState } from 'react';
 import { DEFAULT_FOUNDER_PHOTO, FOUNDER_PHOTO_DATA_URL } from '../assets/founder';
 
 export const FounderSection: React.FC = () => {
-  // Use bundled asset URL with immediate embedded base64 fallback to ensure 100% reliability on GitHub and live deploys
-  const [photoSrc, setPhotoSrc] = useState<string>(DEFAULT_FOUNDER_PHOTO);
-  const [syncStatus, setSyncStatus] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    // Check local storage for user-uploaded custom photo if present
-    const cached = localStorage.getItem('founder_photo_data');
-    if (cached) {
-      setPhotoSrc(cached);
-      // Auto-sync cached data URL to server so it is written to disk permanently for GitHub
-      if (cached.startsWith('data:image/')) {
-        fetch('/api/sync-founder-base64', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ dataUrl: cached })
-        })
-          .then((res) => {
-            if (res.ok) setSyncStatus('synced');
-          })
-          .catch((err) => console.warn('Could not auto-sync founder photo', err));
-      }
-    }
-  }, []);
+  const [photoSrc, setPhotoSrc] = useState<string>('/founder.jpg');
 
   const handleImageError = () => {
-    // Never fall back to an infographic; fall back to the embedded base64 founder portrait data URL
-    if (photoSrc !== FOUNDER_PHOTO_DATA_URL) {
+    if (photoSrc !== DEFAULT_FOUNDER_PHOTO && DEFAULT_FOUNDER_PHOTO) {
+      setPhotoSrc(DEFAULT_FOUNDER_PHOTO);
+    } else if (photoSrc !== FOUNDER_PHOTO_DATA_URL) {
       setPhotoSrc(FOUNDER_PHOTO_DATA_URL);
     }
-  };
-
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = async () => {
-      const dataUrl = reader.result as string;
-      setPhotoSrc(dataUrl);
-      try {
-        localStorage.setItem('founder_photo_data', dataUrl);
-      } catch {
-        // ignore quota
-      }
-      try {
-        const res = await fetch('/api/sync-founder-base64', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ dataUrl })
-        });
-        if (res.ok) {
-          setSyncStatus('saved');
-          setTimeout(() => setSyncStatus(null), 5000);
-        }
-      } catch (err) {
-        console.warn('Could not sync founder photo', err);
-      }
-    };
-    reader.readAsDataURL(file);
   };
 
   return (
@@ -71,15 +18,6 @@ export const FounderSection: React.FC = () => {
       aria-label="Founder and Fractional Marketer"
       className="my-12 rounded-2xl border border-white/10 bg-[#071326]/90 p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden text-left"
     >
-      {/* Hidden file input for uploading an alternate file if desired */}
-      <input 
-        type="file"
-        ref={fileInputRef}
-        onChange={handleFileChange}
-        accept="image/jpeg,image/png,image/webp"
-        className="hidden"
-      />
-
       {/* Subtle ambient lighting */}
       <div 
         aria-hidden="true" 
@@ -92,10 +30,9 @@ export const FounderSection: React.FC = () => {
 
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14 relative z-10">
         
-        {/* Left Column: Founder photograph with 4:5 portrait ratio, no head cropping */}
+        {/* Left Column: Founder photograph with 4:5 portrait ratio */}
         <div className="lg:col-span-5 flex justify-center">
           <div className="relative w-full max-w-[380px] group">
-            
             <div 
               className="relative overflow-hidden rounded-[16px] border border-[#00D080]/30 bg-[#0A1931] shadow-[0_0_35px_rgba(0,208,128,0.18)] p-2 flex items-center justify-center"
               style={{
@@ -120,38 +57,7 @@ export const FounderSection: React.FC = () => {
                   borderRadius: '12px',
                 }}
               />
-              
-              {/* Discrete update button on hover */}
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                title="Update photograph"
-                className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 font-mono text-[10px] font-semibold text-white/80 opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 hover:bg-black hover:text-[#00D080]"
-              >
-                <Camera className="h-3 w-3" />
-                <span>Update Photo</span>
-              </button>
             </div>
-
-            {/* Sync Feedback Message */}
-            {syncStatus && (
-              <div className="mt-3 rounded-lg border border-[#00D080]/40 bg-[#00D080]/10 p-2.5 text-center font-mono text-xs text-[#00D080] animate-pulse">
-                ✓ Photo saved to repository! Click &apos;Sync to GitHub&apos; to update your live website.
-              </div>
-            )}
-
-            {/* Quick action button to upload / sync photo directly */}
-            <div className="mt-3 flex justify-center">
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                className="inline-flex items-center gap-1.5 rounded-md border border-white/20 bg-white/5 px-3 py-1.5 font-mono text-[11px] font-medium text-white/80 transition-colors hover:border-[#00D080] hover:bg-[#00D080]/10 hover:text-[#00D080]"
-              >
-                <Camera className="h-3.5 w-3.5" />
-                <span>Upload / Sync Founder Photo</span>
-              </button>
-            </div>
-
           </div>
         </div>
 
