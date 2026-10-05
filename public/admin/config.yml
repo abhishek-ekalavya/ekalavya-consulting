@@ -9,9 +9,6 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
-  # ==========================================================
-  # 1. CASE STUDIES (With Featured Toggle, Slider & Impact Matrix)
-  # ==========================================================
   - name: "case_studies_collection"
     label: "Case Studies"
     files:
@@ -22,51 +19,20 @@ collections:
           - label: "Case Studies Dossier List"
             name: "dossiers"
             widget: "list"
-            summary: "{{fields.title}} ({{fields.status}})"
+            summary: "{{fields.title}}"
             fields:
               - { label: "Index / ID", name: "id", widget: "string" }
               - { label: "Slug / URL Identifier", name: "slug", widget: "string" }
               - { label: "Brand Title", name: "title", widget: "string" }
-              - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Turn ON to display on the homepage landing section" }
-              - { label: "Outcome Metric", name: "outcome", widget: "string", required: false, hint: "e.g. Built GTM Engine from 0 to 1" }
+              - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
+              - { label: "Outcome Metric", name: "outcome", widget: "string", required: false }
               - { label: "Subtitle / Tagline", name: "subtitle", widget: "string" }
               - { label: "Status Badge", name: "status", widget: "string" }
-              - label: "Tags / Categories"
-                name: "tags"
-                widget: "list"
-                field: { label: "Tag", name: "tag", widget: "string" }
-              - label: "Hero Slider Images"
-                name: "heroImages"
-                widget: "list"
-                field: { label: "Slide Image", name: "image", widget: "image" }
               - { label: "Context & Background", name: "context", widget: "text" }
               - { label: "The Challenge", name: "challenge", widget: "text" }
               - { label: "Core Concept & Strategy", name: "concept", widget: "text" }
-              - label: "Execution Milestones"
-                name: "execution"
-                widget: "list"
-                field: { label: "Milestone Item", name: "item", widget: "text" }
-              - label: "Impact Comparison Matrix"
-                name: "impactTable"
-                widget: "object"
-                fields:
-                  - label: "Table Column Headers"
-                    name: "headers"
-                    widget: "list"
-                    field: { label: "Header Name", name: "header", widget: "string" }
-                  - label: "Table Rows"
-                    name: "rows"
-                    widget: "list"
-                    field:
-                      label: "Row Cells (Dimension, Before, After)"
-                      name: "row"
-                      widget: "list"
-                      field: { label: "Cell Text", name: "cell", widget: "string" }
               - { label: "The Ekalavya Advantage", name: "advantage", widget: "text" }
 
-  # ==========================================================
-  # 2. BLOGS / INSIGHTS (Exact JSON Match + FAQ Schema + Images)
-  # ==========================================================
   - name: "blogs"
     label: "Blogs"
     folder: "content/blogs"
@@ -74,8 +40,6 @@ collections:
     format: "json"
     create: true
     slug: "{{slug}}"
-    identifier_field: "title"
-    summary: "{{title}} ({{category}})"
     fields:
       - { label: "Article Title", name: "title", widget: "string" }
       - { label: "Slug / URL Identifier", name: "slug", widget: "string" }
@@ -88,7 +52,6 @@ collections:
         name: "faq"
         widget: "list"
         required: false
-        hint: "These questions and answers automatically render on the post and generate Schema.org FAQPage structured data."
         fields:
           - { label: "Question", name: "question", widget: "string" }
           - { label: "Answer", name: "answer", widget: "text" }
