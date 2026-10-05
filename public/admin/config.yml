@@ -65,31 +65,33 @@ collections:
               - { label: "The Ekalavya Advantage", name: "advantage", widget: "text" }
 
   # ==========================================================
-  # 2. BLOGS / INSIGHTS (With FAQ Schema & Multi-Image Support)
+  # 2. BLOGS / INSIGHTS (Format: JSON, FAQ Schema, Multiple Images)
   # ==========================================================
   - name: "blogs"
     label: "Blogs"
     folder: "content/blogs"
+    extension: "json"
+    format: "json"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Article Title", name: "title", widget: "string" }
-      - { label: "Slug / URL Identifier", name: "slug", widget: "string" }
+      - { label: "Slug / URL Identifier", name: "slug", widget: "string", hint: "e.g. fractional-cmo-vs-agency" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author Name", name: "author", widget: "string", default: "Abhishek Bhowmick" }
-      - { label: "Category / Tag", name: "category", widget: "string", default: "Marketing Strategy" }
-      - { label: "Short Summary / Meta Description", name: "summary", widget: "text" }
-      - { label: "Primary Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: "Category", name: "category", widget: "select", options: ["GROWTH", "MARKETING", "EXECUTION", "STRATEGY"], default: "MARKETING" }
+      - { label: "Short Description / Excerpt", name: "description", widget: "text" }
+      - { label: "Featured Cover Image", name: "image", widget: "image", required: false }
       - label: "Additional Gallery Images"
-        name: "gallery_images"
+        name: "gallery"
         widget: "list"
         required: false
-        field: { label: "Image", name: "image", widget: "image" }
-      - { label: "Article Body", name: "body", widget: "markdown" }
-      - label: "FAQ Schema Section"
-        name: "faqs"
+        field: { label: "Image", name: "img", widget: "image" }
+      - { label: "Article Body (Markdown)", name: "body", widget: "markdown" }
+      - label: "FAQ Schema Questions"
+        name: "faq"
         widget: "list"
         required: false
+        hint: "These questions and answers automatically generate Schema.org FAQPage structured data."
         fields:
           - { label: "Question", name: "question", widget: "string" }
           - { label: "Answer", name: "answer", widget: "text" }
