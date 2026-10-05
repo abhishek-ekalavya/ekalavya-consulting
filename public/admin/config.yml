@@ -10,7 +10,7 @@ public_folder: "/uploads"
 
 collections:
   # ==========================================================
-  # 1. CASE STUDIES (Bound to data/dossiers.json)
+  # 1. CASE STUDIES (With Featured Toggle, Slider & Impact Matrix)
   # ==========================================================
   - name: "case_studies_collection"
     label: "Case Studies"
@@ -24,65 +24,28 @@ collections:
             widget: "list"
             summary: "{{fields.title}} ({{fields.status}})"
             fields:
-              - label: "Index / ID"
-                name: "id"
-                widget: "string"
-
-              - label: "Slug / URL Identifier"
-                name: "slug"
-                widget: "string"
-
-              - label: "Brand Title"
-                name: "title"
-                widget: "string"
-
-              - label: "Subtitle / Tagline"
-                name: "subtitle"
-                widget: "string"
-
-              - label: "Status Badge"
-                name: "status"
-                widget: "string"
-
+              - { label: "Index / ID", name: "id", widget: "string" }
+              - { label: "Slug / URL Identifier", name: "slug", widget: "string" }
+              - { label: "Brand Title", name: "title", widget: "string" }
+              - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Turn ON to display on the homepage landing section" }
+              - { label: "Outcome Metric", name: "outcome", widget: "string", required: false, hint: "e.g. Built GTM Engine from 0 to 1" }
+              - { label: "Subtitle / Tagline", name: "subtitle", widget: "string" }
+              - { label: "Status Badge", name: "status", widget: "string" }
               - label: "Tags / Categories"
                 name: "tags"
                 widget: "list"
-                field:
-                  label: "Tag"
-                  name: "tag"
-                  widget: "string"
-
-              # --- HERO IMAGE SLIDER ---
+                field: { label: "Tag", name: "tag", widget: "string" }
               - label: "Hero Slider Images"
                 name: "heroImages"
                 widget: "list"
-                hint: "Upload, reorder, or add multiple slides for the top carousel."
-                field:
-                  label: "Slide Image"
-                  name: "image"
-                  widget: "image"
-
-              - label: "Context & Background"
-                name: "context"
-                widget: "text"
-
-              - label: "The Challenge"
-                name: "challenge"
-                widget: "text"
-
-              - label: "Core Concept & Strategy"
-                name: "concept"
-                widget: "text"
-
+                field: { label: "Slide Image", name: "image", widget: "image" }
+              - { label: "Context & Background", name: "context", widget: "text" }
+              - { label: "The Challenge", name: "challenge", widget: "text" }
+              - { label: "Core Concept & Strategy", name: "concept", widget: "text" }
               - label: "Execution Milestones"
                 name: "execution"
                 widget: "list"
-                field:
-                  label: "Milestone Item"
-                  name: "item"
-                  widget: "text"
-
-              # --- IMPACT / COMPARISON MATRIX ---
+                field: { label: "Milestone Item", name: "item", widget: "text" }
               - label: "Impact Comparison Matrix"
                 name: "impactTable"
                 widget: "object"
@@ -90,10 +53,7 @@ collections:
                   - label: "Table Column Headers"
                     name: "headers"
                     widget: "list"
-                    field:
-                      label: "Header Name"
-                      name: "header"
-                      widget: "string"
+                    field: { label: "Header Name", name: "header", widget: "string" }
                   - label: "Table Rows"
                     name: "rows"
                     widget: "list"
@@ -101,14 +61,8 @@ collections:
                       label: "Row Cells (Dimension, Before, After)"
                       name: "row"
                       widget: "list"
-                      field:
-                        label: "Cell Text"
-                        name: "cell"
-                        widget: "string"
-
-              - label: "The Ekalavya Advantage"
-                name: "advantage"
-                widget: "text"
+                      field: { label: "Cell Text", name: "cell", widget: "string" }
+              - { label: "The Ekalavya Advantage", name: "advantage", widget: "text" }
 
   # ==========================================================
   # 2. BLOGS / INSIGHTS (With FAQ Schema & Multi-Image Support)
@@ -119,65 +73,23 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - label: "Article Title"
-        name: "title"
-        widget: "string"
-
-      - label: "Slug / URL Identifier"
-        name: "slug"
-        widget: "string"
-        hint: "Example: fractional-cmo-vs-agency-guide"
-
-      - label: "Publish Date"
-        name: "date"
-        widget: "datetime"
-
-      - label: "Author Name"
-        name: "author"
-        widget: "string"
-        default: "Abhishek Bhowmick"
-
-      - label: "Category / Tag"
-        name: "category"
-        widget: "string"
-        default: "Marketing Strategy"
-
-      - label: "Short Summary / Meta Description"
-        name: "summary"
-        widget: "text"
-        hint: "Used for search engine snippets and social preview cards."
-
-      # --- MULTIPLE IMAGE OPTIONS ---
-      - label: "Primary Cover / Hero Image"
-        name: "cover_image"
-        widget: "image"
-        required: false
-
-      - label: "Additional Gallery / Article Images"
+      - { label: "Article Title", name: "title", widget: "string" }
+      - { label: "Slug / URL Identifier", name: "slug", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author Name", name: "author", widget: "string", default: "Abhishek Bhowmick" }
+      - { label: "Category / Tag", name: "category", widget: "string", default: "Marketing Strategy" }
+      - { label: "Short Summary / Meta Description", name: "summary", widget: "text" }
+      - { label: "Primary Cover Image", name: "cover_image", widget: "image", required: false }
+      - label: "Additional Gallery Images"
         name: "gallery_images"
         widget: "list"
         required: false
-        hint: "Upload one, two, three, or more images for in-article visual showcases."
-        field:
-          label: "Image"
-          name: "image"
-          widget: "image"
-
-      # --- MAIN BODY ---
-      - label: "Article Body"
-        name: "body"
-        widget: "markdown"
-
-      # --- FAQ SCHEMA ENGINE ---
+        field: { label: "Image", name: "image", widget: "image" }
+      - { label: "Article Body", name: "body", widget: "markdown" }
       - label: "FAQ Schema Section"
         name: "faqs"
         widget: "list"
         required: false
-        hint: "Add questions & answers here. These populate the FAQ accordion and power Google FAQ Schema (Schema.org/FAQPage)."
         fields:
-          - label: "Question"
-            name: "question"
-            widget: "string"
-          - label: "Answer"
-            name: "answer"
-            widget: "text"
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Answer", name: "answer", widget: "text" }
