@@ -1,28 +1,44 @@
 import React from 'react';
 import { ArrowRight, Shield, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import rawDossiers from '../data/dossiers.json';
 
-interface Dossier {
+interface CaseStudyItem {
   id: string;
   slug: string;
   title: string;
-  subtitle: string;
-  tags?: string[];
-  status?: string;
-  heroImages?: string[];
-  context?: string;
-  challenge?: string;
-  concept?: string;
-  outcome?: string;
-  featured?: boolean;
+  category: string;
+  outcome: string;
+  summary: string;
+  image: string;
+  imageAlt: string;
 }
 
-export const ProofOfPrecision: React.FC = () => {
-  const allDossiers = rawDossiers as Dossier[];
-  const featuredStudies = allDossiers.filter((d) => d.featured === true);
-  const displayStudies = featuredStudies.length > 0 ? featuredStudies : allDossiers.slice(0, 2);
+const defaultStudies: CaseStudyItem[] = [
+  {
+    id: '01',
+    slug: 'sparta-life',
+    title: 'SPARTA LIFE',
+    category: 'SPORTS INFRASTRUCTURE & LIFESTYLE',
+    outcome: 'Built GTM Engine from 0 to 1',
+    summary:
+      'Turnkey brand architecture, VIP commercial tiering, and integrated regional launch establishing Thane District’s premier sports and high-performance lifestyle ecosystem.',
+    image: '/images/sparta-01.jpg',
+    imageAlt: 'Sparta Life Sports Turf and High Performance Complex',
+  },
+  {
+    id: '04',
+    slug: 'indishield-labs',
+    title: 'INDISHIELD LABS',
+    category: 'B2B MANUFACTURING & HEALTHCARE',
+    outcome: 'Scaled Retail Distribution',
+    summary:
+      'International market entry strategy, B2B demand generation engine, and institutional buyer enablement across domestic and cross-border distribution channels.',
+    image: '/images/placeholder.jpg',
+    imageAlt: 'Indishield Labs Industrial Factory Line and Laboratory Facility',
+  },
+];
 
+export const ProofOfPrecision: React.FC = () => {
   return (
     <section 
       id="proof-of-precision-section" 
@@ -44,29 +60,26 @@ export const ProofOfPrecision: React.FC = () => {
           </p>
         </div>
 
-        {/* Dynamic Featured Case Study Cards Grid */}
+        {/* 2 Case Study Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {displayStudies.map((study, index) => {
-            const displayImage = study.heroImages?.[0] || '/images/placeholder.jpg';
-            const categoryTag = study.tags?.[0] || 'COMMERCIAL STRATEGY';
-            const outcomeText = study.outcome || 'High-Impact Commercial Transformation';
-
+          {defaultStudies.map((study, index) => {
             return (
               <div
-                key={study.id || study.slug}
+                key={study.id}
                 className="group relative flex flex-col justify-between rounded-xl border border-white/10 bg-[#071326] overflow-hidden transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-black/60"
               >
-                {/* Top Image Container */}
+                {/* Top Image Container with Overlay */}
                 <div className="relative h-[180px] w-full overflow-hidden rounded-t-xl bg-[#0A1931]">
                   <img
-                    src={displayImage}
-                    alt={study.title}
+                    src={study.image}
+                    alt={study.imageAlt}
                     className="h-full w-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                   />
                   <div 
                     className="absolute inset-0 bg-[#0A1931]/60 transition-opacity duration-300"
                     aria-hidden="true" 
                   />
+                  {/* Dossier Badge */}
                   <div className="absolute top-3 left-3 z-10">
                     <span className="rounded border border-white/20 bg-[#0A1931]/80 backdrop-blur-sm px-2.5 py-1 font-mono text-[10px] font-semibold text-white/80 tracking-wider uppercase">
                       DOSSIER // 0{index + 1}
@@ -74,7 +87,7 @@ export const ProofOfPrecision: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Content Area */}
+                {/* Content Area Below Image */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
                     {/* Header: Icon + Title */}
@@ -88,7 +101,7 @@ export const ProofOfPrecision: React.FC = () => {
                             {study.title}
                           </h4>
                           <span className="font-mono text-[10px] tracking-wider text-white/50 uppercase block">
-                            {categoryTag}
+                            {study.category}
                           </span>
                         </div>
                       </div>
@@ -100,20 +113,20 @@ export const ProofOfPrecision: React.FC = () => {
                         OUTCOME METRIC
                       </span>
                       <p className="font-cinzel text-base font-bold text-white mt-1">
-                        {outcomeText}
+                        {study.outcome}
                       </p>
                     </div>
 
-                    {/* Summary / Subtitle */}
+                    {/* Description */}
                     <p className="text-sm leading-relaxed text-white/70 line-clamp-3">
-                      {study.concept || study.subtitle}
+                      {study.summary}
                     </p>
                   </div>
 
                   {/* View Execution Link */}
                   <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
                     <Link 
-                      to={`/case-studies`}
+                      to="/case-studies"
                       className="font-mono text-xs font-bold text-[#00D080] group-hover:text-[#00ba76] inline-flex items-center gap-1.5 transition-colors"
                     >
                       <span>View Execution</span>
