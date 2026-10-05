@@ -3,7 +3,9 @@
     "id": "01",
     "slug": "sparta-life",
     "title": "SPARTA LIFE",
-    "subtitle": "Sparta Life \u2014 Turnkey Brand Architecture & Integrated Commercial Launch",
+    "featured": true,
+    "outcome": "Built GTM Engine from 0 to 1",
+    "subtitle": "Sparta Life — Turnkey Brand Architecture & Integrated Commercial Launch",
     "tags": [
       "Sports Infrastructure & Regional Lifestyle Ecosystem",
       "Full-Funnel Brand Architecture",
@@ -14,8 +16,8 @@
       "/images/sparta-01.jpg",
       "/images/sparta-02.jpg"
     ],
-    "context": "\u2022 High-capital regional infrastructure initiative spanning multiple acres in Thane District.\n\u2022 Facility design integrated 15+ athletic disciplines, sports recovery hubs, and junior coaching academies under a unified roof.\n\u2022 High fixed operating overhead required rapid, high-margin membership acquisition prior to physical launch.",
-    "challenge": "\u2022 Mass market consumer perception tended to equate large-scale multi-sport venues with conventional fitness gyms, depressing willingness to pay.\n\u2022 Absence of an overarching commercial packaging framework to cross-sell youth coaching, athlete recovery suites, and lifestyle recreation.\n\u2022 Fragmented local competition competing purely on discount rates rather than high-performance community value.\n\u2022 Lack of narrative momentum across regional press, educational institutes, and premium housing societies within the target catchment.",
+    "context": "• High-capital regional infrastructure initiative spanning multiple acres in Thane District.\n• Facility design integrated 15+ athletic disciplines, sports recovery hubs, and junior coaching academies under a unified roof.\n• High fixed operating overhead required rapid, high-margin membership acquisition prior to physical launch.",
+    "challenge": "• Mass market consumer perception tended to equate large-scale multi-sport venues with conventional fitness gyms, depressing willingness to pay.\n• Absence of an overarching commercial packaging framework to cross-sell youth coaching, athlete recovery suites, and lifestyle recreation.\n• Fragmented local competition competing purely on discount rates rather than high-performance community value.\n• Lack of narrative momentum across regional press, educational institutes, and premium housing societies within the target catchment.",
     "concept": "\"Thane District's Crown Jewel of Sports & Performance.\" Shift the brand narrative from facility square footage to an elite athletic institution. Position Sparta Life as a premier regional benchmark combining elite physical conditioning, scientific recovery, and structured youth pathways.",
     "execution": [
       "Identity Engineering & Brand Origin: Built the master visual identity, trademark design system, typography standards, and positioning narrative establishing institutional authority.",
@@ -59,7 +61,9 @@
     "id": "02",
     "slug": "pinto-electronics",
     "title": "PINTO ELECTRONICS",
-    "subtitle": "Pinto Electronics \u2014 Brand Asset Overhaul & Market Elevation",
+    "featured": false,
+    "outcome": "B2B Catalog & Dealer Modernization",
+    "subtitle": "Pinto Electronics — Brand Asset Overhaul & Market Elevation",
     "tags": [
       "Electronics & Hardware Manufacturing",
       "Digital Product Infrastructure",
@@ -69,8 +73,8 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "\u2022 Domestic electronics and hardware manufacturer with mature engineering capabilities and an extensive, diverse product portfolio.\n\u2022 Build quality and aesthetic design directly comparable to established tier-1 category leaders.\n\u2022 Commercial operations reliant on manual dealer distribution networks and legacy physical trade relationships.",
-    "challenge": "\u2022 Inadequate digital footprint and unorganized product listings obscured the true scope of the product catalog.\n\u2022 Low visual credibility across dealer touchpoints forced the brand to compete on razor-thin distributor margins.\n\u2022 Absence of functional sales literature, product specification sheets, or structured buyer catalogs for industrial procurement teams.\n\u2022 Low-profile trade show presence featuring fragmented, outdated display materials that failed to generate qualified buyer footfall.",
+    "context": "• Domestic electronics and hardware manufacturer with mature engineering capabilities and an extensive, diverse product portfolio.\n• Build quality and aesthetic design directly comparable to established tier-1 category leaders.\n• Commercial operations reliant on manual dealer distribution networks and legacy physical trade relationships.",
+    "challenge": "• Inadequate digital footprint and unorganized product listings obscured the true scope of the product catalog.\n• Low visual credibility across dealer touchpoints forced the brand to compete on razor-thin distributor margins.\n• Absence of functional sales literature, product specification sheets, or structured buyer catalogs for industrial procurement teams.\n• Low-profile trade show presence featuring fragmented, outdated display materials that failed to generate qualified buyer footfall.",
     "concept": "\"Engineering Excellence Made Visible.\" Elevate Pinto Electronics from an unheralded original equipment vendor into a design-led category contender. Build a cohesive, modern visual ecosystem that highlights industrial precision and finish, commanding immediate parity with market incumbents.",
     "execution": [
       "Industrial & Commercial Photography: Directed multi-angle commercial photoshoots capturing tactile material finishes, engineering tolerances, and ergonomic details to replace generic distributor snaps.",
@@ -114,7 +118,9 @@
     "id": "03",
     "slug": "castrol-magnatec",
     "title": "CASTROL MAGNATEC",
-    "subtitle": "Castrol Magnatec \u2014 Multi-City Mobile Experience & Mechanic Activation",
+    "featured": false,
+    "outcome": "Multi-Metro Direct B2B Engagement",
+    "subtitle": "Castrol Magnatec — Multi-City Mobile Experience & Mechanic Activation",
     "tags": [
       "Automotive Lubricants & B2B Trade Engagement",
       "Custom Vehicle Engineering",
@@ -124,8 +130,8 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "\u2022 Flagship engine oil product line operating within an intensely contested aftermarket lubrication sector.\n\u2022 Key brand advocates and retail gatekeepers were local garage mechanics and independent workshop owners.\n\u2022 Campaign carried out at enterprise scale across major metropolitan centers: Mumbai, Delhi, Chennai, Bangalore, and Kolkata.",
-    "challenge": "\u2022 Independent mechanics favored legacy lubrication brands based purely on transactional margins rather than technical engine protection.\n\u2022 The central product differentiator\u2014molecular cling technology mitigating cold-start friction\u2014was too abstract for conventional counter flyers.\n\u2022 Mechanics maintained packed daily repair schedules, making traditional evening hotel conferences poorly attended and expensive.\n\u2022 Conventional distributor networks lacked the narrative training to communicate technical tribology concepts to workshop technicians.",
+    "context": "• Flagship engine oil product line operating within an intensely contested aftermarket lubrication sector.\n• Key brand advocates and retail gatekeepers were local garage mechanics and independent workshop owners.\n• Campaign carried out at enterprise scale across major metropolitan centers: Mumbai, Delhi, Chennai, Bangalore, and Kolkata.",
+    "challenge": "• Independent mechanics favored legacy lubrication brands based purely on transactional margins rather than technical engine protection.\n• The central product differentiator—molecular cling technology mitigating cold-start friction—was too abstract for conventional counter flyers.\n• Mechanics maintained packed daily repair schedules, making traditional evening hotel conferences poorly attended and expensive.\n• Conventional distributor networks lacked the narrative training to communicate technical tribology concepts to workshop technicians.",
     "concept": "\"The Workshop On Wheels: Molecular Science Brought to the Pit.\" Eliminate venue friction by taking the laboratory directly to the mechanic. Convert a production passenger vehicle into a self-contained mobile activation and educational center that interfaces directly with garage clusters during operational downtime.",
     "execution": [
       "Specialized Vehicle Engineering: Re-engineered a Ford Figo into a custom mobile experience rig, integrating rear-mounted high-definition LED displays, specialized sound equipment, and demo stations.",
@@ -169,7 +175,9 @@
     "id": "04",
     "slug": "indishield-labs",
     "title": "INDISHIELD LABS",
-    "subtitle": "Indishield Labs \u2014 International Market Entry & B2B Demand Engine",
+    "featured": true,
+    "outcome": "Scaled Retail Distribution",
+    "subtitle": "Indishield Labs — International Market Entry & B2B Demand Engine",
     "tags": [
       "Industrial Chemicals & Cold-Welding Solutions",
       "Global Market Architecture",
@@ -179,11 +187,11 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "\u2022 Indian manufacturer of specialized epoxy compounds, metal-repair putties, and cold-welding industrial maintenance products.\n\u2022 High technical efficacy across heavy processing environments (marine, power plants, mining, and oil refining).\n\u2022 Corporate initiative to penetrate high-value export distribution territories across Europe and North Africa.",
-    "challenge": "\u2022 International procurement teams often categorized Indian chemical manufacturers as low-grade, commodity suppliers.\n\u2022 A complex catalog of 15\u201320 technical formulations confused overseas buyers regarding exact application suitability.\n\u2022 Complete absence of localized, multilingual technical documentation required for European compliance and trade discussions.\n\u2022 Zero outbound digital discovery systems targeting plant maintenance directors, marine engineers, and specialty chemical distributors.",
+    "context": "• Indian manufacturer of specialized epoxy compounds, metal-repair putties, and cold-welding industrial maintenance products.\n• High technical efficacy across heavy processing environments (marine, power plants, mining, and oil refining).\n• Corporate initiative to penetrate high-value export distribution territories across Europe and North Africa.",
+    "challenge": "• International procurement teams often categorized Indian chemical manufacturers as low-grade, commodity suppliers.\n• A complex catalog of 15–20 technical formulations confused overseas buyers regarding exact application suitability.\n• Complete absence of localized, multilingual technical documentation required for European compliance and trade discussions.\n• Zero outbound digital discovery systems targeting plant maintenance directors, marine engineers, and specialty chemical distributors.",
     "concept": "\"Structural Integrity Without Hot Work.\" Reposition the product lineup from general maintenance supplies to mission-critical asset preservation systems. Frame cold-welding polymers around operational uptime, safety compliance, and rapid turnaround for heavy industries facing costly plant shutdowns.",
     "execution": [
-      "Portfolio Architecture & Taxonomy: Re-engineered 15\u201320 chemical formulations into a modular, matrix-based product catalog categorized by substrate, temperature threshold, and mechanical load.",
+      "Portfolio Architecture & Taxonomy: Re-engineered 15–20 chemical formulations into a modular, matrix-based product catalog categorized by substrate, temperature threshold, and mechanical load.",
       "Multilingual Sales Documentation: Authored and produced technical sales brochures, safety data sheets, and application guides localized into key European and North African trade languages.",
       "LinkedIn B2B Demand Engine: Built an Account-Based content funnel on LinkedIn targeting maintenance directors, operations heads, and industrial supply distributors across target geographies.",
       "Distributor Enablement Toolkits: Designed complete commercial partner kits containing margin calculators, case summaries, competitive comparison matrixes, and distributor onboarding flows.",
@@ -204,7 +212,7 @@
         [
           "Catalog Usability",
           "Dense, unorganized formulation data",
-          "Streamlined, application-led technical matrix covering 15\u201320 specialized SKUs"
+          "Streamlined, application-led technical matrix covering 15–20 specialized SKUs"
         ],
         [
           "Collateral Reach",
@@ -224,7 +232,9 @@
     "id": "05",
     "slug": "syngenta-nk6607",
     "title": "SYNGENTA NK6607",
-    "subtitle": "Syngenta NK6607 \u2014 \"Makkey Ki Adalat\" Experiential Rural Campaign",
+    "featured": false,
+    "outcome": "Multi-Award Rural Engagement Engine",
+    "subtitle": "Syngenta NK6607 — \"Makkey Ki Adalat\" Experiential Rural Campaign",
     "tags": [
       "Agricultural Inputs & Crop Science",
       "Rural Brand Activation",
@@ -234,13 +244,13 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "\u2022 Syngenta holds a premier global footprint in agricultural biotechnology and high-yield seed development.\n\u2022 Focused push on NK6607, a high-yielding hybrid corn seed engineered for drought resilience and high cob weight.\n\u2022 Primary campaign deployment focused across the competitive rural agricultural belts of Maharashtra.",
-    "challenge": "\u2022 Deep-seated farmer skepticism driven by competing claims from local and multinational seed brands.\n\u2022 Traditional rural marketing techniques (van campaigns, static handbills, dealer meetings) produced diminishing audience attention.\n\u2022 Agronomic performance indicators\u2014such as root anchorage and husk coverage\u2014were difficult to explain through abstract technical terms.\n\u2022 Low village gathering turnouts when events were openly promoted as corporate sales seminars.",
+    "context": "• Syngenta holds a premier global footprint in agricultural biotechnology and high-yield seed development.\n• Focused push on NK6607, a high-yielding hybrid corn seed engineered for drought resilience and high cob weight.\n• Primary campaign deployment focused across the competitive rural agricultural belts of Maharashtra.",
+    "challenge": "• Deep-seated farmer skepticism driven by competing claims from local and multinational seed brands.\n• Traditional rural marketing techniques (van campaigns, static handbills, dealer meetings) produced diminishing audience attention.\n• Agronomic performance indicators—such as root anchorage and husk coverage—were difficult to explain through abstract technical terms.\n• Low village gathering turnouts when events were openly promoted as corporate sales seminars.",
     "concept": "\"Makkey Ki Adalat (Corn On Trial).\" Subvert conventional rural demonstrations by staging a high-energy community courtroom drama modeled on popular televised courtroom formats. Put the seed itself in the witness box to answer charges of \"disrupting the harvest with unprecedented yields.\"",
     "execution": [
       "Theatrical Summons Pre-Buzz: Field teams dressed in formal court attire visited farming households across target villages, serving official mock summons requiring attendance at the village square.",
       "Village Courtroom Staging: Transformed central community spaces into complete open-air courtrooms featuring a judge's bench, witness stand, defense tables, and procedural gavels.",
-      "Live Scripted Theater: Actors playing prosecuting counsels challenged the seed\u2014personified by live pack-shot icon walkers\u2014forcing the product to defend its root strength, cob size, and heat resilience.",
+      "Live Scripted Theater: Actors playing prosecuting counsels challenged the seed—personified by live pack-shot icon walkers—forcing the product to defend its root strength, cob size, and heat resilience.",
       "Agronomic Demonstration Desks: Paired theatrical performances with technical demonstration zones, displaying root comparisons and grain density metrics alongside local agronomists.",
       "Retailer Tie-In Closures: Established direct fulfillment counters with local village krishi kendras (agri-dealers), enabling farmers to place immediate booking orders post-show."
     ],
@@ -279,7 +289,9 @@
     "id": "06",
     "slug": "off-plan-residential-launch",
     "title": "OFF-PLAN RESIDENTIAL LAUNCH",
-    "subtitle": "Off-Plan Residential Launch \u2014 Direct Acquisition & Qualification Funnel",
+    "featured": false,
+    "outcome": "66.9% CPL Reduction & 214 Leads",
+    "subtitle": "Off-Plan Residential Launch — Direct Acquisition & Qualification Funnel",
     "tags": [
       "Real Estate Performance Marketing",
       "Search Intent Acquisition",
@@ -289,8 +301,8 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "\u2022 Client: Dubai-based Real Estate Developer (Off-Plan Residential Project, Dubai South) \u2014 NDA Protected.\n\u2022 Duration: 30-Day Acquisition Sprint.\n\u2022 Objective: Acquire pre-qualified property buyer leads below an aggressive target of AED 60 CPL.",
-    "challenge": "\u2022 Legacy paid channels generated poor-quality inquiries averaging AED 120 per lead via broad Google Search campaigns.\n\u2022 Over 70% of inbound submissions were unreachable or financially unqualified, wasting sales agent call capacity.\n\u2022 Campaign relied on a single, static English web form with high user friction and slow conversion response times.\n\u2022 Ad creative leaned heavily on generic architectural renders indistinguishable from hundreds of competing regional developments.",
+    "context": "• Client: Dubai-based Real Estate Developer (Off-Plan Residential Project, Dubai South) — NDA Protected.\n• Duration: 30-Day Acquisition Sprint.\n• Objective: Acquire pre-qualified property buyer leads below an aggressive target of AED 60 CPL.",
+    "challenge": "• Legacy paid channels generated poor-quality inquiries averaging AED 120 per lead via broad Google Search campaigns.\n• Over 70% of inbound submissions were unreachable or financially unqualified, wasting sales agent call capacity.\n• Campaign relied on a single, static English web form with high user friction and slow conversion response times.\n• Ad creative leaned heavily on generic architectural renders indistinguishable from hundreds of competing regional developments.",
     "concept": "\"Financial Accessibility Over Vague Opulence.\" Pivot the core campaign message from generic luxury claims to concrete financial structure: a verified \"1% Monthly Payment Plan\" situated near the high-growth Al Maktoum Airport corridor. Introduce structured friction inside the funnel to filter casual clickers from genuine investors.",
     "execution": [
       "Intent-Based Search Architecture: Replaced broad industry queries with hyper-targeted long-tail terms focusing strictly on specific unit types, locations, and structured financing models.",
@@ -344,7 +356,9 @@
     "id": "07",
     "slug": "boutique-hospitality-fb",
     "title": "BOUTIQUE HOSPITALITY & F&B",
-    "subtitle": "Boutique Hospitality & F&B \u2014 Direct Acquisition & Booking Funnel",
+    "featured": false,
+    "outcome": "4.6x Blended ROAS & 60% CPL Drop",
+    "subtitle": "Boutique Hospitality & F&B — Direct Acquisition & Booking Funnel",
     "tags": [
       "Hospitality & F&B Performance Marketing",
       "Direct Booking Engine",
@@ -354,8 +368,8 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "\u2022 Client: Boutique Hotel & Specialty Dining Group, Downtown Dubai \u2014 NDA Protected.\n\u2022 Duration: 45-Day Performance Campaign.\n\u2022 Objective: Cut per-reservation acquisition costs and shift bookings away from high-commission Online Travel Agencies (OTAs).",
-    "challenge": "\u2022 Booking acquisition on Google Search averaged AED 160 per transaction alongside a 25% revenue commission paid to third-party travel aggregators.\n\u2022 Advertising creative relied on static, polished hotel photography that failed to stand out in saturated travel feeds.\n\u2022 A single, unsegmented landing funnel failed to distinguish between domestic staycationers and international tourists.\n\u2022 The fine-dining arm lacked direct, fast table reservation channels, losing reservations to cumbersome email forms.",
+    "context": "• Client: Boutique Hotel & Specialty Dining Group, Downtown Dubai — NDA Protected.\n• Duration: 45-Day Performance Campaign.\n• Objective: Cut per-reservation acquisition costs and shift bookings away from high-commission Online Travel Agencies (OTAs).",
+    "challenge": "• Booking acquisition on Google Search averaged AED 160 per transaction alongside a 25% revenue commission paid to third-party travel aggregators.\n• Advertising creative relied on static, polished hotel photography that failed to stand out in saturated travel feeds.\n• A single, unsegmented landing funnel failed to distinguish between domestic staycationers and international tourists.\n• The fine-dining arm lacked direct, fast table reservation channels, losing reservations to cumbersome email forms.",
     "concept": "\"Direct Value & Real Atmosphere.\" Break OTA dependency by offering clear financial advantages for booking direct (\"Book Direct, Save AED 100\"). Split campaign traffic into targeted traveler cohorts while swapping sterile stock photography for authentic, POV-driven mobile video.",
     "execution": [
       "Dual-Track Funnel Segmentation: Separated campaign funnels into domestic residents (focused on weekend staycation bundles) and inbound international visitors (focused on long-stay itineraries with airport transit).",
@@ -404,7 +418,9 @@
     "id": "08",
     "slug": "fitbit-vertical-marathon",
     "title": "FITBIT VERTICAL MARATHON",
-    "subtitle": "Fitbit Vertical Marathon \u2014 Bespoke Sports IP & Experiential Architecture",
+    "featured": false,
+    "outcome": "Turnkey Sports IP & Title Sponsorship",
+    "subtitle": "Fitbit Vertical Marathon — Bespoke Sports IP & Experiential Architecture",
     "tags": [
       "Sports Intellectual Property & Experiential Marketing",
       "IP Conceptualization & Identity Systems",
@@ -414,13 +430,13 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "Context Note: Specialized IP concept and master blueprint developed for Globosport (founded by tennis icon Mahesh Bhupathi) to pitch and secure title sponsorship with Fitbit India.\n\n\u2022 Globosport sought to build a premier proprietary sports asset to expand its corporate and brand partnership portfolio.\n\u2022 Target title brand was Fitbit India, seeking to prove wearable accuracy in high-exertion athletic settings.\n\u2022 Conceptualized for deployment inside Mumbai's luxury commercial skyline at the 38-story St. Regis Hotel.",
-    "challenge": "\u2022 Traditional road marathons suffered from category fatigue and heavy logistical headaches, including city-wide road closures and civic permits.\n\u2022 Mass road races diluted brand integration down to passive logo placement on competitor bibs and water stations.\n\u2022 Fitbit required a format that visibly highlighted core biometric tracking features\u2014real-time pulse peaks, floors climbed, and extreme endurance.\n\u2022 The property needed to attract an elite corporate, cultural, and athletic crowd to establish premium brand associations.",
+    "context": "Context Note: Specialized IP concept and master blueprint developed for Globosport (founded by tennis icon Mahesh Bhupathi) to pitch and secure title sponsorship with Fitbit India.\n\n• Globosport sought to build a premier proprietary sports asset to expand its corporate and brand partnership portfolio.\n• Target title brand was Fitbit India, seeking to prove wearable accuracy in high-exertion athletic settings.\n• Conceptualized for deployment inside Mumbai's luxury commercial skyline at the 38-story St. Regis Hotel.",
+    "challenge": "• Traditional road marathons suffered from category fatigue and heavy logistical headaches, including city-wide road closures and civic permits.\n• Mass road races diluted brand integration down to passive logo placement on competitor bibs and water stations.\n• Fitbit required a format that visibly highlighted core biometric tracking features—real-time pulse peaks, floors climbed, and extreme endurance.\n• The property needed to attract an elite corporate, cultural, and athletic crowd to establish premium brand associations.",
     "concept": "\"From Distance to Elevation: Conquering the Vertical Mile.\" Turn the marathon model 90 degrees upward into an exclusive vertical footrace. Participants scale 38 stories and 1,200 stairs, turning the race into a high-octane demonstration of physical grit and real-time biometric tracking.",
     "execution": [
       "IP Identity & Visual Language: Designed dynamic logo assets integrating stair geometry, Mumbai architectural landmarks, and pulse telemetry graphics.",
-      "The 10-Fraternity Draft System: Structured competition cohorts across 10 elite sectors\u2014Corporate, Bollywood, Media, Finance, and Olympians\u2014led by captains like Milind Soman, Rahul Bose, and Mary Kom.",
-      "Guerrilla Pre-Launch Engine: Staged a midnight launch press conference on the steps of Mumbai\u2019s historic Asiatic Library Town Hall. Built elevation-themed hoardings at Mahim Causeway and handed out race-bib toll slips at the Bandra-Worli Sea Link.",
+      "The 10-Fraternity Draft System: Structured competition cohorts across 10 elite sectors—Corporate, Bollywood, Media, Finance, and Olympians—led by captains like Milind Soman, Rahul Bose, and Mary Kom.",
+      "Guerrilla Pre-Launch Engine: Staged a midnight launch press conference on the steps of Mumbai’s historic Asiatic Library Town Hall. Built elevation-themed hoardings at Mahim Causeway and handed out race-bib toll slips at the Bandra-Worli Sea Link.",
       "Raceway Safety & Telemetry Systems: Engineered the fire-stairwell course into a monitored raceway with staggered wave releases, hydration pit-stops every 4 floors, and medical rapid-response teams.",
       "Biometric Broadcast Integration: Streamed live runner pulse and pacing metrics from wearable units directly to spectator screens in the VIP ground and rooftop zones.",
       "Commercial Partner Integration: Built utility-first sponsorship integrations: G-Shock (Official Timekeeper), Asics (Apparel & Footwear), and CalorieCare (Athlete Recovery Nutrition)."
@@ -460,7 +476,9 @@
     "id": "09",
     "slug": "artisanal-spice-brand",
     "title": "ARTISANAL SPICE BRAND",
-    "subtitle": "Artisanal Spice Brand \u2014 Flagship Launch & Omnichannel Scale",
+    "featured": false,
+    "outcome": "4,000 Sq. Ft Flagship & D2C Engine",
+    "subtitle": "Artisanal Spice Brand — Flagship Launch & Omnichannel Scale",
     "tags": [
       "FMCG, Specialty Food Retail & E-Commerce",
       "Fractional CMO Engagement",
@@ -470,9 +488,9 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "\u2022 Client: Nashik-based Spice & Masala Manufacturer \u2014 NDA Protected.\n\u2022 Engagement: Fractional CMO (Full-Funnel Commercial Growth).\n\u2022 Objective: Establish the brand in Thane District, launch an experiential 4,000 sq. ft. flagship store, and build a high-margin direct-to-consumer and marketplace sales engine.",
-    "challenge": "\u2022 Packaged spice retail is saturated with legacy players competing heavily on wholesale trade promotions and commodity pricing.\n\u2022 The client possessed extensive manufacturing facilities and a novel 4,000 sq. ft. retail space, but lacked market positioning, brand identity, and packaging sophistication.\n\u2022 Zero digital footprint, e-commerce infrastructure, or marketplace listings on national platforms.\n\u2022 Traditional brand-launch playbooks lacked the storytelling needed to draw foot traffic into an experiential retail space.",
-    "concept": "\"Bespoke Flavors, Freshly Ground.\" Transform spices from a packaged commodity into a customized culinary service. Anchor the brand around \"Make Your Own Masala\"\u2014allowing consumers to customize ingredient blends to their exact regional palate both in the flagship store and online.",
+    "context": "• Client: Nashik-based Spice & Masala Manufacturer — NDA Protected.\n• Engagement: Fractional CMO (Full-Funnel Commercial Growth).\n• Objective: Establish the brand in Thane District, launch an experiential 4,000 sq. ft. flagship store, and build a high-margin direct-to-consumer and marketplace sales engine.",
+    "challenge": "• Packaged spice retail is saturated with legacy players competing heavily on wholesale trade promotions and commodity pricing.\n• The client possessed extensive manufacturing facilities and a novel 4,000 sq. ft. retail space, but lacked market positioning, brand identity, and packaging sophistication.\n• Zero digital footprint, e-commerce infrastructure, or marketplace listings on national platforms.\n• Traditional brand-launch playbooks lacked the storytelling needed to draw foot traffic into an experiential retail space.",
+    "concept": "\"Bespoke Flavors, Freshly Ground.\" Transform spices from a packaged commodity into a customized culinary service. Anchor the brand around \"Make Your Own Masala\"—allowing consumers to customize ingredient blends to their exact regional palate both in the flagship store and online.",
     "execution": [
       "Flagship Experience Launch: Staged an inaugural launch event featuring regional dignitaries and civic figures, supported by hyper-local broadcast and paid social buzz showcasing live in-store spice grinding.",
       "Interactive D2C Web Architecture: Architected a custom e-commerce portal with a real-time recipe-builder tool, allowing shoppers to alter spice proportions for regional tastes and receive personalized named packaging.",
@@ -517,7 +535,9 @@
     "id": "10",
     "slug": "precision-industrial-connectivity",
     "title": "PRECISION INDUSTRIAL CONNECTIVITY",
-    "subtitle": "Precision Industrial Connectivity \u2014 Strategic Category Audit & 12-Month Scale Engine",
+    "featured": false,
+    "outcome": "From Component Seller to Uptime Partner",
+    "subtitle": "Precision Industrial Connectivity — Strategic Category Audit & 12-Month Scale Engine",
     "tags": [
       "B2B Industrial Manufacturing & Automation",
       "Category Audit",
@@ -527,8 +547,8 @@
     "heroImages": [
       "/images/placeholder.jpg"
     ],
-    "context": "Disclaimer: This is NOT an active or past client engagement. This is an independent category audit and speculative 12-month roadmap developed to illustrate Ekalavya Consulting's diagnostic approach and Fractional CMO methodology for global industrial players.\n\n\u2022 Tier-1 Indian industrial manufacturer producing DIN Rail Terminal Blocks, Interface Modules, SMPS, and wiring tools.\n\u2022 Dombivli-headquartered engineering organization with a 40+ year heritage, distribution across 80+ export countries, and international certifications (UL, CSA, VDE, ATEX).\n\u2022 Strong engineering pedigree anchored by the brand promise of \"The Right Connection,\" competing with European peers like Phoenix Contact and Wago.",
-    "challenge": "\u2022 High-precision connection hardware is frequently commoditized, inviting pricing pressure from lower-spec competitors.\n\u2022 Thousands of complex technical SKUs are locked inside heavy, static 500-page PDF catalogs, creating friction for electrical engineers.\n\u2022 Over-reliance on traditional distributor networks with limited visibility into end-user control-panel specifications.\n\u2022 An understated digital presence that under-represents the company's high-spec international engineering certifications.",
+    "context": "Disclaimer: This is NOT an active or past client engagement. This is an independent category audit and speculative 12-month roadmap developed to illustrate Ekalavya Consulting's diagnostic approach and Fractional CMO methodology for global industrial players.\n\n• Tier-1 Indian industrial manufacturer producing DIN Rail Terminal Blocks, Interface Modules, SMPS, and wiring tools.\n• Dombivli-headquartered engineering organization with a 40+ year heritage, distribution across 80+ export countries, and international certifications (UL, CSA, VDE, ATEX).\n• Strong engineering pedigree anchored by the brand promise of \"The Right Connection,\" competing with European peers like Phoenix Contact and Wago.",
+    "challenge": "• High-precision connection hardware is frequently commoditized, inviting pricing pressure from lower-spec competitors.\n• Thousands of complex technical SKUs are locked inside heavy, static 500-page PDF catalogs, creating friction for electrical engineers.\n• Over-reliance on traditional distributor networks with limited visibility into end-user control-panel specifications.\n• An understated digital presence that under-represents the company's high-spec international engineering certifications.",
     "concept": "\"From Component Seller to Uptime Partner.\" Move the sales narrative away from component piece-prices toward complete cabinet reliability and assembly speed. Position the brand as an essential engineering partner that prevents plant downtime, accelerates switchboard fabrication, and guarantees international regulatory compliance.",
     "execution": [
       "Application Narrative Architecture: Shift marketing from spec sheets to application-focused case summaries across high-risk operating environments: Solar Energy, Rail Transit, Marine Systems, and Hazardous ATEX Zones.",
