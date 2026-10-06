@@ -10,35 +10,65 @@ public_folder: "/uploads"
 
 collections:
   # ==========================================================
-  # 1. CASE STUDIES (Direct JSON File Binding)
+  # 1. SITE PAGES (Home, About, Services, Team)
+  # ==========================================================
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/pages/home.json"
+        fields:
+          - { label: "Hero Badge", name: "hero_badge", widget: "string" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_sub", widget: "text" }
+          - { label: "Hero CTA Text", name: "hero_cta", widget: "string" }
+          - { label: "About Section Title", name: "about_title", widget: "string" }
+          - { label: "About Section Content", name: "about_content", widget: "markdown" }
+
+      - name: "team"
+        label: "Team & Leadership"
+        file: "content/pages/team.json"
+        fields:
+          - { label: "Show Strike Team", name: "show_strike_team", widget: "boolean", default: true }
+          - label: "Founder Details"
+            name: "founder"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Quote", name: "quote", widget: "string" }
+
+  # ==========================================================
+  # 2. CASE STUDIES (Dossiers)
   # ==========================================================
   - name: "case_studies"
     label: "Case Studies"
     files:
-      - name: "all_dossiers"
-        label: "Case Studies List"
+      - name: "dossiers_file"
+        label: "Manage All Case Studies"
         file: "data/dossiers.json"
-        description: "Edit existing case studies or toggle featured status for the homepage."
         fields:
-          - label: "Dossiers"
+          - label: "Dossiers List"
             name: "dossiers"
             widget: "list"
-            summary: "{{fields.title}} - {{fields.outcome}}"
+            summary: "{{fields.title}} [Featured: {{fields.featured}}]"
             fields:
-              - { label: "Index / ID", name: "id", widget: "string" }
-              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Slug / URL Identifier", name: "slug", widget: "string" }
               - { label: "Brand Title", name: "title", widget: "string" }
               - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
               - { label: "Outcome Metric", name: "outcome", widget: "string", required: false }
               - { label: "Subtitle", name: "subtitle", widget: "string" }
               - { label: "Status Badge", name: "status", widget: "string" }
               - { label: "Context", name: "context", widget: "text" }
-              - { label: "Challenge", name: "challenge", widget: "text" }
-              - { label: "Concept", name: "concept", widget: "text" }
-              - { label: "Advantage", name: "advantage", widget: "text" }
+              - { label: "The Challenge", name: "challenge", widget: "text" }
+              - { label: "Core Concept & Strategy", name: "concept", widget: "text" }
+              - { label: "The Ekalavya Advantage", name: "advantage", widget: "text" }
 
   # ==========================================================
-  # 2. BLOGS
+  # 3. BLOGS
   # ==========================================================
   - name: "blogs"
     label: "Blogs"
@@ -62,3 +92,18 @@ collections:
         fields:
           - { label: "Question", name: "question", widget: "string" }
           - { label: "Answer", name: "answer", widget: "text" }
+
+  # ==========================================================
+  # 4. SITE SETTINGS
+  # ==========================================================
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "content/settings/general.json"
+        fields:
+          - { label: "Site Name", name: "site_name", widget: "string" }
+          - { label: "Logo Text", name: "logo_text", widget: "string" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
