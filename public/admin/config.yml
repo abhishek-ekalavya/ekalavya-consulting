@@ -9,30 +9,37 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "case_studies_collection"
+  # ==========================================================
+  # 1. CASE STUDIES (Direct JSON File Binding)
+  # ==========================================================
+  - name: "case_studies"
     label: "Case Studies"
     files:
-      - name: "dossiers"
-        label: "All Dossiers & Case Studies"
+      - name: "all_dossiers"
+        label: "Case Studies List"
         file: "data/dossiers.json"
+        description: "Edit existing case studies or toggle featured status for the homepage."
         fields:
-          - label: "Case Studies Dossier List"
+          - label: "Dossiers"
             name: "dossiers"
             widget: "list"
-            summary: "{{fields.title}}"
+            summary: "{{fields.title}} - {{fields.outcome}}"
             fields:
               - { label: "Index / ID", name: "id", widget: "string" }
-              - { label: "Slug / URL Identifier", name: "slug", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string" }
               - { label: "Brand Title", name: "title", widget: "string" }
               - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
               - { label: "Outcome Metric", name: "outcome", widget: "string", required: false }
-              - { label: "Subtitle / Tagline", name: "subtitle", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
               - { label: "Status Badge", name: "status", widget: "string" }
-              - { label: "Context & Background", name: "context", widget: "text" }
-              - { label: "The Challenge", name: "challenge", widget: "text" }
-              - { label: "Core Concept & Strategy", name: "concept", widget: "text" }
-              - { label: "The Ekalavya Advantage", name: "advantage", widget: "text" }
+              - { label: "Context", name: "context", widget: "text" }
+              - { label: "Challenge", name: "challenge", widget: "text" }
+              - { label: "Concept", name: "concept", widget: "text" }
+              - { label: "Advantage", name: "advantage", widget: "text" }
 
+  # ==========================================================
+  # 2. BLOGS
+  # ==========================================================
   - name: "blogs"
     label: "Blogs"
     folder: "content/blogs"
