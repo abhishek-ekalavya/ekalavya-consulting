@@ -1,11 +1,12 @@
 import homeData from '../../content/pages/home.json';
 import teamData from '../../content/pages/team.json';
 import generalData from '../../content/settings/general.json';
-import dossiersRaw from '../../data/dossiers.json';
+import fallbackDossiers from '../../data/dossiers.json';
 import { BlogPost, BlogFAQ } from './blogs';
 
-// Import all JSON files in /content/blogs
+// Auto-import all blogs and case studies from their folders
 const blogModules = import.meta.glob('../../content/blogs/*.json', { eager: true });
+const caseStudyModules = import.meta.glob('../../content/case-studies/*.json', { eager: true });
 
 export interface TeamContent {
   show_strike_team: boolean;
@@ -69,46 +70,41 @@ export interface DossierItem {
   advantage: string;
 }
 
-export const getSiteSettings = (): SiteSettings => {
-  return generalData as SiteSettings;
-};
-
-export const getHomeContent = (): HomeContent => {
-  return homeData as HomeContent;
-};
-
-export const getTeamContent = (): TeamContent => {
-  return teamData as TeamContent;
-};
+export const getSiteSettings = (): SiteSettings => generalData as SiteSettings;
+export const getHomeContent = (): HomeContent => homeData as HomeContent;
+export const getTeamContent = (): TeamContent => teamData as TeamContent;
 
 /**
  * Universal Dossier Loader:
- * Works whether dossiers.json is a direct array [ ... ] or a wrapped object { dossiers: [ ... ] }
+ * Automatically loads from content/case-studies/*.json.
+ * If the folder is empty, gracefully falls back to data/dossiers.json.
  */
 export const getDossiers = (): DossierItem[] => {
-  const raw: any = dossiersRaw;
-  if (Array.isArray(raw)) {
-    return raw;
+  const list: DossierItem[] = [];
+
+  for (const path in caseStudyModules) {
+    const mod = (caseStudyModules[path] as any).default || caseStudyModules[path];
+    if (mod && mod.slug) {
+      list.push(mod as DossierItem);
+    }
   }
-  if (raw && Array.isArray(raw.dossiers)) {
-    return raw.dossiers;
+
+  if (list.length > 0) {
+    return list.sort((a, b) => (a.id || '').localeCompare(b.id || ''));
   }
+
+  const raw: any = fallbackDossiers;
+  if (Array.isArray(raw)) return raw;
+  if (raw && Array.isArray(raw.dossiers)) return raw.dossiers;
   return [];
 };
 
-/**
- * Converts a raw markdown string into standard HTML paragraphs and headings
- */
 function markdownToHtml(md: string): string {
   if (!md) return '';
-  
-  if (/<[a-z][\s\S]*>/i.test(md)) {
-    return md;
-  }
+  if (/<[a-z][\s\S]*>/i.test(md)) return md;
 
   const lines = md.split('\n');
   const htmlParts: string[] = [];
-  let inParagraph = false;
   let paragraphBuffer: string[] = [];
 
   const flushParagraph = () => {
@@ -121,18 +117,14 @@ function markdownToHtml(md: string): string {
       }
       paragraphBuffer = [];
     }
-    inParagraph = false;
   };
 
   for (let i = 0; i < lines.length; i++) {
-    const rawLine = lines[i];
-    const line = rawLine.trim();
-
+    const line = lines[i].trim();
     if (!line) {
       flushParagraph();
       continue;
     }
-
     if (line.startsWith('# ')) {
       flushParagraph();
       htmlParts.push(`<h1>${line.slice(2).trim()}</h1>`);
@@ -144,22 +136,16 @@ function markdownToHtml(md: string): string {
       htmlParts.push(`<h3>${line.slice(4).trim()}</h3>`);
     } else if (line.startsWith('- ')) {
       flushParagraph();
-      let text = line.slice(2).trim();
-      text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      let text = line.slice(2).trim().replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
       htmlParts.push(`<p>&bull; ${text}</p>`);
     } else {
-      inParagraph = true;
       paragraphBuffer.push(line);
     }
   }
-
   flushParagraph();
   return htmlParts.join('\n');
 }
 
-/**
- * Reads all blogs from /content/blogs/*.json
- */
 export const getContentBlogs = (): BlogPost[] => {
   const posts: BlogPost[] = [];
   let counter = 1;
@@ -179,10 +165,7 @@ export const getContentBlogs = (): BlogPost[] => {
       "mainEntity": faqs.map((f) => ({
         "@type": "Question",
         "name": f.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": f.answer
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer }
       }))
     };
 
@@ -190,7 +173,7 @@ export const getContentBlogs = (): BlogPost[] => {
       ? new Date(fileContent.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
       : '15 May 2026';
 
-    const post: BlogPost = {
+    posts.push({
       id: String(counter++).padStart(2, '0'),
       slug: fileContent.slug,
       category: fileContent.category || 'GROWTH',
@@ -203,9 +186,7 @@ export const getContentBlogs = (): BlogPost[] => {
       htmlContent: markdownToHtml(fileContent.body || ''),
       faqs,
       faqJson
-    };
-
-    posts.push(post);
+    });
   }
 
   return posts;
