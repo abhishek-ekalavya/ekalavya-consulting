@@ -1,6 +1,7 @@
 import homeData from '../../content/pages/home.json';
 import teamData from '../../content/pages/team.json';
 import generalData from '../../content/settings/general.json';
+import dossiersRaw from '../../data/dossiers.json';
 import { BlogPost, BlogFAQ } from './blogs';
 
 // Import all JSON files in /content/blogs
@@ -47,6 +48,27 @@ export interface SiteSettings {
   phone: string;
 }
 
+export interface DossierItem {
+  id: string;
+  slug: string;
+  title: string;
+  featured?: boolean;
+  outcome?: string;
+  subtitle: string;
+  tags?: string[];
+  status: string;
+  heroImages?: string[];
+  context: string;
+  challenge: string;
+  concept: string;
+  execution?: string[];
+  impactTable?: {
+    headers: string[];
+    rows: string[][];
+  };
+  advantage: string;
+}
+
 export const getSiteSettings = (): SiteSettings => {
   return generalData as SiteSettings;
 };
@@ -60,12 +82,26 @@ export const getTeamContent = (): TeamContent => {
 };
 
 /**
+ * Universal Dossier Loader:
+ * Works whether dossiers.json is a direct array [ ... ] or a wrapped object { dossiers: [ ... ] }
+ */
+export const getDossiers = (): DossierItem[] => {
+  const raw: any = dossiersRaw;
+  if (Array.isArray(raw)) {
+    return raw;
+  }
+  if (raw && Array.isArray(raw.dossiers)) {
+    return raw.dossiers;
+  }
+  return [];
+};
+
+/**
  * Converts a raw markdown string into standard HTML paragraphs and headings
  */
 function markdownToHtml(md: string): string {
   if (!md) return '';
   
-  // If it already contains HTML tags like <h1> or <p>, return as is
   if (/<[a-z][\s\S]*>/i.test(md)) {
     return md;
   }
@@ -79,9 +115,7 @@ function markdownToHtml(md: string): string {
     if (paragraphBuffer.length > 0) {
       let text = paragraphBuffer.join(' ').trim();
       if (text) {
-        // bold
         text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        // italics
         text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
         htmlParts.push(`<p>${text}</p>`);
       }
