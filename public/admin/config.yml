@@ -10,37 +10,40 @@ public_folder: "/uploads"
 
 collections:
   # ==========================================================
-  # 1. CASE STUDIES (With Hero Slider Image Upload)
+  # 1. CASE STUDIES (Folder Collection - 100% Stable)
   # ==========================================================
   - name: "case_studies"
     label: "Case Studies"
-    files:
-      - name: "all_dossiers"
-        label: "Case Studies List"
-        file: "data/dossiers.json"
-        description: "Edit existing case studies, upload slider photos, or toggle featured status."
-        fields:
-          - label: "Dossiers"
-            name: "dossiers"
-            widget: "list"
-            summary: "{{fields.title}} - {{fields.outcome}}"
-            fields:
-              - { label: "Index / ID", name: "id", widget: "string" }
-              - { label: "Slug", name: "slug", widget: "string" }
-              - { label: "Brand Title", name: "title", widget: "string" }
-              - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
-              - { label: "Outcome Metric", name: "outcome", widget: "string", required: false }
-              - { label: "Subtitle", name: "subtitle", widget: "string" }
-              - { label: "Status Badge", name: "status", widget: "string" }
-              - label: "Hero Slider Images"
-                name: "heroImages"
-                widget: "list"
-                required: false
-                field: { label: "Slide Photo", name: "image", widget: "image" }
-              - { label: "Context", name: "context", widget: "text" }
-              - { label: "Challenge", name: "challenge", widget: "text" }
-              - { label: "Concept", name: "concept", widget: "text" }
-              - { label: "Advantage", name: "advantage", widget: "text" }
+    folder: "content/case-studies"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Index / ID", name: "id", widget: "string" }
+      - { label: "Slug / URL Identifier", name: "slug", widget: "string" }
+      - { label: "Brand Title", name: "title", widget: "string" }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
+      - { label: "Outcome Metric", name: "outcome", widget: "string", required: false }
+      - { label: "Subtitle / Tagline", name: "subtitle", widget: "string" }
+      - { label: "Status Badge", name: "status", widget: "string" }
+      - label: "Tags / Categories"
+        name: "tags"
+        widget: "list"
+        required: false
+      - label: "Hero Slider Images"
+        name: "heroImages"
+        widget: "list"
+        required: false
+        field: { label: "Slide Image", name: "image", widget: "image" }
+      - { label: "Context & Background", name: "context", widget: "text" }
+      - { label: "The Challenge", name: "challenge", widget: "text" }
+      - { label: "Core Concept & Strategy", name: "concept", widget: "text" }
+      - label: "Execution Milestones"
+        name: "execution"
+        widget: "list"
+        required: false
+      - { label: "The Ekalavya Advantage", name: "advantage", widget: "text" }
 
   # ==========================================================
   # 2. BLOGS
@@ -67,3 +70,18 @@ collections:
         fields:
           - { label: "Question", name: "question", widget: "string" }
           - { label: "Answer", name: "answer", widget: "text" }
+
+  # ==========================================================
+  # 3. SETTINGS
+  # ==========================================================
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "content/settings/general.json"
+        fields:
+          - { label: "Site Name", name: "site_name", widget: "string" }
+          - { label: "Logo Text", name: "logo_text", widget: "string" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
