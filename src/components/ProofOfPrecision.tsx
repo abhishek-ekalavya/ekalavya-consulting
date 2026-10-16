@@ -34,7 +34,7 @@ export const ProofOfPrecision: React.FC = () => {
         {/* Case Study Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {displayStudies.map((study, index) => {
-            const displayImage = study.heroImages?.[0] || '/images/sparta-01.jpg';
+            const displayImage = study.heroImages?.[0] || '';
             const displayCategory = study.tags?.[0] || 'BRAND ARCHITECTURE & GTM';
             const displayOutcome = study.outcome || 'Strategic Turnkey Launch';
             const displaySummary = study.subtitle || study.context?.slice(0, 160) || '';
@@ -44,26 +44,27 @@ export const ProofOfPrecision: React.FC = () => {
                 key={study.id || study.slug || index}
                 className="group relative flex flex-col justify-between rounded-xl border border-white/10 bg-[#071326] overflow-hidden transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-black/60"
               >
-                {/* Top Image Container with Overlay */}
-                <div className="relative h-[180px] w-full overflow-hidden rounded-t-xl bg-[#0A1931]">
-                  <img
-                    src={displayImage}
-                    alt={study.title}
-                    className="h-full w-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div 
-                    className="absolute inset-0 bg-[#0A1931]/60 transition-opacity duration-300"
-                    aria-hidden="true" 
-                  />
-                  {/* Dossier Badge */}
-                  <div className="absolute top-3 left-3 z-10">
-                    <span className="rounded border border-white/20 bg-[#0A1931]/80 backdrop-blur-sm px-2.5 py-1 font-mono text-[10px] font-semibold text-white/80 tracking-wider uppercase">
-                      DOSSIER // 0{index + 1}
-                    </span>
+                {/* Image Container: ONLY renders if an image actually exists */}
+                {displayImage && (
+                  <div className="relative h-[180px] w-full overflow-hidden rounded-t-xl bg-[#0A1931]">
+                    <img
+                      src={displayImage}
+                      alt={study.title}
+                      className="h-full w-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div 
+                      className="absolute inset-0 bg-[#0A1931]/60 transition-opacity duration-300"
+                      aria-hidden="true" 
+                    />
+                    <div className="absolute top-3 left-3 z-10">
+                      <span className="rounded border border-white/20 bg-[#0A1931]/80 backdrop-blur-sm px-2.5 py-1 font-mono text-[10px] font-semibold text-white/80 tracking-wider uppercase">
+                        DOSSIER // 0{index + 1}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
 
-                {/* Content Area Below Image */}
+                {/* Content Area */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
                     {/* Header: Icon + Title */}
@@ -81,6 +82,13 @@ export const ProofOfPrecision: React.FC = () => {
                           </span>
                         </div>
                       </div>
+
+                      {/* Fallback Badge if image container is absent */}
+                      {!displayImage && (
+                        <span className="rounded border border-white/20 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-white/60 tracking-wider uppercase">
+                          DOSSIER // 0{index + 1}
+                        </span>
+                      )}
                     </div>
 
                     {/* Outcome Metric Box */}
@@ -102,7 +110,7 @@ export const ProofOfPrecision: React.FC = () => {
                   {/* View Execution Link */}
                   <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
                     <Link 
-                      to={`/case-studies`}
+                      to="/case-studies"
                       className="font-mono text-xs font-bold text-[#00D080] group-hover:text-[#00ba76] inline-flex items-center gap-1.5 transition-colors"
                     >
                       <span>View Execution</span>
