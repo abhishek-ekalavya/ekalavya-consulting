@@ -6,7 +6,6 @@ import { AboutPage } from './pages/AboutPage';
 import { TeamPage } from './pages/TeamPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { CaseStudiesPage } from './pages/CaseStudiesPage';
-import { CaseStudyDetailPage } from './pages/CaseStudyDetailPage';
 import { BlogsPage } from './pages/BlogsPage';
 import { BlogDetailPage } from './pages/BlogDetailPage';
 import { ContactPage } from './pages/ContactPage';
@@ -127,10 +126,6 @@ function AppContent() {
           <Route 
             path="/case-studies" 
             element={<CaseStudiesPage onLockTarget={handleOpenChooser} />} 
-          />
-          <Route 
-            path="/case-studies/:slug" 
-            element={<CaseStudyDetailPage onLockTarget={handleOpenChooser} />} 
           />
           <Route 
             path="/blogs" 
