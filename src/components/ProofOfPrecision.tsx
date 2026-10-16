@@ -1,44 +1,15 @@
 import React from 'react';
 import { ArrowRight, Shield, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-interface CaseStudyItem {
-  id: string;
-  slug: string;
-  title: string;
-  category: string;
-  outcome: string;
-  summary: string;
-  image: string;
-  imageAlt: string;
-}
-
-const defaultStudies: CaseStudyItem[] = [
-  {
-    id: '01',
-    slug: 'sparta-life',
-    title: 'SPARTA LIFE',
-    category: 'SPORTS INFRASTRUCTURE & LIFESTYLE',
-    outcome: 'Built GTM Engine from 0 to 1',
-    summary:
-      'Turnkey brand architecture, VIP commercial tiering, and integrated regional launch establishing Thane District’s premier sports and high-performance lifestyle ecosystem.',
-    image: '/images/sparta-01.jpg',
-    imageAlt: 'Sparta Life Sports Turf and High Performance Complex',
-  },
-  {
-    id: '04',
-    slug: 'indishield-labs',
-    title: 'INDISHIELD LABS',
-    category: 'B2B MANUFACTURING & HEALTHCARE',
-    outcome: 'Scaled Retail Distribution',
-    summary:
-      'International market entry strategy, B2B demand generation engine, and institutional buyer enablement across domestic and cross-border distribution channels.',
-    image: '/images/placeholder.jpg',
-    imageAlt: 'Indishield Labs Industrial Factory Line and Laboratory Facility',
-  },
-];
+import { getDossiers, DossierItem } from '../data/contentLoader';
 
 export const ProofOfPrecision: React.FC = () => {
+  const allDossiers: DossierItem[] = getDossiers();
+
+  // Pick items marked "featured: true", or take the first 2 available
+  const featured = allDossiers.filter((d) => d.featured);
+  const displayStudies = (featured.length > 0 ? featured : allDossiers).slice(0, 2);
+
   return (
     <section 
       id="proof-of-precision-section" 
@@ -60,19 +31,24 @@ export const ProofOfPrecision: React.FC = () => {
           </p>
         </div>
 
-        {/* 2 Case Study Cards Grid */}
+        {/* Case Study Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {defaultStudies.map((study, index) => {
+          {displayStudies.map((study, index) => {
+            const displayImage = study.heroImages?.[0] || '/images/sparta-01.jpg';
+            const displayCategory = study.tags?.[0] || 'BRAND ARCHITECTURE & GTM';
+            const displayOutcome = study.outcome || 'Strategic Turnkey Launch';
+            const displaySummary = study.subtitle || study.context?.slice(0, 160) || '';
+
             return (
               <div
-                key={study.id}
+                key={study.id || study.slug || index}
                 className="group relative flex flex-col justify-between rounded-xl border border-white/10 bg-[#071326] overflow-hidden transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-black/60"
               >
                 {/* Top Image Container with Overlay */}
                 <div className="relative h-[180px] w-full overflow-hidden rounded-t-xl bg-[#0A1931]">
                   <img
-                    src={study.image}
-                    alt={study.imageAlt}
+                    src={displayImage}
+                    alt={study.title}
                     className="h-full w-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                   />
                   <div 
@@ -101,7 +77,7 @@ export const ProofOfPrecision: React.FC = () => {
                             {study.title}
                           </h4>
                           <span className="font-mono text-[10px] tracking-wider text-white/50 uppercase block">
-                            {study.category}
+                            {displayCategory}
                           </span>
                         </div>
                       </div>
@@ -113,20 +89,20 @@ export const ProofOfPrecision: React.FC = () => {
                         OUTCOME METRIC
                       </span>
                       <p className="font-cinzel text-base font-bold text-white mt-1">
-                        {study.outcome}
+                        {displayOutcome}
                       </p>
                     </div>
 
                     {/* Description */}
                     <p className="text-sm leading-relaxed text-white/70 line-clamp-3">
-                      {study.summary}
+                      {displaySummary}
                     </p>
                   </div>
 
                   {/* View Execution Link */}
                   <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
                     <Link 
-                      to="/case-studies"
+                      to={`/case-studies`}
                       className="font-mono text-xs font-bold text-[#00D080] group-hover:text-[#00ba76] inline-flex items-center gap-1.5 transition-colors"
                     >
                       <span>View Execution</span>
