@@ -1,12 +1,11 @@
 import homeData from '../../content/pages/home.json';
 import teamData from '../../content/pages/team.json';
 import generalData from '../../content/settings/general.json';
-import fallbackDossiers from '../../data/dossiers.json';
 import { BlogPost, BlogFAQ } from './blogs';
 
-// Auto-import all blogs and case studies from their folders
-const blogModules = import.meta.glob('../../content/blogs/*.json', { eager: true });
+// Auto-import strictly from the new folder collections
 const caseStudyModules = import.meta.glob('../../content/case-studies/*.json', { eager: true });
+const blogModules = import.meta.glob('../../content/blogs/*.json', { eager: true });
 
 export interface TeamContent {
   show_strike_team: boolean;
@@ -75,28 +74,20 @@ export const getHomeContent = (): HomeContent => homeData as HomeContent;
 export const getTeamContent = (): TeamContent => teamData as TeamContent;
 
 /**
- * Universal Dossier Loader:
- * Automatically loads from content/case-studies/*.json.
- * If the folder is empty, gracefully falls back to data/dossiers.json.
+ * Clean Folder Loader:
+ * Reads exclusively from content/case-studies/*.json
  */
 export const getDossiers = (): DossierItem[] => {
   const list: DossierItem[] = [];
 
   for (const path in caseStudyModules) {
     const mod = (caseStudyModules[path] as any).default || caseStudyModules[path];
-    if (mod && mod.slug) {
+    if (mod && (mod.slug || mod.title)) {
       list.push(mod as DossierItem);
     }
   }
 
-  if (list.length > 0) {
-    return list.sort((a, b) => (a.id || '').localeCompare(b.id || ''));
-  }
-
-  const raw: any = fallbackDossiers;
-  if (Array.isArray(raw)) return raw;
-  if (raw && Array.isArray(raw.dossiers)) return raw.dossiers;
-  return [];
+  return list.sort((a, b) => (a.id || '').localeCompare(b.id || ''));
 };
 
 function markdownToHtml(md: string): string {
