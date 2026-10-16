@@ -61,15 +61,16 @@ export const CaseStudiesPage: React.FC = () => {
           {filteredDossiers.map((study, idx) => {
             const displayImage = study.heroImages?.[0] || '';
             const displayCategory = study.tags?.[0] || 'GTM & STRATEGY';
+            const dossierUrl = `/case-studies/${study.slug || study.id}`;
 
             return (
               <article
                 key={study.id || study.slug || idx}
                 className="group flex flex-col justify-between rounded-xl border border-white/10 bg-[#0A1931] overflow-hidden transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-black/60"
               >
-                {/* Image Container: ONLY renders if image exists */}
+                {/* Image Container */}
                 {displayImage && (
-                  <div className="relative h-56 w-full overflow-hidden bg-[#071326]">
+                  <Link to={dossierUrl} className="block relative h-56 w-full overflow-hidden bg-[#071326]">
                     <img
                       src={displayImage}
                       alt={study.title}
@@ -88,7 +89,7 @@ export const CaseStudiesPage: React.FC = () => {
                         </span>
                       </div>
                     )}
-                  </div>
+                  </Link>
                 )}
 
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
@@ -99,9 +100,11 @@ export const CaseStudiesPage: React.FC = () => {
                           {idx % 2 === 0 ? <Shield className="h-5 w-5" /> : <Award className="h-5 w-5" />}
                         </div>
                         <div>
-                          <h2 className="font-cinzel text-xl font-bold tracking-wide text-white">
-                            {study.title}
-                          </h2>
+                          <Link to={dossierUrl}>
+                            <h2 className="font-cinzel text-xl font-bold tracking-wide text-white hover:text-[#00D080] transition-colors">
+                              {study.title}
+                            </h2>
+                          </Link>
                           <span className="font-mono text-[10px] tracking-wider text-white/50 uppercase block">
                             {displayCategory}
                           </span>
@@ -139,9 +142,12 @@ export const CaseStudiesPage: React.FC = () => {
                   </div>
 
                   <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#00D080] font-semibold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <Link
+                      to={dossierUrl}
+                      className="font-mono text-xs text-[#00D080] font-semibold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                    >
                       Read Full Dossier <ArrowUpRight className="h-4 w-4" />
-                    </span>
+                    </Link>
                     <span className="font-mono text-[10px] text-white/40 tracking-widest uppercase">
                       VERIFIED
                     </span>
