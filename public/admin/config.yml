@@ -72,7 +72,51 @@ collections:
           - { label: "Answer", name: "answer", widget: "text" }
 
   # ==========================================================
-  # 3. SETTINGS
+  # 3. PAGES
+  # ==========================================================
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "team"
+        label: "Our Team"
+        file: "content/pages/team.json"
+        fields:
+          - { label: "Show Surgical Strike Team Card", name: "show_strike_team", widget: "boolean", default: false }
+          - label: "Founder Dossier"
+            name: "founder"
+            widget: "object"
+            fields:
+              - { label: "Founder Name", name: "name", widget: "string" }
+              - { label: "Title / Role", name: "title", widget: "string" }
+              - { label: "Founder Photo (Template currently uses /founder.jpg)", name: "image", widget: "image", required: false }
+              - label: "Bio Paragraphs"
+                name: "bio_paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - { label: "Founder Quote", name: "quote", widget: "text", required: false }
+              - label: "Stat Pills"
+                name: "stats"
+                widget: "list"
+                field: { label: "Stat Pill", name: "stat", widget: "string" }
+          - label: "Fractional CMO Council Card"
+            name: "council"
+            widget: "object"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Unit / Subtitle", name: "unit", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Surgical Strike Team Card"
+            name: "strike_team"
+            widget: "object"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Unit / Subtitle", name: "unit", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  # ==========================================================
+  # 4. SETTINGS
   # ==========================================================
   - name: "settings"
     label: "Settings"
