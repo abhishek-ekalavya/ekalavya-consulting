@@ -16,17 +16,17 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
         
         {/* Breadcrumb / Tag */}
         <div className="mb-4 flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.2em] text-[#00D080] uppercase">
-          <span>02 &bull; COMMAND LEADERSHIP</span>
+          <span>{teamData.breadcrumb || '02 • COMMAND LEADERSHIP'}</span>
         </div>
 
         {/* Page Title */}
         <h1 className="font-cinzel text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Our Team
+          {teamData.page_title || 'Our Team'}
         </h1>
 
         {/* 1. Intro Paragraph */}
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
-          Not junior account managers or layers of agency coordinators. You interface exclusively with seasoned marketing governors and elite specialized executors who have managed nine-figure marketing P&amp;Ls.
+          {teamData.intro || 'No junior account managers or layers of agency coordinators. You work directly with senior marketers and hands-on specialists who have spent over two decades building 360° campaigns and brand growth across global markets.'}
         </p>
 
         {/* 2. FOUNDER DOSSIER HERO */}
@@ -66,8 +66,13 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
                 }}
               >
                 <img
-                  src="/founder.jpg"
+                  src={teamData.founder.image || '/founder.jpg'}
                   alt={`${teamData.founder.name} - ${teamData.founder.title}`}
+                  onError={(e) => {
+                    if (!e.currentTarget.src.endsWith('/founder.jpg')) {
+                      e.currentTarget.src = '/founder.jpg';
+                    }
+                  }}
                   className="w-full h-full object-cover rounded-[12px] filter grayscale contrast-105 transition-all duration-500 hover:contrast-110"
                   style={{
                     width: '100%',
@@ -86,7 +91,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
               {/* Top pill */}
               <div className="mb-4 inline-flex items-center self-start rounded-full border border-[#00D080]/30 bg-[#00D080]/10 px-3.5 py-1">
                 <span className="font-mono text-[11px] tracking-[2px] text-[#00D080] font-bold uppercase">
-                  01 • COMMAND • FOUNDER&apos;S DOSSIER
+                  {teamData.founder_pill || "01 • COMMAND • FOUNDER'S DOSSIER"}
                 </span>
               </div>
 
@@ -102,7 +107,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
 
               {/* Bio */}
               <div className="space-y-4 font-sans text-base sm:text-lg leading-relaxed text-white/80">
-                {teamData.founder.bio_paragraphs.map((paragraph, idx) => (
+                {(teamData.founder.bio_paragraphs || []).map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
               </div>
@@ -118,7 +123,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
 
               {/* Bottom Stat Pills */}
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                {teamData.founder.stats.map((stat, idx) => (
+                {(teamData.founder.stats || []).map((stat, idx) => (
                   <div
                     key={idx}
                     className="rounded-lg border border-[#00D080]/30 bg-[#00D080]/10 px-4 py-2 font-mono text-xs sm:text-sm font-bold text-[#00D080] tracking-wider"
@@ -203,7 +208,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
             className="flex items-center gap-2.5 rounded-lg bg-[#00D080] px-8 py-4 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow-[#00D080]/20 transition-all hover:bg-[#00ba76] active:scale-[0.99]"
           >
             <Crosshair className="h-4 w-4" />
-            <span>LOCK THE TARGET</span>
+            <span>{teamData.cta_text || 'LOCK THE TARGET'}</span>
           </button>
         </div>
 
