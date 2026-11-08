@@ -1,12 +1,13 @@
 import React from 'react';
 import { ArrowRight, Shield, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getDossiers, DossierItem } from '../data/contentLoader';
+import { getDossiers, getHomeContent, DossierItem } from '../data/contentLoader';
 
 export const ProofOfPrecision: React.FC = () => {
+  const homeData = getHomeContent();
+  const pop = homeData.proof_of_precision;
   const allDossiers: DossierItem[] = getDossiers();
 
-  // Pick items marked "featured: true", or take the first 2 available
   const featured = allDossiers.filter((d) => d.featured);
   const displayStudies = (featured.length > 0 ? featured : allDossiers).slice(0, 2);
 
@@ -21,13 +22,13 @@ export const ProofOfPrecision: React.FC = () => {
         {/* Header */}
         <div className="mx-auto mb-12 sm:mb-16 max-w-3xl text-center">
           <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#00D080] uppercase block mb-3">
-            VERIFIED CASE STUDIES
+            {pop?.badge || 'VERIFIED CASE STUDIES'}
           </span>
           <h2 className="font-cinzel text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Proof of Precision
+            {pop?.title || 'Proof of Precision'}
           </h2>
           <p className="mt-4 text-base text-white/75 sm:text-lg">
-            Not theory. Battlefield results.
+            {pop?.subtitle || 'Not theory. Battlefield results.'}
           </p>
         </div>
 
@@ -44,7 +45,6 @@ export const ProofOfPrecision: React.FC = () => {
                 key={study.id || study.slug || index}
                 className="group relative flex flex-col justify-between rounded-xl border border-white/10 bg-[#071326] overflow-hidden transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-black/60"
               >
-                {/* Image Container: ONLY renders if an image actually exists */}
                 {displayImage && (
                   <div className="relative h-[180px] w-full overflow-hidden rounded-t-xl bg-[#0A1931]">
                     <img
@@ -64,10 +64,8 @@ export const ProofOfPrecision: React.FC = () => {
                   </div>
                 )}
 
-                {/* Content Area */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    {/* Header: Icon + Title */}
                     <div className="flex items-center justify-between gap-3 mb-6">
                       <div className="flex items-center gap-3">
                         <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-[#00D080]">
@@ -83,7 +81,6 @@ export const ProofOfPrecision: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Fallback Badge if image container is absent */}
                       {!displayImage && (
                         <span className="rounded border border-white/20 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-white/60 tracking-wider uppercase">
                           DOSSIER // 0{index + 1}
@@ -91,7 +88,6 @@ export const ProofOfPrecision: React.FC = () => {
                       )}
                     </div>
 
-                    {/* Outcome Metric Box */}
                     <div className="mb-4 rounded-lg border border-[#00D080]/30 bg-[#00D080]/10 p-3">
                       <span className="font-mono text-xs font-semibold text-[#00D080] block uppercase tracking-wider">
                         OUTCOME METRIC
@@ -101,13 +97,11 @@ export const ProofOfPrecision: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* Description */}
                     <p className="text-sm leading-relaxed text-white/70 line-clamp-3">
                       {displaySummary}
                     </p>
                   </div>
 
-                  {/* View Execution Link */}
                   <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
                     <Link 
                       to="/case-studies"
