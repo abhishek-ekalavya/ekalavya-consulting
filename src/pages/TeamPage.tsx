@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Crosshair, Compass, Zap } from 'lucide-react';
 import { getTeamContent } from '../data/contentLoader';
-import { DEFAULT_FOUNDER_PHOTO, FOUNDER_PHOTO_DATA_URL } from '../assets/founder';
 
 interface TeamPageProps {
   onLockTarget: () => void;
@@ -10,30 +9,6 @@ interface TeamPageProps {
 export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
   const teamData = getTeamContent();
   const show_strike_team = Boolean(teamData.show_strike_team);
-
-  // Use bundled asset URL with immediate embedded base64 fallback to ensure 100% reliability on GitHub and live deploys
-  const [photoSrc, setPhotoSrc] = useState<string>(DEFAULT_FOUNDER_PHOTO);
-
-  useEffect(() => {
-    const cached = localStorage.getItem('founder_photo_data');
-    if (cached) {
-      setPhotoSrc(cached);
-      if (cached.startsWith('data:image/')) {
-        fetch('/api/sync-founder-base64', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ dataUrl: cached })
-        }).catch((err) => console.warn('Could not auto-sync founder photo from TeamPage', err));
-      }
-    }
-  }, []);
-
-  const handleImageError = () => {
-    // Never fall back to an infographic; fall back directly to the embedded base64 founder portrait data URL
-    if (photoSrc !== FOUNDER_PHOTO_DATA_URL) {
-      setPhotoSrc(FOUNDER_PHOTO_DATA_URL);
-    }
-  };
 
   return (
     <div className="bg-tactical-grid py-16 sm:py-24">
@@ -49,12 +24,12 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
           Our Team
         </h1>
 
-        {/* 1. Intro Paragraph (Preserved exactly as requested) */}
+        {/* 1. Intro Paragraph */}
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
           Not junior account managers or layers of agency coordinators. You interface exclusively with seasoned marketing governors and elite specialized executors who have managed nine-figure marketing P&amp;Ls.
         </p>
 
-        {/* 2. FOUNDER DOSSIER HERO - Dominant Hero of this page */}
+        {/* 2. FOUNDER DOSSIER HERO */}
         <section 
           id="founder-dossier-hero"
           aria-label="Founder Dossier - Command Leadership"
@@ -91,15 +66,14 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
                 }}
               >
                 <img
-                  src={photoSrc}
+                  src="/founder.jpg"
                   alt={`${teamData.founder.name} - ${teamData.founder.title}`}
-                  onError={handleImageError}
                   className="w-full h-full object-cover rounded-[12px] filter grayscale contrast-105 transition-all duration-500 hover:contrast-110"
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'top center',
+                    objectPosition: 'center top',
                     borderRadius: '12px',
                   }}
                 />
@@ -109,7 +83,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
             {/* Desktop 60% Content Column */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               
-              {/* Top pill: "01 • COMMAND • FOUNDER'S DOSSIER" in emerald #00D080 mono 11px tracking 2px */}
+              {/* Top pill */}
               <div className="mb-4 inline-flex items-center self-start rounded-full border border-[#00D080]/30 bg-[#00D080]/10 px-3.5 py-1">
                 <span className="font-mono text-[11px] tracking-[2px] text-[#00D080] font-bold uppercase">
                   01 • COMMAND • FOUNDER&apos;S DOSSIER
@@ -126,7 +100,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
                 {teamData.founder.title}
               </p>
 
-              {/* Bio: Exact 2 paragraphs from landing page */}
+              {/* Bio */}
               <div className="space-y-4 font-sans text-base sm:text-lg leading-relaxed text-white/80">
                 {teamData.founder.bio_paragraphs.map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
@@ -142,7 +116,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
                 </div>
               )}
 
-              {/* Bottom: 3 Stat Pills reused from landing page in emerald tint boxes */}
+              {/* Bottom Stat Pills */}
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 {teamData.founder.stats.map((stat, idx) => (
                   <div
@@ -159,12 +133,12 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
           </div>
         </section>
 
-        {/* 5. Spacing: 48px gap (mt-12) between founder hero and council card */}
+        {/* 3. Council & Strike Team Grid */}
         <div className="mt-12">
           
           <div className={`grid grid-cols-1 gap-6 ${show_strike_team ? 'sm:grid-cols-2' : ''}`}>
             
-            {/* 3. THE FRACTIONAL CMO COUNCIL CARD (Card 02) */}
+            {/* THE FRACTIONAL CMO COUNCIL CARD */}
             <div 
               id="cmo-council-card"
               className="rounded-xl border border-white/10 bg-[#071326] p-6 sm:p-8 backdrop-blur-sm transition-all duration-300 hover:border-[#00D080]/40"
@@ -190,8 +164,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onLockTarget }) => {
               </p>
             </div>
 
-            {/* 4. SURGICAL EXECUTION STRIKE TEAM CARD */}
-            {/* <!-- Strike Team hidden per client request, enable via CMS --> */}
+            {/* SURGICAL EXECUTION STRIKE TEAM CARD */}
             <div 
               id="surgical-strike-team-card"
               style={{ display: show_strike_team ? 'block' : 'none' }}
