@@ -1,5 +1,8 @@
 import homeData from '../../content/pages/home.json';
 import teamData from '../../content/pages/team.json';
+import aboutData from '../../content/pages/about.json';
+import servicesData from '../../content/pages/services.json';
+import contactData from '../../content/pages/contact.json';
 import generalData from '../../content/settings/general.json';
 import { BlogPost, BlogFAQ } from './blogs';
 
@@ -8,6 +11,11 @@ const caseStudyModules = import.meta.glob('../../content/case-studies/*.json', {
 const blogModules = import.meta.glob('../../content/blogs/*.json', { eager: true });
 
 export interface TeamContent {
+  breadcrumb?: string;
+  page_title?: string;
+  intro?: string;
+  founder_pill?: string;
+  cta_text?: string;
   show_strike_team: boolean;
   founder: {
     name: string;
@@ -36,9 +44,134 @@ export interface HomeContent {
   hero_headline: string;
   hero_sub: string;
   hero_cta: string;
-  services: Array<{ title: string; desc: string }>;
   about_title: string;
-  about_content: string;
+  about_content?: string;
+  explore_arsenal_cta?: string;
+  services?: Array<{ title: string; desc: string }>;
+  founder_section?: {
+    badge: string;
+    name: string;
+    image?: string;
+    bio_paragraphs: string[];
+    quote: string;
+  };
+  infographics?: {
+    challenge_image: string;
+    challenge_alt: string;
+    answer_image: string;
+    answer_alt: string;
+  };
+  how_we_work?: {
+    title: string;
+    subtitle: string;
+    path1: {
+      label: string;
+      title: string;
+      description: string;
+      list_heading: string;
+      items: string[];
+      best_for_label: string;
+      best_for_text: string;
+      link_text: string;
+    };
+    path2: {
+      label: string;
+      title: string;
+      description: string;
+      list_heading: string;
+      categories: Array<{
+        title: string;
+        items: string[];
+      }>;
+      best_for_label: string;
+      best_for_text: string;
+      link_text: string;
+    };
+    closing_line: string;
+  };
+  proof_of_precision?: {
+    badge: string;
+    title: string;
+    subtitle: string;
+  };
+  clearing_the_fog?: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    items: Array<{
+      question: string;
+      answer: string;
+    }>;
+  };
+  engagement_battle?: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    card_a: {
+      label: string;
+      title: string;
+      points: string[];
+      cta: string;
+    };
+    card_b: {
+      label: string;
+      title: string;
+      description: string;
+      cta: string;
+    };
+  };
+}
+
+export interface AboutContent {
+  breadcrumb: string;
+  title: string;
+  intro_line: string;
+  highlight_bold: string;
+  highlight_text: string;
+  paragraphs: string[];
+  tagline: string;
+  cta_text: string;
+  cta_subtext: string;
+}
+
+export interface ServicesContent {
+  arsenal_badge: string;
+  arsenal_title: string;
+  arsenal_subtitle: string;
+  services: Array<{
+    id: string;
+    icon_type?: string;
+    title: string;
+    scope: string;
+    description: string;
+    tags: string[];
+  }>;
+}
+
+export interface ContactContent {
+  breadcrumb: string;
+  title: string;
+  subtitle: string;
+  direct_box: {
+    title: string;
+    subtitle: string;
+    whatsapp_label: string;
+    whatsapp_display: string;
+    whatsapp_url: string;
+    phone_label: string;
+    phone_display: string;
+    phone_href: string;
+    email_label: string;
+    email_display: string;
+    response_sla: string;
+  };
+  brief_box: {
+    badge: string;
+    title: string;
+    description: string;
+    bullets: string[];
+    cta_text: string;
+  };
 }
 
 export interface SiteSettings {
@@ -72,6 +205,9 @@ export interface DossierItem {
 export const getSiteSettings = (): SiteSettings => generalData as SiteSettings;
 export const getHomeContent = (): HomeContent => homeData as HomeContent;
 export const getTeamContent = (): TeamContent => teamData as TeamContent;
+export const getAboutContent = (): AboutContent => aboutData as AboutContent;
+export const getServicesContent = (): ServicesContent => servicesData as ServicesContent;
+export const getContactContent = (): ContactContent => contactData as ContactContent;
 
 /**
  * Clean Folder Loader:
