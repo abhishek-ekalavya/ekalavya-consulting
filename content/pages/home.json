@@ -2,17 +2,139 @@
   "hero_badge": "INSTITUTIONAL MARKET OWNERSHIP",
   "hero_headline": "Fractional Marketing Leadership and Execution Firm for Ambitious Brands | Ekalavya Consulting",
   "hero_sub": "We are Ekalavya Consulting, a premier Marketing Leadership and Execution firm. We provide Fractional CMO Services and Specialised Execution to drive high-velocity business growth across India, Middle East, and Europe.",
-  "hero_cta": "LOCK THE TARGET",
-  "services": [
-    {
-      "title": "Fractional CMO Leadership",
-      "desc": "For founders who need direction, not just delivery. Strategic depth, budget governance, and team leadership without full-time executive overhead. Complete Marketing Operating System & GTM Architecture."
-    },
-    {
-      "title": "Specialized Execution",
-      "desc": "For businesses that already have a strategy but need ruthless, zero-compromise asset delivery. Precision strike teams for Corporate Films, High-Converting Landing Pages, 3D Assets, and B2B Growth."
-    }
-  ],
   "about_title": "One Arrow. One Kill. No Waste.",
-  "about_content": "Most businesses are currently being led by 'Dronacharyas' who have grown too comfortable. You are likely paying for an in-house CMO taking a big fat paycheck to sit in meetings, or bleeding money on expensive agencies that deliver flashy creatives with zero business logic. Ekalavya Consulting is the 'Middle Path' for brands that value razor-sharp precision, combining 21 years of executive tier-1 agency discipline with relentless ground execution."
+  "hero_cta": "LOCK THE TARGET",
+  "explore_arsenal_cta": "Explore The Full Arsenal",
+  "founder_section": {
+    "badge": "FOUNDER AND FRACTIONAL MARKETER",
+    "name": "Abhishek Bhowmick",
+    "image": "/founder.jpg",
+    "bio_paragraphs": [
+      "21 years of experience with top global brands across India, Middle East and Europe.",
+      "Started as a copywriter, moved to 360-degree campaign planning, and led gold-standard teams at India's biggest loyalty management company.",
+      "Now as Founder and Fractional Marketer at Ekalavya Consulting, I help ambitious brands fix their go-to-market and drive high-velocity growth."
+    ],
+    "quote": "I observe in silence, plan in 360°, and strike with one arrow."
+  },
+  "infographics": {
+    "challenge_image": "/IMG-20260929-WA7672.jpg",
+    "challenge_alt": "The Challenge - Same Effort. Same Spend. Zero Growth. Ekalavya Consulting",
+    "answer_image": "/IMG-20260929-WA5137.jpg?v=3",
+    "answer_alt": "The Answer - One Arrow. One Kill. No Waste. Ekalavya Consulting"
+  },
+  "how_we_work": {
+    "title": "Two Paths. Same Precision. Zero Waste.",
+    "subtitle": "We don't believe in one-size-fits-all retainers. You engage us based on the battle you are fighting.",
+    "path1": {
+      "label": "PATH 1 - THE LONG GAME",
+      "title": "Fractional CMO Leadership",
+      "description": "For founders who need direction, not just delivery. You get the strategic depth, budget governance, and team leadership of a full-time CMO without the full-time overhead. I become your Marketing Governor.",
+      "list_heading": "What we take ownership of:",
+      "items": [
+        "Complete Marketing Operating System & Go-To-Market Architecture",
+        "Monthly Budget Governance & ROI Accountability",
+        "Empanelled Agency & Vendor Audit / Management",
+        "Brand, Performance, and Content Leadership",
+        "Board-level Reporting & Growth Roadmap"
+      ],
+      "best_for_label": "Best for:",
+      "best_for_text": "Scaling startups, mid-sized brands, and Pan-India / Middle East businesses preparing for next-stage growth.",
+      "link_text": "Need standalone project delivery? Explore Specialized Execution"
+    },
+    "path2": {
+      "label": "PATH 2 - THE SHORT GAME",
+      "title": "Specialized Execution",
+      "description": "For founders who need one critical asset or one critical campaign nailed with zero waste. You have the direction. You need flawless execution. We deploy our trusted, specialized network to deliver with sniper precision. One Arrow. One Kill.",
+      "list_heading": "What we execute:",
+      "categories": [
+        {
+          "title": "A. Brand & Digital Assets",
+          "items": [
+            "Corporate AVs & Brand Films",
+            "High-Performance Websites, SEO Systems & Custom Web Apps",
+            "Packaging, 3D, and Product Visual Systems",
+            "B2B Content, Pitch Decks & Sales Enablement Collateral"
+          ]
+        },
+        {
+          "title": "B. Integrated Growth Campaigns",
+          "items": [
+            "Performance Marketing & Paid Media (Google, Meta, LinkedIn)",
+            "Integrated Campaign Planning - Radio, Print, TVC, Outdoor + Digital",
+            "Campaign Strategy, Media Buying & ROI Governance",
+            "Lead Generation Systems & Conversion Architecture"
+          ]
+        },
+        {
+          "title": "C. On-Ground Domination",
+          "items": [
+            "Event Planning & Execution",
+            "Brand Activations, Trade Shows & Retail Experiences",
+            "Influencer & Community Activation"
+          ]
+        }
+      ],
+      "best_for_label": "Best for:",
+      "best_for_text": "Businesses that need a specialized project or a time-bound campaign delivered to CMO-standards, without hiring an army.",
+      "link_text": "Need strategic direction & budget governance? Explore Fractional CMO"
+    },
+    "closing_line": "Both paths end the same way: No black boxes. No bloated markups. Institutional ownership of outcome."
+  },
+  "proof_of_precision": {
+    "badge": "VERIFIED CASE STUDIES",
+    "title": "Proof of Precision",
+    "subtitle": "Not theory. Battlefield results."
+  },
+  "clearing_the_fog": {
+    "badge": "MECHANICS & HESITATIONS",
+    "title": "Clearing The Fog",
+    "subtitle": "Direct answers on how we eliminate waste, govern budgets, and execute.",
+    "items": [
+      {
+        "question": "Most businesses are currently being led by \"Dronacharyas\" who have grown too comfortable.",
+        "answer": "You are likely paying for an in-house CMO taking a big fat paycheck to sit in meetings, or bleeding money on expensive agencies that deliver flashy creatives with zero business logic. They have lost their edge. Whether they are mismanaging your long-term roadmap or fumbling individual projects like your website, corporate AV, or product packaging, your budget is leaking through the cracks of uncoordinated execution and \"black box\" marketing."
+      },
+      {
+        "question": "I spent 21 years in the shadows, observing how the \"Masters\" actually work.",
+        "answer": "I didn't just hold a seat; I held a 21-year vigil across top-tier agencies and India's largest loyalty management company. I watched elite strategies succeed and expensive ones fail. I didn't just decode high-level consumer data—I mastered the ground-level mechanics of production, design systems, and campaigns. I know exactly where big agencies inflate their markups and where standalone projects lose their traction."
+      },
+      {
+        "question": "Ekalavya Consulting is the \"Middle Path\" for brands that value Razor-Sharp Precision.",
+        "answer": "We bridge the gap between high-level advisory and flawless execution. If you need long-term direction, we provide a complete Marketing Operating System to govern your budget. If you need to undertake specific, standalone tasks, we act as your Leadership & Execution machinery to get it done. We ensure that your overarching business strategy and your immediate physical or digital assets are perfectly synchronized."
+      },
+      {
+        "question": "I start by observing the battlefield that everyone else has become blind to.",
+        "answer": "Whether you engage us for fractional leadership or a single complex project, our approach begins with observation. We audit your internal workflows, your empanelled partners, and your digital footprint. Before we suggest a single rupee of spend on a campaign or a new application, we ensure the foundation is built for a kill."
+      },
+      {
+        "question": "Strategy is nothing without the mastery of the pull.",
+        "answer": "We take your brand from concept to conversion with zero friction. As your Creative & Strategic Governor, I manage the entire process for you. For our Fractional CMO clients, this means total portfolio accountability. For our standalone project clients, it means deploying my trusted network of specialized resources to deliver corporate films, SEO websites, 3D systems, or B2B content with absolute, uncompromised finesse."
+      },
+      {
+        "question": "You don't need a royal army. You need the right archer.",
+        "answer": "Whether you are a fast-scaling startup needing a long-term strategic ally, or a traditional mid-sized brand looking to execute a specialized marketing asset, the goal remains unchanged. Stop the \"spray and pray\" approach. It is time to shift from constant corporate noise to calculated, precise impact."
+      }
+    ]
+  },
+  "engagement_battle": {
+    "badge": "SELECT ENGAGEMENT MODEL",
+    "title": "WHICH BATTLE ARE WE FIGHTING?",
+    "subtitle": "Stop guessing. Lock direction or lock execution.",
+    "card_a": {
+      "label": "FORM A • FRACTIONAL CMO",
+      "title": "THE LONG GAME",
+      "points": [
+        "GTM Strategy",
+        "Audit Growth Leaks",
+        "Build 90-Day Roadmap"
+      ],
+      "cta": "LOCK YOUR GROWTH DIRECTION"
+    },
+    "card_b": {
+      "label": "FORM B • SPECIALIZED EXECUTION",
+      "title": "THE SHORT GAME",
+      "description": "Corporate AV / Website / Packaging / Performance Ads / Event - One asset executed right",
+      "cta": "LOCK YOUR EXECUTION"
+    }
+  }
 }
