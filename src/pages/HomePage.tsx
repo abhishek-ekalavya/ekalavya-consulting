@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getHomeContent } from '../data/contentLoader';
 import { Section1About } from '../components/Section1About';
 import { InfographicsSection } from '../components/InfographicsSection';
 import { HowWeWork } from '../components/HowWeWork';
@@ -18,6 +19,8 @@ export const HomePage: React.FC<HomePageProps> = ({
   onSelectLongGame,
   onSelectShortGame,
 }) => {
+  const homeData = getHomeContent();
+
   return (
     <>
       {/* SECTION 1: ABOUT US (Hero, One Arrow tagline, Founder Section) */}
@@ -36,7 +39,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             to="/services"
             className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-[#00D080] bg-transparent px-8 py-4 font-mono text-sm sm:text-base font-bold tracking-wider text-[#00D080] transition-all duration-300 hover:bg-[#00D080] hover:text-black active:scale-[0.99] shadow-sm hover:shadow-lg hover:shadow-[#00D080]/20"
           >
-            <span>Explore The Full Arsenal</span>
+            <span>{homeData.explore_arsenal_cta || 'Explore The Full Arsenal'}</span>
             <span>&rarr;</span>
           </Link>
         </div>
