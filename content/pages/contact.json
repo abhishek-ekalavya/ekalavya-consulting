@@ -1,0 +1,29 @@
+{
+  "breadcrumb": "06 • DIRECT CONTACT DESK",
+  "title": "Contact Ekalavya Consulting",
+  "subtitle": "No automated ticketing queues. No junior gatekeepers. Direct connection to the Governor and executive operational desk.",
+  "direct_box": {
+    "title": "Direct Executive Lines",
+    "subtitle": "For urgent brief intake, executive consultations, or high-stakes marketing mandates.",
+    "whatsapp_label": "Direct WhatsApp & Urgent Mobile Desk",
+    "whatsapp_display": "9820049031",
+    "whatsapp_url": "https://wa.me/919820049031",
+    "phone_label": "Voice Telephony",
+    "phone_display": "+91 98200 49031",
+    "phone_href": "tel:+919820049031",
+    "email_label": "Official Dossier Email",
+    "email_display": "helloekalavya@gmail.com",
+    "response_sla": "Standard response window: < 4 operational hours"
+  },
+  "brief_box": {
+    "badge": "FAST TRACK SUBMISSION",
+    "title": "Submit Formal Brief",
+    "description": "If your requirement is already defined, launch the Target Chooser directly. Choose between fractional governance (Long Game) or specialized project execution (Short Game).",
+    "bullets": [
+      "Directional diagnostic or discrete brief configuration",
+      "Instant official Brief ID generation",
+      "Direct calendar booking integration"
+    ],
+    "cta_text": "LOCK THE TARGET NOW"
+  }
+}
