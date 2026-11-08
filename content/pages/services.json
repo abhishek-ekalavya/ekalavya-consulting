@@ -1,0 +1,79 @@
+{
+  "arsenal_badge": "DETAILED BREAKDOWN",
+  "arsenal_title": "The Arsenal",
+  "arsenal_subtitle": "Precision tools. Deployed based on your battle.",
+  "services": [
+    {
+      "id": "fractional-cmo",
+      "icon_type": "shield",
+      "title": "Fractional CMO / Fractional Marketer",
+      "scope": "Strategic Direction & Budget Governance",
+      "description": "High-level strategic leadership, marketing operating systems, and ruthless ROI accountability without full-time executive overhead. We act as your Marketing Governor, eliminating waste and directing every rupee with institutional precision.",
+      "tags": [
+        "Marketing Operating System",
+        "Budget ROI Governance",
+        "Agency & Team Leadership"
+      ]
+    },
+    {
+      "id": "gtm-strategy",
+      "icon_type": "compass",
+      "title": "Go-To-Market Strategy & Engine",
+      "scope": "Market Entry & Commercial Packaging",
+      "description": "Comprehensive GTM architecture, market segmentation, and commercial packaging engineered from 0 to 1. We build predictable customer acquisition engines that align product-market fit with revenue generation.",
+      "tags": [
+        "Target Segmentation",
+        "Pricing Architecture",
+        "Demand Generation Funnels"
+      ]
+    },
+    {
+      "id": "brand-positioning",
+      "icon_type": "award",
+      "title": "Brand & Positioning",
+      "scope": "Institutional Parity & Authority",
+      "description": "Master narrative architecture, brand origin engineering, and visual design systems that elevate your company into a design-led category benchmark, commanding pricing power and customer trust.",
+      "tags": [
+        "Visual Identity Systems",
+        "Master Narrative",
+        "Category Authority"
+      ]
+    },
+    {
+      "id": "growth-performance",
+      "icon_type": "trending",
+      "title": "Growth & Performance System",
+      "scope": "Paid Acquisition & CAC Optimization",
+      "description": "Data-driven paid media execution across Google, Meta, and LinkedIn with continuous attribution modeling, disciplined CAC/LTV governance, and zero black-box agency spend.",
+      "tags": [
+        "Performance Media",
+        "Conversion Architecture",
+        "Attribution Modeling"
+      ]
+    },
+    {
+      "id": "campaign-planning",
+      "icon_type": "crosshair",
+      "title": "360° Campaign Planning & Execution",
+      "scope": "Integrated Multi-Channel Rollouts",
+      "description": "Synchronized multi-channel campaigns orchestrated with sniper precision—unifying digital media, outdoor OOH, print, television, radio, and high-impact on-ground events.",
+      "tags": [
+        "Omnichannel Media",
+        "OOH & Broadcast",
+        "Production Governance"
+      ]
+    },
+    {
+      "id": "content-creative",
+      "icon_type": "sparkles",
+      "title": "Content & Creative Engine",
+      "scope": "Cinematic Films & Sales Enablement",
+      "description": "High-velocity production of cinematic corporate AVs, high-converting digital web platforms, 3D product visuals, packaging systems, and executive sales enablement collateral.",
+      "tags": [
+        "Corporate AVs & Brand Films",
+        "High-Speed Web Platforms",
+        "Sales Enablement Decks"
+      ]
+    }
+  ]
+}
