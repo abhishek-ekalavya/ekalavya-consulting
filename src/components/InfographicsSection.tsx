@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { getHomeContent } from '../data/contentLoader';
 
 export const InfographicsSection: React.FC = () => {
+  const homeData = getHomeContent();
+  const info = homeData.infographics;
+
   const [revealed1, setRevealed1] = useState(false);
   const [revealed2, setRevealed2] = useState(false);
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Reveal immediately on mount, with intersection observer enhancing the scroll entry
     const timer = setTimeout(() => {
       setRevealed1(true);
       setRevealed2(true);
@@ -50,8 +53,8 @@ export const InfographicsSection: React.FC = () => {
           }`}
         >
           <img 
-            src="/IMG-20260929-WA7672.jpg" 
-            alt="The Challenge - Same Effort. Same Spend. Zero Growth. Ekalavya Consulting"
+            src={info?.challenge_image || '/IMG-20260929-WA7672.jpg'} 
+            alt={info?.challenge_alt || 'The Challenge - Same Effort. Same Spend. Zero Growth. Ekalavya Consulting'}
             className="w-full h-auto object-contain block mx-auto shadow-2xl transition-transform duration-500 hover:scale-[1.01]"
             onError={(e) => {
               const target = e.currentTarget;
@@ -76,8 +79,8 @@ export const InfographicsSection: React.FC = () => {
           }`}
         >
           <img 
-            src="/IMG-20260929-WA5137.jpg?v=3" 
-            alt="The Answer - One Arrow. One Kill. No Waste. Ekalavya Consulting"
+            src={info?.answer_image || '/IMG-20260929-WA5137.jpg?v=3'} 
+            alt={info?.answer_alt || 'The Answer - One Arrow. One Kill. No Waste. Ekalavya Consulting'}
             className="w-full h-auto object-contain block mx-auto shadow-2xl transition-transform duration-500 hover:scale-[1.01]"
             onError={(e) => {
               const target = e.currentTarget;
