@@ -1,61 +1,103 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { DEFAULT_FOUNDER_PHOTO, FOUNDER_PHOTO_DATA_URL } from '../assets/founder';
 import { getHomeContent } from '../data/contentLoader';
-import { Section1About } from '../components/Section1About';
-import { InfographicsSection } from '../components/InfographicsSection';
-import { HowWeWork } from '../components/HowWeWork';
-import { ProofOfPrecision } from '../components/ProofOfPrecision';
-import { ClearingTheFog } from '../components/ClearingTheFog';
-import { EngagementBattleSection } from '../components/EngagementBattleSection';
 
-interface HomePageProps {
-  onLockTarget: () => void;
-  onSelectLongGame?: () => void;
-  onSelectShortGame?: () => void;
-}
-
-export const HomePage: React.FC<HomePageProps> = ({ 
-  onLockTarget,
-  onSelectLongGame,
-  onSelectShortGame,
-}) => {
+export const FounderSection: React.FC = () => {
   const homeData = getHomeContent();
+  const founder = homeData.founder_section;
+  const [photoSrc, setPhotoSrc] = useState<string>(founder?.image || '/founder.jpg');
+
+  const handleImageError = () => {
+    if (photoSrc !== '/founder.jpg') {
+      setPhotoSrc('/founder.jpg');
+    } else if (photoSrc !== DEFAULT_FOUNDER_PHOTO && DEFAULT_FOUNDER_PHOTO) {
+      setPhotoSrc(DEFAULT_FOUNDER_PHOTO);
+    } else if (photoSrc !== FOUNDER_PHOTO_DATA_URL) {
+      setPhotoSrc(FOUNDER_PHOTO_DATA_URL);
+    }
+  };
+
+  const bioParagraphs = founder?.bio_paragraphs?.length
+    ? founder.bio_paragraphs
+    : [
+        '21 years of experience with top global brands across India, Middle East and Europe.',
+        "Started as a copywriter, moved to 360-degree campaign planning, and led gold-standard teams at India's biggest loyalty management company.",
+        'Now as Founder and Fractional Marketer at Ekalavya Consulting, I help ambitious brands fix their go-to-market and drive high-velocity growth.',
+      ];
 
   return (
-    <>
-      {/* SECTION 1: ABOUT US (Hero, One Arrow tagline, Founder Section) */}
-      <Section1About onLockTarget={onLockTarget} />
-
-      {/* INFOGRAPHICS: 1. THE CHALLENGE (Problem) -> 2. THE ANSWER (Solution) */}
-      <InfographicsSection />
-
-      {/* SECTION 2: HOW WE WORK ("Two Paths. Same Precision. Zero Waste...") */}
-      <HowWeWork onLockTarget={onLockTarget} />
-
-      {/* CENTERED CTA: EXPLORE THE FULL ARSENAL */}
-      <section className="w-full bg-[#0A1931] border-b border-white/10 py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <Link
-            to="/services"
-            className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-[#00D080] bg-transparent px-8 py-4 font-mono text-sm sm:text-base font-bold tracking-wider text-[#00D080] transition-all duration-300 hover:bg-[#00D080] hover:text-black active:scale-[0.99] shadow-sm hover:shadow-lg hover:shadow-[#00D080]/20"
-          >
-            <span>{homeData.explore_arsenal_cta || 'Explore The Full Arsenal'}</span>
-            <span>&rarr;</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* CLOSING SEQUENCE: 2. CASE STUDIES ("Proof of Precision") */}
-      <ProofOfPrecision />
-
-      {/* CLOSING SEQUENCE: 3. ACCORDION Q&A ("Clearing The Fog") */}
-      <ClearingTheFog />
-
-      {/* CLOSING SEQUENCE: 4. SELECT ENGAGEMENT MODEL (WHICH BATTLE ARE WE FIGHTING?) */}
-      <EngagementBattleSection 
-        onSelectLongGame={onSelectLongGame || onLockTarget}
-        onSelectShortGame={onSelectShortGame || onLockTarget}
+    <div 
+      id="founder-section" 
+      aria-label="Founder and Fractional Marketer"
+      className="my-12 rounded-2xl border border-white/10 bg-[#071326]/90 p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden text-left"
+    >
+      {/* Subtle ambient lighting */}
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute -top-32 right-10 h-72 w-72 rounded-full bg-[#00D080]/5 blur-[100px]" 
       />
-    </>
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute -bottom-32 left-10 h-72 w-72 rounded-full bg-[#1E3A8A]/10 blur-[100px]" 
+      />
+
+      <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14 relative z-10">
+        
+        {/* Left Column: Founder photograph with 4:5 portrait ratio */}
+        <div className="lg:col-span-5 flex justify-center">
+          <div className="relative w-full max-w-[380px] group">
+            <div 
+              className="relative overflow-hidden rounded-[16px] border border-[#00D080]/30 bg-[#0A1931] shadow-[0_0_35px_rgba(0,208,128,0.18)] p-2 flex items-center justify-center"
+              style={{
+                aspectRatio: '4 / 5',
+                maxHeight: '480px',
+                borderRadius: '16px',
+                backgroundColor: '#0A1931',
+                borderColor: 'rgba(0, 208, 128, 0.3)',
+                padding: '8px',
+              }}
+            >
+              <img
+                src={photoSrc}
+                alt={`${founder?.name || 'Abhishek Bhowmick'} - Founder and Fractional Marketer`}
+                onError={handleImageError}
+                className="w-full h-full object-cover rounded-[12px] filter grayscale-[80%] contrast-[1.05] transition-all duration-500 group-hover:grayscale-[20%]"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'top center',
+                  borderRadius: '12px',
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Founder & Fractional Marketer content */}
+        <div className="lg:col-span-7 flex flex-col justify-center">
+          <span className="font-mono text-xs sm:text-sm font-semibold tracking-[0.2em] text-[#00D080] uppercase block">
+            {founder?.badge || 'FOUNDER AND FRACTIONAL MARKETER'}
+          </span>
+
+          <h2 className="font-sans text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl mt-2 mb-6">
+            {founder?.name || 'Abhishek Bhowmick'}
+          </h2>
+
+          <div className="space-y-4 font-sans text-base sm:text-lg leading-relaxed text-white/80">
+            {bioParagraphs.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+          </div>
+
+          <div className="mt-8 border-l-2 border-[#00D080] pl-4 sm:pl-6 py-2">
+            <blockquote className="font-cinzel text-lg sm:text-xl italic text-white/95 leading-relaxed tracking-wide">
+              &ldquo;{founder?.quote || 'I observe in silence, plan in 360°, and strike with one arrow.'}&rdquo;
+            </blockquote>
+          </div>
+        </div>
+
+      </div>
+    </div>
   );
 };
