@@ -10,7 +10,7 @@ public_folder: "/uploads"
 
 collections:
   # ==========================================================
-  # 1. CASE STUDIES (Folder Collection - 100% Stable)
+  # 1. CASE STUDIES
   # ==========================================================
   - name: "case_studies"
     label: "Case Studies"
@@ -77,10 +77,150 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/pages/home.json"
+        fields:
+          - { label: "Hero Badge", name: "hero_badge", widget: "string" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "text" }
+          - { label: "Hero Sub-headline", name: "hero_sub", widget: "text" }
+          - { label: "Tagline (One Arrow...)", name: "about_title", widget: "string" }
+          - { label: "Primary CTA Button Text", name: "hero_cta", widget: "string" }
+          - { label: "Explore Arsenal Button Text", name: "explore_arsenal_cta", widget: "string" }
+          - label: "Founder Section (Homepage)"
+            name: "founder_section"
+            widget: "object"
+            fields:
+              - { label: "Top Label", name: "badge", widget: "string" }
+              - { label: "Founder Name", name: "name", widget: "string" }
+              - { label: "Founder Photo", name: "image", widget: "image", required: false }
+              - label: "Bio Paragraphs"
+                name: "bio_paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - { label: "Quote", name: "quote", widget: "text" }
+          - label: "Infographics (Shared with Services Page)"
+            name: "infographics"
+            widget: "object"
+            fields:
+              - { label: "Challenge Infographic Image", name: "challenge_image", widget: "image" }
+              - { label: "Challenge Image Alt Text", name: "challenge_alt", widget: "string" }
+              - { label: "Answer Infographic Image", name: "answer_image", widget: "image" }
+              - { label: "Answer Image Alt Text", name: "answer_alt", widget: "string" }
+          - label: "How We Work (Shared with Services Page)"
+            name: "how_we_work"
+            widget: "object"
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Section Subtitle", name: "subtitle", widget: "text" }
+              - label: "Path 1 - The Long Game"
+                name: "path1"
+                widget: "object"
+                fields:
+                  - { label: "Top Label", name: "label", widget: "string" }
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "List Heading", name: "list_heading", widget: "string" }
+                  - label: "Bullet Points"
+                    name: "items"
+                    widget: "list"
+                    field: { label: "Point", name: "item", widget: "string" }
+                  - { label: "Best For Label", name: "best_for_label", widget: "string" }
+                  - { label: "Best For Text", name: "best_for_text", widget: "text" }
+                  - { label: "Bottom Link Text", name: "link_text", widget: "string" }
+              - label: "Path 2 - The Short Game"
+                name: "path2"
+                widget: "object"
+                fields:
+                  - { label: "Top Label", name: "label", widget: "string" }
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "List Heading", name: "list_heading", widget: "string" }
+                  - label: "Execution Categories"
+                    name: "categories"
+                    widget: "list"
+                    fields:
+                      - { label: "Category Title", name: "title", widget: "string" }
+                      - label: "Items"
+                        name: "items"
+                        widget: "list"
+                        field: { label: "Item", name: "item", widget: "string" }
+                  - { label: "Best For Label", name: "best_for_label", widget: "string" }
+                  - { label: "Best For Text", name: "best_for_text", widget: "text" }
+                  - { label: "Bottom Link Text", name: "link_text", widget: "string" }
+              - { label: "Closing Line Above CTA", name: "closing_line", widget: "text" }
+          - label: "Proof of Precision Header"
+            name: "proof_of_precision"
+            widget: "object"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - label: "Clearing The Fog (Q&A Accordion)"
+            name: "clearing_the_fog"
+            widget: "object"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - label: "Q&A Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Question / Statement", name: "question", widget: "text" }
+                  - { label: "Answer", name: "answer", widget: "text" }
+          - label: "Engagement Battle Section"
+            name: "engagement_battle"
+            widget: "object"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - label: "Card A (Long Game)"
+                name: "card_a"
+                widget: "object"
+                fields:
+                  - { label: "Top Label", name: "label", widget: "string" }
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - label: "Checkpoints"
+                    name: "points"
+                    widget: "list"
+                    field: { label: "Point", name: "point", widget: "string" }
+                  - { label: "Button Text", name: "cta", widget: "string" }
+              - label: "Card B (Short Game)"
+                name: "card_b"
+                widget: "object"
+                fields:
+                  - { label: "Top Label", name: "label", widget: "string" }
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Button Text", name: "cta", widget: "string" }
+
+      - name: "about"
+        label: "About Us"
+        file: "content/pages/about.json"
+        fields:
+          - { label: "Breadcrumb Tag", name: "breadcrumb", widget: "string" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Opening Line", name: "intro_line", widget: "string" }
+          - { label: "Bold Lead Sentence", name: "highlight_bold", widget: "text" }
+          - { label: "Supporting Sentence", name: "highlight_text", widget: "text" }
+          - label: "Body Paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Button Text", name: "cta_text", widget: "string" }
+          - { label: "Subtext Below Button", name: "cta_subtext", widget: "string" }
+
       - name: "team"
         label: "Our Team"
         file: "content/pages/team.json"
         fields:
+          - { label: "Breadcrumb Tag", name: "breadcrumb", widget: "string", required: false, default: "02 • COMMAND LEADERSHIP" }
+          - { label: "Page Title", name: "page_title", widget: "string", required: false, default: "Our Team" }
+          - { label: "Page Intro Description", name: "intro", widget: "text", required: false, default: "No junior account managers or layers of agency coordinators. You work directly with senior marketers and hands-on specialists who have spent over two decades building 360° campaigns and brand growth across global markets." }
+          - { label: "Founder Dossier Pill", name: "founder_pill", widget: "string", required: false, default: "01 • COMMAND • FOUNDER'S DOSSIER" }
           - { label: "Show Surgical Strike Team Card", name: "show_strike_team", widget: "boolean", default: false }
           - label: "Founder Dossier"
             name: "founder"
@@ -88,7 +228,7 @@ collections:
             fields:
               - { label: "Founder Name", name: "name", widget: "string" }
               - { label: "Title / Role", name: "title", widget: "string" }
-              - { label: "Founder Photo (Template currently uses /founder.jpg)", name: "image", widget: "image", required: false }
+              - { label: "Founder Photo", name: "image", widget: "image", required: false }
               - label: "Bio Paragraphs"
                 name: "bio_paragraphs"
                 widget: "list"
@@ -114,6 +254,73 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Unit / Subtitle", name: "unit", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+          - { label: "Bottom CTA Button Text", name: "cta_text", widget: "string", required: false, default: "LOCK THE TARGET" }
+
+      - name: "services"
+        label: "Services (The Arsenal)"
+        file: "content/pages/services.json"
+        fields:
+          - { label: "Section Badge", name: "arsenal_badge", widget: "string" }
+          - { label: "Section Title", name: "arsenal_title", widget: "string" }
+          - { label: "Section Subtitle", name: "arsenal_subtitle", widget: "string" }
+          - label: "Service Cards"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "ID (lowercase-no-spaces)", name: "id", widget: "string" }
+              - label: "Icon"
+                name: "icon_type"
+                widget: "select"
+                default: "shield"
+                options:
+                  - { label: "Shield", value: "shield" }
+                  - { label: "Compass", value: "compass" }
+                  - { label: "Award", value: "award" }
+                  - { label: "Trending Up", value: "trending" }
+                  - { label: "Crosshair", value: "crosshair" }
+                  - { label: "Sparkles", value: "sparkles" }
+              - { label: "Service Title", name: "title", widget: "string" }
+              - { label: "Scope Tag", name: "scope", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Bottom Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Us"
+        file: "content/pages/contact.json"
+        fields:
+          - { label: "Breadcrumb Tag", name: "breadcrumb", widget: "string" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Subtitle", name: "subtitle", widget: "text" }
+          - label: "Direct Executive Lines Card"
+            name: "direct_box"
+            widget: "object"
+            fields:
+              - { label: "Card Title", name: "title", widget: "string" }
+              - { label: "Card Subtitle", name: "subtitle", widget: "text" }
+              - { label: "WhatsApp Label", name: "whatsapp_label", widget: "string" }
+              - { label: "WhatsApp Number Display", name: "whatsapp_display", widget: "string" }
+              - { label: "WhatsApp Link URL", name: "whatsapp_url", widget: "string" }
+              - { label: "Phone Label", name: "phone_label", widget: "string" }
+              - { label: "Phone Number Display", name: "phone_display", widget: "string" }
+              - { label: "Phone Tel Link (tel:+91...)", name: "phone_href", widget: "string" }
+              - { label: "Email Label", name: "email_label", widget: "string" }
+              - { label: "Email Address", name: "email_display", widget: "string" }
+              - { label: "Response Window Text", name: "response_sla", widget: "string" }
+          - label: "Submit Formal Brief Card"
+            name: "brief_box"
+            widget: "object"
+            fields:
+              - { label: "Top Badge", name: "badge", widget: "string" }
+              - { label: "Card Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Bullet Points"
+                name: "bullets"
+                widget: "list"
+                field: { label: "Bullet", name: "bullet", widget: "string" }
+              - { label: "CTA Button Text", name: "cta_text", widget: "string" }
 
   # ==========================================================
   # 4. SETTINGS
