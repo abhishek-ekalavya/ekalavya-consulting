@@ -12,12 +12,14 @@ interface HomePageProps {
   onLockTarget: () => void;
   onSelectLongGame?: () => void;
   onSelectShortGame?: () => void;
+  onSelectSmartGame?: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ 
   onLockTarget,
   onSelectLongGame,
   onSelectShortGame,
+  onSelectSmartGame,
 }) => {
   const homeData = getHomeContent();
 
@@ -55,6 +57,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       <EngagementBattleSection 
         onSelectLongGame={onSelectLongGame || onLockTarget}
         onSelectShortGame={onSelectShortGame || onLockTarget}
+        onSelectSmartGame={onSelectSmartGame || onLockTarget}
       />
     </>
   );
