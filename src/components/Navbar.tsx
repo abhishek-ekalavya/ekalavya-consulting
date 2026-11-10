@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
   { label: 'Our Team', path: '/team' },
   { label: 'Services', path: '/services' },
   { label: 'Case Studies', path: '/case-studies' },
-  { label: 'Blogs', path: '/blogs' },
+  { label: 'Blog', path: '/blogs' },
   { label: 'Contact Us', path: '/contact' },
 ];
 
