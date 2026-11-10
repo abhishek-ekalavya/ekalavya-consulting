@@ -6,7 +6,6 @@ import {
   Flame, 
   ArrowRight, 
   ArrowLeft,
-  Calendar, 
   ShieldCheck, 
   Send,
   AlertCircle,
@@ -34,7 +33,6 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
   view,
   onClose,
   onSelectView,
-  onOpenCalendly,
 }) => {
   // FORM A STATE
   const [formA, setFormA] = useState<FormAData>({
@@ -99,7 +97,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
       !formA.phone ||
       !formA.email
     ) {
-      setErrorA('All fields are mandatory to evaluate leadership requirements.');
+      setErrorA('Please fill in all required fields to evaluate leadership requirements.');
       return;
     }
 
@@ -122,13 +120,14 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
       `Company: ${formA.companyAndUrl}`,
       `Phone: ${formA.phone}`,
       `Email: ${formA.email}`,
-      `Spend: ${formA.monthlySpend}`,
-      `Challenge: ${formA.whatIsBroken}`
+      `Spend (INR): ${formA.monthlySpend}`,
+      `Challenge: ${formA.whatIsBroken}`,
+      ...(formA.sixMonthVision ? [`6-Month Vision: ${formA.sixMonthVision}`] : []),
     ].join('\n');
 
     // Action on submit:
     window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
-    window.open('mailto:helloekalavya@gmail.com?subject=New Lead - FORM A - ' + formA.companyAndUrl + '&body=' + encodeURIComponent(message), '_blank');
+    window.open('mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM A - ' + formA.companyAndUrl + '&body=' + encodeURIComponent(message), '_blank');
 
     setTimeout(() => {
       setIsSubmittingA(false);
@@ -165,23 +164,23 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     setErrorB('');
     setIsSubmittingB(true);
 
-    const selectedWeapon = formB.whatNeeded.join(', ');
+    const selectedDeliverables = formB.whatNeeded.join(', ');
     const challengeB = formB.challenge || `Timeline: ${formB.timeline} (Brief ready: ${formB.briefReady})`;
 
     const message = [
-      `NEW LEAD - FORM B - ${selectedWeapon}`,
+      `NEW LEAD - FORM B - ${selectedDeliverables}`,
       `Name: ${formB.name}`,
       `Company: ${formB.company}`,
       `Phone: ${formB.phone}`,
       `Email: ${formB.email}`,
-      `Spend: ${formB.budget}`,
-      `Weapon: ${selectedWeapon}`,
+      `Budget (INR): ${formB.budget}`,
+      `Deliverables: ${selectedDeliverables}`,
       `Challenge: ${challengeB}`
     ].join('\n');
 
     // Action on submit:
     window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
-    window.open('mailto:helloekalavya@gmail.com?subject=New Lead - FORM B - ' + formB.company + '&body=' + encodeURIComponent(message), '_blank');
+    window.open('mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM B - ' + formB.company + '&body=' + encodeURIComponent(message), '_blank');
 
     setTimeout(() => {
       setIsSubmittingB(false);
@@ -219,7 +218,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
               </div>
               <div>
                 <span className="font-mono text-xs font-semibold tracking-widest text-[#00D084] uppercase">
-                  LOCK THE TARGET
+                  BOOK A CALL
                 </span>
                 <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl">
                   Which battle are we fighting?
@@ -298,7 +297,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
         {/* 2. FORM A: THE LONG GAME */}
         {view === 'formA' && (
           <div id="view-form-a">
-            {/* Sticky Top Header Row: Back on left, Labels & Title, X on right */}
+            {/* Sticky Top Header Row */}
             <div className="sticky -top-6 sm:-top-8 -mx-6 sm:-mx-8 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 mb-6 bg-[#0A1931] border-b border-white/10 z-20">
               <div className="flex items-center justify-between gap-4">
                 <button
@@ -338,7 +337,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
             )}
 
             <form onSubmit={handleSubmitFormA} className="space-y-4">
-              {/* Field 1: Your Name (Text) */}
+              {/* Field 1: Your Name */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   1. Your Name <span className="text-[#00D084]">*</span>
@@ -354,7 +353,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 />
               </div>
 
-              {/* Field 2: Company Name + Website URL (Text) */}
+              {/* Field 2: Company Name + Website URL */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   2. Company Name + Website URL <span className="text-[#00D084]">*</span>
@@ -370,10 +369,10 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 />
               </div>
 
-              {/* Field 3: Current Monthly Marketing Spend (Dropdown: <2L / 2-5L / 5-15L / 15L+) */}
+              {/* Field 3: Current Monthly Marketing Spend (INR) */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  3. Current Monthly Marketing Spend <span className="text-[#00D084]">*</span>
+                  3. Current Monthly Marketing Spend (INR) <span className="text-[#00D084]">*</span>
                 </label>
                 <select
                   id="forma-monthly-spend"
@@ -382,15 +381,15 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                   onChange={(e) => setFormA({ ...formA, monthlySpend: e.target.value as any })}
                   className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
                 >
-                  <option value="" disabled className="text-white/40">Select Monthly Spend</option>
-                  <option value="<2L">&lt;2L</option>
-                  <option value="2-5L">2-5L</option>
-                  <option value="5-15L">5-15L</option>
-                  <option value="15L+">15L+</option>
+                  <option value="" disabled className="text-white/40">Select Monthly Spend (INR)</option>
+                  <option value="<2L">&lt;2L INR</option>
+                  <option value="2-5L">2-5L INR</option>
+                  <option value="5-15L">5-15L INR</option>
+                  <option value="15L+">15L+ INR</option>
                 </select>
               </div>
 
-              {/* Field 4: Current Team Structure (Dropdown: No team / 1-2 people / Small agency / Large agency that needs governance) */}
+              {/* Field 4: Current Team Structure */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   4. Current Team Structure <span className="text-[#00D084]">*</span>
@@ -406,11 +405,11 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                   <option value="No team">No team</option>
                   <option value="1-2 people">1-2 people</option>
                   <option value="Small agency">Small agency</option>
-                  <option value="Large agency that needs governance">Large agency that needs governance</option>
+                  <option value="Large agency that needs oversight">Large agency that needs oversight</option>
                 </select>
               </div>
 
-              {/* Field 5: What is broken? (Dropdown: No strategy / Spends but no ROI / Team exists but no leader / Scaling to next market) */}
+              {/* Field 5: What is broken? */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   5. What is broken? <span className="text-[#00D084]">*</span>
@@ -430,14 +429,13 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 </select>
               </div>
 
-              {/* Field 6: If we fix this, what does growth look like in 6 months? (Long text) */}
+              {/* Field 6: Growth Vision (Optional) */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  6. If we fix this, what does growth look like in 6 months? <span className="text-[#00D084]">*</span>
+                  6. If we fix this, what does growth look like in 6 months? <span className="text-white/40 font-normal normal-case">(Optional)</span>
                 </label>
                 <textarea
                   id="forma-growth-vision"
-                  required
                   rows={3}
                   value={formA.sixMonthVision}
                   onChange={(e) => setFormA({ ...formA, sixMonthVision: e.target.value })}
@@ -446,7 +444,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 />
               </div>
 
-              {/* Field 7: Phone / WhatsApp (Phone field) */}
+              {/* Field 7: Phone / WhatsApp */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   7. Phone / WhatsApp <span className="text-[#00D084]">*</span>
@@ -462,7 +460,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 />
               </div>
 
-              {/* Field 8: Work / Personal Email */}
+              {/* Field 8: Email Address */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   8. Email Address <span className="text-[#00D084]">*</span>
@@ -495,6 +493,9 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                     </>
                   )}
                 </button>
+                <p className="mt-2.5 text-center text-xs text-white/60">
+                  Book a 30-minute call with Abhishek.
+                </p>
               </div>
             </form>
           </div>
@@ -503,7 +504,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
         {/* 3. FORM B: THE SHORT GAME */}
         {view === 'formB' && (
           <div id="view-form-b">
-            {/* Sticky Top Header Row: Back on left, Labels & Title, X on right */}
+            {/* Sticky Top Header Row */}
             <div className="sticky -top-6 sm:-top-8 -mx-6 sm:-mx-8 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 mb-6 bg-[#0A1931] border-b border-white/10 z-20">
               <div className="flex items-center justify-between gap-4">
                 <button
@@ -543,7 +544,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
             )}
 
             <form onSubmit={handleSubmitFormB} className="space-y-4">
-              {/* Field 1: Your Name (Text) */}
+              {/* Field 1: Your Name */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   1. Your Name <span className="text-[#00D084]">*</span>
@@ -559,7 +560,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 />
               </div>
 
-              {/* Field 2: Company Name (Text) */}
+              {/* Field 2: Company Name */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   2. Company Name <span className="text-[#00D084]">*</span>
@@ -575,10 +576,10 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 />
               </div>
 
-              {/* Field 3: Select Your Weapon (Multi-select Dropdown) */}
+              {/* Field 3: What do you need delivered? */}
               <div>
                 <label className="mb-1.5 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  3. Select Your Weapon <span className="text-[#00D084]">*</span>
+                  3. What do you need delivered? <span className="text-[#00D084]">*</span>
                 </label>
                 <div className="space-y-2">
                   {executionNeedOptions.map((option) => {
@@ -606,7 +607,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 </div>
               </div>
 
-              {/* Field 4: Do you have a ready brief / reference? (Yes / No) */}
+              {/* Field 4: Do you have a ready brief / reference? */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   4. Do you have a ready brief / reference? <span className="text-[#00D084]">*</span>
@@ -639,10 +640,10 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 </div>
               </div>
 
-              {/* Field 5: Budget for this asset/campaign (Dropdown: 50k-2L / 2-5L / 5-10L / 10L+) */}
+              {/* Field 5: Budget for this asset/campaign (INR) */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  5. Budget for this asset/campaign <span className="text-[#00D084]">*</span>
+                  5. Budget for this asset/campaign (INR) <span className="text-[#00D084]">*</span>
                 </label>
                 <select
                   id="formb-budget"
@@ -651,15 +652,15 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                   onChange={(e) => setFormB({ ...formB, budget: e.target.value as any })}
                   className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
                 >
-                  <option value="" disabled className="text-white/40">Select Budget</option>
-                  <option value="50k-2L">50k-2L</option>
-                  <option value="2-5L">2-5L</option>
-                  <option value="5-10L">5-10L</option>
-                  <option value="10L+">10L+</option>
+                  <option value="" disabled className="text-white/40">Select Budget (INR)</option>
+                  <option value="50k-2L">50k-2L INR</option>
+                  <option value="2-5L">2-5L INR</option>
+                  <option value="5-10L">5-10L INR</option>
+                  <option value="10L+">10L+ INR</option>
                 </select>
               </div>
 
-              {/* Field 6: Launch Timeline (Dropdown: Urgent <15 days / This Month / Next 30-60 days) */}
+              {/* Field 6: Launch Timeline */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   6. Launch Timeline <span className="text-[#00D084]">*</span>
@@ -675,10 +676,11 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                   <option value="Urgent <15 days">Urgent &lt;15 days</option>
                   <option value="This Month">This Month</option>
                   <option value="Next 30-60 days">Next 30-60 days</option>
+                  <option value="Planning ahead (60+ days)">Planning ahead (60+ days)</option>
                 </select>
               </div>
 
-              {/* Field 7: Phone / WhatsApp (Phone field) */}
+              {/* Field 7: Phone / WhatsApp */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   7. Phone / WhatsApp <span className="text-[#00D084]">*</span>
@@ -694,7 +696,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                 />
               </div>
 
-              {/* Field 8: Work / Personal Email */}
+              {/* Field 8: Email Address */}
               <div>
                 <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
                   8. Email Address <span className="text-[#00D084]">*</span>
@@ -742,6 +744,9 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                     </>
                   )}
                 </button>
+                <p className="mt-2.5 text-center text-xs text-white/60">
+                  Share your project brief. We reply with scope and cost.
+                </p>
               </div>
             </form>
           </div>
