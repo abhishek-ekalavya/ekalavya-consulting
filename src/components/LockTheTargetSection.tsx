@@ -45,7 +45,7 @@ export const LockTheTargetSection: React.FC = () => {
   return (
     <section 
       id="lock-target-section" 
-      aria-label="Lock the Target Conversion Form"
+      aria-label="Book a Call Conversion Form"
       className="w-full bg-[#0A1931] border-b border-white/10 py-10 sm:py-20"
     >
       <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export const LockTheTargetSection: React.FC = () => {
             <span>PRECISION INTAKE</span>
           </div>
           <h2 className="font-cinzel text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Lock the Target
+            Book a Call
           </h2>
           <p className="mt-3 text-base text-white/75 sm:text-lg">
             Ready to kill waste and drive 10X?
@@ -74,7 +74,7 @@ export const LockTheTargetSection: React.FC = () => {
                 <CheckCircle2 className="h-8 w-8" />
               </div>
               <h3 className="font-cinzel text-2xl font-bold text-white sm:text-3xl">
-                Target Locked.
+                Call Requested.
               </h3>
               <p className="mt-3 text-base text-white/80 font-medium leading-relaxed">
                 We'll be in touch in 24 hours.
@@ -235,10 +235,10 @@ export const LockTheTargetSection: React.FC = () => {
                   className="group relative flex w-full items-center justify-center gap-3 rounded-lg bg-[#00D080] py-4 px-6 font-mono text-base font-bold tracking-wider text-black shadow-lg shadow-[#00D080]/25 transition-all duration-200 hover:bg-[#00ba76] hover:shadow-[#00D080]/40 active:scale-[0.99] disabled:opacity-75"
                 >
                   {isSubmitting ? (
-                    <span>LOCKING TARGET...</span>
+                    <span>BOOKING CALL...</span>
                   ) : (
                     <>
-                      <span>Request Precision Call</span>
+                      <span>Book a Call</span>
                       <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
                     </>
                   )}
