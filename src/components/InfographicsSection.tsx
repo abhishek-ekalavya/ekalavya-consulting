@@ -8,7 +8,7 @@ import {
 const pillars = [
   {
     title: 'THE LONG GAME',
-    subtitle: 'Fractional Marketer',
+    subtitle: 'Fractional CMO',
     items: [
       { Icon: Compass, text: 'C-Suite GTM Strategy' },
       { Icon: Settings, text: 'System & Engine Building' },
