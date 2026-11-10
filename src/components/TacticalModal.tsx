@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { 
-  X, 
-  Crosshair, 
-  Compass, 
-  Flame, 
+import {
+  X,
+  Crosshair,
+  Compass,
+  Flame,
   Zap,
-  ArrowRight, 
+  ArrowRight,
   ArrowLeft,
-  ShieldCheck, 
+  ShieldCheck,
   Send,
   AlertCircle,
-  Check
+  Check,
 } from 'lucide-react';
 import { FormAData, FormBData, FormCData, ExecutionNeed, ModalView } from '../types';
 
@@ -92,10 +92,10 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
   if (view === 'closed') return null;
 
   const handleToggleNeed = (item: ExecutionNeed) => {
-    setFormB(prev => {
+    setFormB((prev) => {
       const exists = prev.whatNeeded.includes(item);
       if (exists) {
-        return { ...prev, whatNeeded: prev.whatNeeded.filter(n => n !== item) };
+        return { ...prev, whatNeeded: prev.whatNeeded.filter((n) => n !== item) };
       } else {
         return { ...prev, whatNeeded: [...prev.whatNeeded, item] };
       }
@@ -103,10 +103,10 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
   };
 
   const handleToggleLeadSource = (source: string) => {
-    setFormC(prev => {
+    setFormC((prev) => {
       const exists = prev.leadSources.includes(source);
       if (exists) {
-        return { ...prev, leadSources: prev.leadSources.filter(s => s !== source) };
+        return { ...prev, leadSources: prev.leadSources.filter((s) => s !== source) };
       } else {
         return { ...prev, leadSources: [...prev.leadSources, source] };
       }
@@ -115,7 +115,11 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
 
   const validatePhone = (phone: string): boolean => {
     const digits = phone.replace(/\D/g, '');
-    return digits.length === 10 || (digits.length === 11 && digits.startsWith('0')) || (digits.length === 12 && digits.startsWith('91'));
+    return (
+      digits.length === 10 ||
+      (digits.length === 11 && digits.startsWith('0')) ||
+      (digits.length === 12 && digits.startsWith('91'))
+    );
   };
 
   const validateEmail = (email: string): boolean => {
@@ -166,7 +170,13 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     const message = messageLines.join('\n');
 
     window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
-    window.open('mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM A - ' + formA.companyAndUrl + '&body=' + encodeURIComponent(message), '_blank');
+    window.open(
+      'mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM A - ' +
+        formA.companyAndUrl +
+        '&body=' +
+        encodeURIComponent(message),
+      '_blank'
+    );
 
     setTimeout(() => {
       setIsSubmittingA(false);
@@ -204,7 +214,8 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     setIsSubmittingB(true);
 
     const selectedDeliverables = formB.whatNeeded.join(', ');
-    const challengeB = formB.challenge || `Timeline: ${formB.timeline} (Brief ready: ${formB.briefReady})`;
+    const challengeB =
+      formB.challenge || `Timeline: ${formB.timeline} (Brief ready: ${formB.briefReady})`;
 
     const message = [
       `NEW LEAD - FORM B - ${selectedDeliverables}`,
@@ -214,11 +225,17 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
       `Email: ${formB.email}`,
       `Budget (INR): ${formB.budget}`,
       `Deliverables: ${selectedDeliverables}`,
-      `Challenge: ${challengeB}`
+      `Challenge: ${challengeB}`,
     ].join('\n');
 
     window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
-    window.open('mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM B - ' + formB.company + '&body=' + encodeURIComponent(message), '_blank');
+    window.open(
+      'mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM B - ' +
+        formB.company +
+        '&body=' +
+        encodeURIComponent(message),
+      '_blank'
+    );
 
     setTimeout(() => {
       setIsSubmittingB(false);
@@ -274,7 +291,13 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     const message = messageLines.join('\n');
 
     window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
-    window.open('mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM C - ' + formC.companyAndUrl + '&body=' + encodeURIComponent(message), '_blank');
+    window.open(
+      'mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM C - ' +
+        formC.companyAndUrl +
+        '&body=' +
+        encodeURIComponent(message),
+      '_blank'
+    );
 
     setTimeout(() => {
       setIsSubmittingC(false);
@@ -283,16 +306,21 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
   };
 
   return (
-    <div 
+    <div
       id="tactical-modal-overlay"
       className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/80 p-4 backdrop-blur-md"
     >
-      <div 
+      <div
         id="tactical-modal-card"
-        className={`relative my-8 w-full ${view === 'chooser' ? 'max-w-4xl' : 'max-w-2xl'} max-h-[90vh] overflow-y-auto rounded-xl border border-white/20 bg-[#0A1931] p-6 shadow-2xl transition-all sm:p-8`}
+        className={`relative my-8 w-full ${
+          view === 'chooser' ? 'max-w-4xl' : 'max-w-2xl'
+        } max-h-[90vh] overflow-y-auto rounded-xl border border-white/20 bg-[#0A1931] p-6 shadow-2xl transition-all sm:p-8`}
       >
         {/* Close Button (for Chooser and ThankYou views) */}
-        {(view === 'chooser' || view === 'thankYouA' || view === 'thankYouB' || view === 'thankYouC') && (
+        {(view === 'chooser' ||
+          view === 'thankYouA' ||
+          view === 'thankYouB' ||
+          view === 'thankYouC') && (
           <button
             id="modal-close-btn"
             onClick={onClose}
@@ -336,9 +364,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                       PATH 1
                     </span>
                   </div>
-                  <h4 className="font-cinzel text-lg font-bold text-white">
-                    I Need Direction
-                  </h4>
+                  <h4 className="font-cinzel text-lg font-bold text-white">I Need Direction</h4>
                   <div className="font-mono text-xs font-semibold text-[#00D084]">
                     The Long Game
                   </div>
@@ -368,9 +394,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                       PATH 2
                     </span>
                   </div>
-                  <h4 className="font-cinzel text-lg font-bold text-white">
-                    I Need Execution
-                  </h4>
+                  <h4 className="font-cinzel text-lg font-bold text-white">I Need Execution</h4>
                   <div className="font-mono text-xs font-semibold text-[#00D084]">
                     The Short Game
                   </div>
@@ -400,9 +424,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                       PATH 3
                     </span>
                   </div>
-                  <h4 className="font-cinzel text-lg font-bold text-white">
-                    I Need Automation
-                  </h4>
+                  <h4 className="font-cinzel text-lg font-bold text-white">I Need Automation</h4>
                   <div className="font-mono text-xs font-semibold text-[#00D084]">
                     The Smart Game
                   </div>
@@ -435,167 +457,4 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                   <ArrowLeft className="h-5 w-5" />
                 </button>
                 <div className="flex-1 min-w-0">
-                  <div className="font-mono text-xs font-bold tracking-widest text-[#00D084] uppercase">
-                    FORM A &bull; FRACTIONAL CMO
-                  </div>
-                  <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl mt-0.5 truncate">
-                    THE LONG GAME
-                  </h3>
-                </div>
-                <button
-                  type="button"
-                  onClick={onClose}
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-white/30 hover:bg-white/10 hover:text-white"
-                  title="Close"
-                  aria-label="Close"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {errorA && (
-              <div className="mb-4 flex items-center gap-2 rounded border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-200">
-                <AlertCircle className="h-4 w-4 shrink-0 text-red-400" />
-                <span>{errorA}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmitFormA} className="space-y-4">
-              <div>
-                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  1. Your Name <span className="text-[#00D084]">*</span>
-                </label>
-                <input
-                  id="forma-name"
-                  type="text"
-                  required
-                  value={formA.name}
-                  onChange={(e) => setFormA({ ...formA, name: e.target.value })}
-                  placeholder="e.g. Vikramaditya Rao"
-                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
-                />
-              </div>
-
-              <div>
-                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  2. Company Name + Website URL <span className="text-[#00D084]">*</span>
-                </label>
-                <input
-                  id="forma-company-url"
-                  type="text"
-                  required
-                  value={formA.companyAndUrl}
-                  onChange={(e) => setFormA({ ...formA, companyAndUrl: e.target.value })}
-                  placeholder="e.g. Titan Dynamics | titandynamics.com"
-                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
-                />
-              </div>
-
-              <div>
-                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  3. Current Monthly Marketing Spend (INR) <span className="text-[#00D084]">*</span>
-                </label>
-                <select
-                  id="forma-monthly-spend"
-                  required
-                  value={formA.monthlySpend}
-                  onChange={(e) => setFormA({ ...formA, monthlySpend: e.target.value as any })}
-                  className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
-                >
-                  <option value="" disabled className="text-white/40">Select Monthly Spend (INR)</option>
-                  <option value="<2L">&lt;2L INR</option>
-                  <option value="2-5L">2-5L INR</option>
-                  <option value="5-15L">5-15L INR</option>
-                  <option value="15L+">15L+ INR</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  4. Current Team Structure <span className="text-[#00D084]">*</span>
-                </label>
-                <select
-                  id="forma-team-structure"
-                  required
-                  value={formA.teamStructure}
-                  onChange={(e) => setFormA({ ...formA, teamStructure: e.target.value as any })}
-                  className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
-                >
-                  <option value="" disabled className="text-white/40">Select Team Structure</option>
-                  <option value="No team">No team</option>
-                  <option value="1-2 people">1-2 people</option>
-                  <option value="Small agency">Small agency</option>
-                  <option value="Large agency that needs oversight">Large agency that needs oversight</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  5. What is broken? <span className="text-[#00D084]">*</span>
-                </label>
-                <select
-                  id="forma-what-is-broken"
-                  required
-                  value={formA.whatIsBroken}
-                  onChange={(e) => setFormA({ ...formA, whatIsBroken: e.target.value as any })}
-                  className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
-                >
-                  <option value="" disabled className="text-white/40">Select What is Broken</option>
-                  <option value="No strategy">No strategy</option>
-                  <option value="Spends but no ROI">Spends but no ROI</option>
-                  <option value="Team exists but no leader">Team exists but no leader</option>
-                  <option value="Scaling to next market">Scaling to next market</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  6. If we fix this, what does growth look like in 6 months? <span className="text-white/40 font-normal normal-case">(Optional)</span>
-                </label>
-                <textarea
-                  id="forma-growth-vision"
-                  rows={3}
-                  value={formA.sixMonthVision}
-                  onChange={(e) => setFormA({ ...formA, sixMonthVision: e.target.value })}
-                  placeholder="Outline your 6-month growth target, revenue benchmark, or market milestone..."
-                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
-                />
-              </div>
-
-              <div>
-                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  7. Phone / WhatsApp <span className="text-[#00D084]">*</span>
-                </label>
-                <input
-                  id="forma-phone"
-                  type="tel"
-                  required
-                  value={formA.phone}
-                  onChange={(e) => setFormA({ ...formA, phone: e.target.value })}
-                  placeholder="e.g. 9820049031 (10 digits)"
-                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
-                />
-              </div>
-
-              <div>
-                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
-                  8. Email Address <span className="text-[#00D084]">*</span>
-                </label>
-                <input
-                  id="forma-email"
-                  type="email"
-                  required
-                  value={formA.email}
-                  onChange={(e) => setFormA({ ...formA, email: e.target.value })}
-                  placeholder="e.g. rahul@company.com or yourname@gmail.com"
-                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
-                />
-              </div>
-
-              <div className="pt-3">
-                <button
-                  id="forma-submit-btn"
-                  type="submit"
-                  disabled={isSubmittingA}
-                  className="flex w-full items-center justify-center gap-2 rounded bg-[#00D084] py-4 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow
+                  <div className="font-mono text-
