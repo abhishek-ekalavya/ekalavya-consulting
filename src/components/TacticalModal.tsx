@@ -151,7 +151,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
     setErrorA('');
     setIsSubmittingA(true);
 
-    const message = [
+    const messageLines = [
       'NEW LEAD - FORM A - THE LONG GAME',
       `Name: ${formA.name}`,
       `Company: ${formA.companyAndUrl}`,
@@ -159,8 +159,11 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
       `Email: ${formA.email}`,
       `Spend (INR): ${formA.monthlySpend}`,
       `Challenge: ${formA.whatIsBroken}`,
-      ...(formA.sixMonthVision ? [`6-Month Vision: ${formA.sixMonthVision}`] : []),
-    ].join('\n');
+    ];
+    if (formA.sixMonthVision) {
+      messageLines.push(`6-Month Vision: ${formA.sixMonthVision}`);
+    }
+    const message = messageLines.join('\n');
 
     window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
     window.open('mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM A - ' + formA.companyAndUrl + '&body=' + encodeURIComponent(message), '_blank');
@@ -254,7 +257,7 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
 
     const sources = formC.leadSources.join(', ');
 
-    const message = [
+    const messageLines = [
       'NEW LEAD - FORM C - THE SMART GAME (AI AUTOMATION)',
       `Name: ${formC.name}`,
       `Company: ${formC.companyAndUrl}`,
@@ -264,4 +267,335 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
       `Monthly Leads: ${formC.monthlyLeads}`,
       `Follow-Up Speed: ${formC.followUpSpeed}`,
       `Automate First: ${formC.automateFirst}`,
-      ...(formC.currentTools ?
+    ];
+    if (formC.currentTools) {
+      messageLines.push(`Current Tools: ${formC.currentTools}`);
+    }
+    const message = messageLines.join('\n');
+
+    window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
+    window.open('mailto:connect@ekalavyaconsulting.com?subject=New Lead - FORM C - ' + formC.companyAndUrl + '&body=' + encodeURIComponent(message), '_blank');
+
+    setTimeout(() => {
+      setIsSubmittingC(false);
+      onSelectView('thankYouC');
+    }, 600);
+  };
+
+  return (
+    <div 
+      id="tactical-modal-overlay"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/80 p-4 backdrop-blur-md"
+    >
+      <div 
+        id="tactical-modal-card"
+        className={`relative my-8 w-full ${view === 'chooser' ? 'max-w-4xl' : 'max-w-2xl'} max-h-[90vh] overflow-y-auto rounded-xl border border-white/20 bg-[#0A1931] p-6 shadow-2xl transition-all sm:p-8`}
+      >
+        {/* Close Button (for Chooser and ThankYou views) */}
+        {(view === 'chooser' || view === 'thankYouA' || view === 'thankYouB' || view === 'thankYouC') && (
+          <button
+            id="modal-close-btn"
+            onClick={onClose}
+            className="absolute right-4 top-4 z-10 rounded border border-white/10 p-1.5 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+            title="Close"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        )}
+
+        {/* 1. CHOOSER POPUP */}
+        {view === 'chooser' && (
+          <div id="view-chooser" className="py-2">
+            <div className="mb-6 flex items-center gap-3 border-b border-white/10 pb-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded border border-[#00D084]/40 bg-[#00D084]/10 text-[#00D084]">
+                <Crosshair className="h-6 w-6" />
+              </div>
+              <div>
+                <span className="font-mono text-xs font-semibold tracking-widest text-[#00D084] uppercase">
+                  BOOK A CALL
+                </span>
+                <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl">
+                  Which battle are we fighting?
+                </h3>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+              {/* BUTTON A: I Need Direction */}
+              <button
+                id="chooser-button-a"
+                onClick={() => onSelectView('formA')}
+                className="group relative flex flex-col justify-between rounded-lg border border-white/15 bg-white/[0.03] p-6 text-left transition-all duration-200 hover:border-[#00D084] hover:bg-white/[0.06] active:scale-[0.99]"
+              >
+                <div>
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded border border-[#00D084]/30 bg-[#00D084]/10 text-[#00D084]">
+                      <Compass className="h-5 w-5" />
+                    </div>
+                    <span className="font-mono text-[11px] font-semibold text-[#00D084] uppercase">
+                      PATH 1
+                    </span>
+                  </div>
+                  <h4 className="font-cinzel text-lg font-bold text-white">
+                    I Need Direction
+                  </h4>
+                  <div className="font-mono text-xs font-semibold text-[#00D084]">
+                    The Long Game
+                  </div>
+                  <p className="mt-3 text-xs leading-relaxed text-white/70">
+                    I need a CMO to lead my marketing.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4 font-mono text-xs font-bold text-white group-hover:text-[#00D084]">
+                  <span>OPEN FORM A</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </div>
+              </button>
+
+              {/* BUTTON B: I Need Execution */}
+              <button
+                id="chooser-button-b"
+                onClick={() => onSelectView('formB')}
+                className="group relative flex flex-col justify-between rounded-lg border border-white/15 bg-white/[0.03] p-6 text-left transition-all duration-200 hover:border-[#00D084] hover:bg-white/[0.06] active:scale-[0.99]"
+              >
+                <div>
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded border border-[#00D084]/30 bg-[#00D084]/10 text-[#00D084]">
+                      <Flame className="h-5 w-5" />
+                    </div>
+                    <span className="font-mono text-[11px] font-semibold text-[#00D084] uppercase">
+                      PATH 2
+                    </span>
+                  </div>
+                  <h4 className="font-cinzel text-lg font-bold text-white">
+                    I Need Execution
+                  </h4>
+                  <div className="font-mono text-xs font-semibold text-[#00D084]">
+                    The Short Game
+                  </div>
+                  <p className="mt-3 text-xs leading-relaxed text-white/70">
+                    I have direction, I need one campaign/asset nailed.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4 font-mono text-xs font-bold text-white group-hover:text-[#00D084]">
+                  <span>OPEN FORM B</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </div>
+              </button>
+
+              {/* BUTTON C: I Need Automation */}
+              <button
+                id="chooser-button-c"
+                onClick={() => onSelectView('formC')}
+                className="group relative flex flex-col justify-between rounded-lg border border-white/15 bg-white/[0.03] p-6 text-left transition-all duration-200 hover:border-[#00D084] hover:bg-white/[0.06] active:scale-[0.99]"
+              >
+                <div>
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded border border-[#00D084]/30 bg-[#00D084]/10 text-[#00D084]">
+                      <Zap className="h-5 w-5" />
+                    </div>
+                    <span className="font-mono text-[11px] font-semibold text-[#00D084] uppercase">
+                      PATH 3
+                    </span>
+                  </div>
+                  <h4 className="font-cinzel text-lg font-bold text-white">
+                    I Need Automation
+                  </h4>
+                  <div className="font-mono text-xs font-semibold text-[#00D084]">
+                    The Smart Game
+                  </div>
+                  <p className="mt-3 text-xs leading-relaxed text-white/70">
+                    Capture every lead and automate follow-ups &amp; reporting.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4 font-mono text-xs font-bold text-white group-hover:text-[#00D084]">
+                  <span>OPEN FORM C</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </div>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* 2. FORM A: THE LONG GAME */}
+        {view === 'formA' && (
+          <div id="view-form-a">
+            <div className="sticky -top-6 sm:-top-8 -mx-6 sm:-mx-8 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 mb-6 bg-[#0A1931] border-b border-white/10 z-20">
+              <div className="flex items-center justify-between gap-4">
+                <button
+                  type="button"
+                  onClick={() => onSelectView('chooser')}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-[#00D084] hover:bg-[#00D084]/10 hover:text-[#00D084]"
+                  title="Back to Which Battle"
+                  aria-label="Back to Which Battle"
+                >
+                  <ArrowLeft className="h-5 w-5" />
+                </button>
+                <div className="flex-1 min-w-0">
+                  <div className="font-mono text-xs font-bold tracking-widest text-[#00D084] uppercase">
+                    FORM A &bull; FRACTIONAL CMO
+                  </div>
+                  <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl mt-0.5 truncate">
+                    THE LONG GAME
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-white/30 hover:bg-white/10 hover:text-white"
+                  title="Close"
+                  aria-label="Close"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            {errorA && (
+              <div className="mb-4 flex items-center gap-2 rounded border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-200">
+                <AlertCircle className="h-4 w-4 shrink-0 text-red-400" />
+                <span>{errorA}</span>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmitFormA} className="space-y-4">
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  1. Your Name <span className="text-[#00D084]">*</span>
+                </label>
+                <input
+                  id="forma-name"
+                  type="text"
+                  required
+                  value={formA.name}
+                  onChange={(e) => setFormA({ ...formA, name: e.target.value })}
+                  placeholder="e.g. Vikramaditya Rao"
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  2. Company Name + Website URL <span className="text-[#00D084]">*</span>
+                </label>
+                <input
+                  id="forma-company-url"
+                  type="text"
+                  required
+                  value={formA.companyAndUrl}
+                  onChange={(e) => setFormA({ ...formA, companyAndUrl: e.target.value })}
+                  placeholder="e.g. Titan Dynamics | titandynamics.com"
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  3. Current Monthly Marketing Spend (INR) <span className="text-[#00D084]">*</span>
+                </label>
+                <select
+                  id="forma-monthly-spend"
+                  required
+                  value={formA.monthlySpend}
+                  onChange={(e) => setFormA({ ...formA, monthlySpend: e.target.value as any })}
+                  className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                >
+                  <option value="" disabled className="text-white/40">Select Monthly Spend (INR)</option>
+                  <option value="<2L">&lt;2L INR</option>
+                  <option value="2-5L">2-5L INR</option>
+                  <option value="5-15L">5-15L INR</option>
+                  <option value="15L+">15L+ INR</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  4. Current Team Structure <span className="text-[#00D084]">*</span>
+                </label>
+                <select
+                  id="forma-team-structure"
+                  required
+                  value={formA.teamStructure}
+                  onChange={(e) => setFormA({ ...formA, teamStructure: e.target.value as any })}
+                  className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                >
+                  <option value="" disabled className="text-white/40">Select Team Structure</option>
+                  <option value="No team">No team</option>
+                  <option value="1-2 people">1-2 people</option>
+                  <option value="Small agency">Small agency</option>
+                  <option value="Large agency that needs oversight">Large agency that needs oversight</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  5. What is broken? <span className="text-[#00D084]">*</span>
+                </label>
+                <select
+                  id="forma-what-is-broken"
+                  required
+                  value={formA.whatIsBroken}
+                  onChange={(e) => setFormA({ ...formA, whatIsBroken: e.target.value as any })}
+                  className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                >
+                  <option value="" disabled className="text-white/40">Select What is Broken</option>
+                  <option value="No strategy">No strategy</option>
+                  <option value="Spends but no ROI">Spends but no ROI</option>
+                  <option value="Team exists but no leader">Team exists but no leader</option>
+                  <option value="Scaling to next market">Scaling to next market</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  6. If we fix this, what does growth look like in 6 months? <span className="text-white/40 font-normal normal-case">(Optional)</span>
+                </label>
+                <textarea
+                  id="forma-growth-vision"
+                  rows={3}
+                  value={formA.sixMonthVision}
+                  onChange={(e) => setFormA({ ...formA, sixMonthVision: e.target.value })}
+                  placeholder="Outline your 6-month growth target, revenue benchmark, or market milestone..."
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  7. Phone / WhatsApp <span className="text-[#00D084]">*</span>
+                </label>
+                <input
+                  id="forma-phone"
+                  type="tel"
+                  required
+                  value={formA.phone}
+                  onChange={(e) => setFormA({ ...formA, phone: e.target.value })}
+                  placeholder="e.g. 9820049031 (10 digits)"
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  8. Email Address <span className="text-[#00D084]">*</span>
+                </label>
+                <input
+                  id="forma-email"
+                  type="email"
+                  required
+                  value={formA.email}
+                  onChange={(e) => setFormA({ ...formA, email: e.target.value })}
+                  placeholder="e.g. rahul@company.com or yourname@gmail.com"
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              <div className="pt-3">
+                <button
+                  id="forma-submit-btn"
+                  type="submit"
+                  disabled={isSubmittingA}
+                  className="flex w-full items-center justify-center gap-2 rounded bg-[#00D084] py-4 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow
