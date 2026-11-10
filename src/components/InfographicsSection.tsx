@@ -49,15 +49,15 @@ export const InfographicsSection: React.FC = () => {
       {/* 1. THE CHALLENGE (Circular Cycle Diagram) */}
       <section
         id="infographic-challenge-section"
-        aria-label="The Challenge - Same Effort. Same Spend. Zero Growth."
+        aria-label="Stuck in the Cycle - Four broken links keeping businesses from scaling profitably."
         className="relative w-full overflow-hidden border-b border-white/10 py-16 sm:py-24 px-4"
       >
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="font-cinzel text-3xl font-extrabold tracking-wide text-white sm:text-5xl">
-            THE CHALLENGE
+            STUCK IN THE CYCLE
           </h2>
           <p className="mt-3 font-mono text-xs sm:text-sm tracking-widest text-[#00D084]">
-            Same Effort. Same Spend. Zero Growth.
+            Four broken links keeping businesses from scaling profitably.
           </p>
 
           {/* Desktop Orbital Diagram */}
