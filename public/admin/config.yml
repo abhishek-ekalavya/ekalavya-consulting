@@ -269,3 +269,5 @@ collections:
             fields:
               - { label: "Badge", name: "badge", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
+              - { label: "Unit / Subtitle", name: "unit", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
