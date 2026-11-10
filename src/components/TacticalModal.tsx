@@ -457,4 +457,72 @@ export const TacticalModal: React.FC<TacticalModalProps> = ({
                   <ArrowLeft className="h-5 w-5" />
                 </button>
                 <div className="flex-1 min-w-0">
-                  <div className="font-mono text-
+                  <div className="font-mono text-xs font-bold tracking-widest text-[#00D084] uppercase">
+                    FORM A &bull; FRACTIONAL CMO
+                  </div>
+                  <h3 className="font-cinzel text-xl font-bold text-white sm:text-2xl mt-0.5 truncate">
+                    THE LONG GAME
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-white/30 hover:bg-white/10 hover:text-white"
+                  title="Close"
+                  aria-label="Close"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            {errorA && (
+              <div className="mb-4 flex items-center gap-2 rounded border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-200">
+                <AlertCircle className="h-4 w-4 shrink-0 text-red-400" />
+                <span>{errorA}</span>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmitFormA} className="space-y-4">
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  1. Your Name <span className="text-[#00D084]">*</span>
+                </label>
+                <input
+                  id="forma-name"
+                  type="text"
+                  required
+                  value={formA.name}
+                  onChange={(e) => setFormA({ ...formA, name: e.target.value })}
+                  placeholder="e.g. Vikramaditya Rao"
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  2. Company Name + Website URL <span className="text-[#00D084]">*</span>
+                </label>
+                <input
+                  id="forma-company-url"
+                  type="text"
+                  required
+                  value={formA.companyAndUrl}
+                  onChange={(e) => setFormA({ ...formA, companyAndUrl: e.target.value })}
+                  placeholder="e.g. Titan Dynamics | titandynamics.com"
+                  className="w-full rounded border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1 block font-mono text-xs font-semibold text-white/90 uppercase">
+                  3. Current Monthly Marketing Spend (INR) <span className="text-[#00D084]">*</span>
+                </label>
+                <select
+                  id="forma-monthly-spend"
+                  required
+                  value={formA.monthlySpend}
+                  onChange={(e) => setFormA({ ...formA, monthlySpend: e.target.value as any })}
+                  className="w-full rounded border border-white/15 bg-[#0A1931] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[#00D084] focus:outline-none focus:ring-1 focus:ring-[#00D084]"
+                >
+                  <option value
