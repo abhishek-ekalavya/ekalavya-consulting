@@ -53,8 +53,7 @@
         "Board-level reporting and a growth roadmap"
       ],
       "best_for_label": "Best for:",
-      "best_for_text": "Scaling startups, mid-sized brands, and Pan-India or Middle East businesses preparing for their next stage of growth.",
-      "link_text": "Need Standalone Project Delivery? Explore Specialised Execution"
+      "best_for_text": "Scaling startups, mid-sized brands, and Pan-India or Middle East businesses preparing for their next stage of growth."
     },
     "path2": {
       "label": "PATH 2 - THE SHORT GAME",
@@ -90,8 +89,42 @@
         }
       ],
       "best_for_label": "Best for:",
-      "best_for_text": "Businesses that need a specific project or a time-bound campaign delivered to CMO standards, without hiring a large team.",
-      "link_text": "Need strategic direction & budget governance? Explore Fractional CMO"
+      "best_for_text": "Businesses that need a specific project or a time-bound campaign delivered to CMO standards, without hiring a large team."
+    },
+    "path3": {
+      "label": "PATH 3 • THE SMART GAME",
+      "title": "AI Automation Systems",
+      "description": "For founders who want more output without adding headcount. You have the team and the direction. You need systems that keep working when your team is offline. We set up tested, ready-to-run AI automation that removes manual work. Set it once. It keeps working.",
+      "list_heading": "What we automate:",
+      "categories": [
+        {
+          "title": "A. Lead capture and instant follow-up",
+          "items": [
+            "Capture leads from your website, ads, WhatsApp and forms",
+            "WhatsApp and email follow-up in under 60 seconds",
+            "Lead scoring, routing and nurturing until a meeting is booked",
+            "No lead left cold. No follow-up missed."
+          ]
+        },
+        {
+          "title": "B. Content and communication",
+          "items": [
+            "AI-assisted content systems for social, email and WhatsApp",
+            "Drafts in your brand voice, with repurposing and scheduling",
+            "Founder and brand content at scale, without a content team"
+          ]
+        },
+        {
+          "title": "C. Reporting and revenue operations",
+          "items": [
+            "Automated weekly reports on spend, leads, sales and ROI",
+            "CRM clean-up, pipeline tracking and sales dashboards",
+            "One dashboard. A clear view of what works."
+          ]
+        }
+      ],
+      "best_for_label": "Best for:",
+      "best_for_text": "Founders and mid-sized brands already getting leads and running marketing, but losing time, leads and money to manual follow-ups and messy operations."
     },
     "closing_line": "Both paths end the same way: No black boxes. No bloated markups. Institutional ownership of outcome."
   },
