@@ -127,7 +127,6 @@ collections:
                     field: { label: "Point", name: "item", widget: "string" }
                   - { label: "Best For Label", name: "best_for_label", widget: "string" }
                   - { label: "Best For Text", name: "best_for_text", widget: "text" }
-                  - { label: "Bottom Link Text", name: "link_text", widget: "string" }
               - label: "Path 2 - The Short Game"
                 name: "path2"
                 widget: "object"
@@ -147,7 +146,25 @@ collections:
                         field: { label: "Item", name: "item", widget: "string" }
                   - { label: "Best For Label", name: "best_for_label", widget: "string" }
                   - { label: "Best For Text", name: "best_for_text", widget: "text" }
-                  - { label: "Bottom Link Text", name: "link_text", widget: "string" }
+              - label: "Path 3 - The Smart Game"
+                name: "path3"
+                widget: "object"
+                fields:
+                  - { label: "Top Label", name: "label", widget: "string" }
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "List Heading", name: "list_heading", widget: "string" }
+                  - label: "Automation Categories"
+                    name: "categories"
+                    widget: "list"
+                    fields:
+                      - { label: "Category Title", name: "title", widget: "string" }
+                      - label: "Items"
+                        name: "items"
+                        widget: "list"
+                        field: { label: "Item", name: "item", widget: "string" }
+                  - { label: "Best For Label", name: "best_for_label", widget: "string" }
+                  - { label: "Best For Text", name: "best_for_text", widget: "text" }
               - { label: "Closing Line Above CTA", name: "closing_line", widget: "text" }
           - label: "Proof of Precision Header"
             name: "proof_of_precision"
@@ -251,88 +268,4 @@ collections:
             widget: "object"
             fields:
               - { label: "Badge", name: "badge", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Unit / Subtitle", name: "unit", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-          - { label: "Bottom CTA Button Text", name: "cta_text", widget: "string", required: false, default: "LOCK THE TARGET" }
-
-      - name: "services"
-        label: "Services (The Arsenal)"
-        file: "content/pages/services.json"
-        fields:
-          - { label: "Section Badge", name: "arsenal_badge", widget: "string" }
-          - { label: "Section Title", name: "arsenal_title", widget: "string" }
-          - { label: "Section Subtitle", name: "arsenal_subtitle", widget: "string" }
-          - label: "Service Cards"
-            name: "services"
-            widget: "list"
-            fields:
-              - { label: "ID (lowercase-no-spaces)", name: "id", widget: "string" }
-              - label: "Icon"
-                name: "icon_type"
-                widget: "select"
-                default: "shield"
-                options:
-                  - { label: "Shield", value: "shield" }
-                  - { label: "Compass", value: "compass" }
-                  - { label: "Award", value: "award" }
-                  - { label: "Trending Up", value: "trending" }
-                  - { label: "Crosshair", value: "crosshair" }
-                  - { label: "Sparkles", value: "sparkles" }
-              - { label: "Service Title", name: "title", widget: "string" }
-              - { label: "Scope Tag", name: "scope", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - label: "Bottom Tags"
-                name: "tags"
-                widget: "list"
-                field: { label: "Tag", name: "tag", widget: "string" }
-
-      - name: "contact"
-        label: "Contact Us"
-        file: "content/pages/contact.json"
-        fields:
-          - { label: "Breadcrumb Tag", name: "breadcrumb", widget: "string" }
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Page Subtitle", name: "subtitle", widget: "text" }
-          - label: "Direct Executive Lines Card"
-            name: "direct_box"
-            widget: "object"
-            fields:
-              - { label: "Card Title", name: "title", widget: "string" }
-              - { label: "Card Subtitle", name: "subtitle", widget: "text" }
-              - { label: "WhatsApp Label", name: "whatsapp_label", widget: "string" }
-              - { label: "WhatsApp Number Display", name: "whatsapp_display", widget: "string" }
-              - { label: "WhatsApp Link URL", name: "whatsapp_url", widget: "string" }
-              - { label: "Phone Label", name: "phone_label", widget: "string" }
-              - { label: "Phone Number Display", name: "phone_display", widget: "string" }
-              - { label: "Phone Tel Link (tel:+91...)", name: "phone_href", widget: "string" }
-              - { label: "Email Label", name: "email_label", widget: "string" }
-              - { label: "Email Address", name: "email_display", widget: "string" }
-              - { label: "Response Window Text", name: "response_sla", widget: "string" }
-          - label: "Submit Formal Brief Card"
-            name: "brief_box"
-            widget: "object"
-            fields:
-              - { label: "Top Badge", name: "badge", widget: "string" }
-              - { label: "Card Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - label: "Bullet Points"
-                name: "bullets"
-                widget: "list"
-                field: { label: "Bullet", name: "bullet", widget: "string" }
-              - { label: "CTA Button Text", name: "cta_text", widget: "string" }
-
-  # ==========================================================
-  # 4. SETTINGS
-  # ==========================================================
-  - name: "settings"
-    label: "Settings"
-    files:
-      - name: "general"
-        label: "General Settings"
-        file: "content/settings/general.json"
-        fields:
-          - { label: "Site Name", name: "site_name", widget: "string" }
-          - { label: "Logo Text", name: "logo_text", widget: "string" }
-          - { label: "Contact Email", name: "email", widget: "string" }
-          - { label: "Phone Number", name: "phone", widget: "string" }
+              - { label: "Title", name: "title", widget: "string"
