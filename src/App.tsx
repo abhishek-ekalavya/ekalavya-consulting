@@ -51,6 +51,10 @@ function AppContent() {
     setModalView('formB');
   };
 
+  const handleSelectSmartGame = () => {
+    setModalView('formC');
+  };
+
   const handleCloseModal = () => {
     setModalView('closed');
   };
@@ -86,7 +90,7 @@ function AppContent() {
         </div>
       </div>
 
-      {/* Sticky Header Navigation with 6 links & LOCK THE TARGET button */}
+      {/* Sticky Header Navigation with 6 links & BOOK A CALL button */}
       <Navbar onLockTarget={handleOpenChooser} />
 
       {/* Main Routed Content */}
@@ -99,6 +103,7 @@ function AppContent() {
                 onLockTarget={handleOpenChooser}
                 onSelectLongGame={handleSelectLongGame}
                 onSelectShortGame={handleSelectShortGame}
+                onSelectSmartGame={handleSelectSmartGame}
               />
             } 
           />
@@ -121,6 +126,7 @@ function AppContent() {
                 onLockTarget={handleOpenChooser}
                 onSelectLongGame={handleSelectLongGame}
                 onSelectShortGame={handleSelectShortGame}
+                onSelectSmartGame={handleSelectSmartGame}
               />
             } 
           />
@@ -147,7 +153,14 @@ function AppContent() {
           {/* Catch-all to Home */}
           <Route 
             path="*" 
-            element={<HomePage onLockTarget={handleOpenChooser} />} 
+            element={
+              <HomePage 
+                onLockTarget={handleOpenChooser}
+                onSelectLongGame={handleSelectLongGame}
+                onSelectShortGame={handleSelectShortGame}
+                onSelectSmartGame={handleSelectSmartGame}
+              />
+            } 
           />
         </Routes>
       </main>
@@ -155,7 +168,7 @@ function AppContent() {
       {/* Footer */}
       <Footer onLockTarget={handleOpenChooser} />
 
-      {/* Tactical Chooser / Form A / Form B Modal */}
+      {/* Tactical Chooser / Form A / Form B / Form C Modal */}
       <TacticalModal
         view={modalView}
         onClose={handleCloseModal}
