@@ -9,7 +9,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = () => {
   const settings = getSiteSettings();
-  const email = settings.email || 'reach@ekalavyaconsulting.com';
+  const email = settings.email || 'connect@ekalavyaconsulting.com';
   const phone = settings.phone || '+91 98205 91873';
 
   return (
