@@ -234,4 +234,37 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({ onLockTarget }) => {
               </div>
             </div>
 
-            <div className="mt-8 rounded border border
+            <div className="mt-8 rounded border border-white/10 bg-white/[0.02] p-4">
+              <span className="font-mono text-xs font-bold text-[#00D084] uppercase">
+                {path3?.best_for_label || 'Best for:'}{' '}
+              </span>
+              <span className="text-sm text-white/80">
+                {path3?.best_for_text || 'Founders and mid-sized brands already getting leads and running marketing, but losing time, leads and money to manual follow-ups and messy operations.'}
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Closing line below all columns (Center) */}
+        <div className="mt-16 text-center">
+          <p className="mx-auto max-w-3xl text-base font-semibold leading-relaxed text-white/90 sm:text-xl">
+            {hww?.closing_line || 'Both paths end the same way: No black boxes. No bloated markups. Institutional ownership of outcome.'}
+          </p>
+
+          <div className="mt-8 flex justify-center">
+            <button
+              id="how-we-work-lock-target-btn"
+              onClick={onLockTarget}
+              className="group relative flex items-center justify-center gap-3 rounded bg-[#00D084] px-9 py-4 font-mono text-base font-bold tracking-wider text-black shadow-xl shadow-[#00D084]/25 transition-all duration-200 hover:bg-[#00ba76] hover:shadow-[#00D084]/40 active:scale-[0.99]"
+            >
+              <Crosshair className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90" />
+              <span>{heroCta}</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
