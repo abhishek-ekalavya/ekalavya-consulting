@@ -268,4 +268,4 @@ collections:
             widget: "object"
             fields:
               - { label: "Badge", name: "badge", widget: "string" }
-              - { label: "Title", name: "title", widget: "string"
+              - { label: "Title", name: "title", widget: "string" }
