@@ -178,4 +178,4 @@ export const InfographicsSection: React.FC = () => {
                 <h3 className="font-cinzel text-xl font-bold tracking-wider text-[#00D084]">
                   THE SMART GAME
                 </h3>
-                <p className="mt-1 font-mono
+                <p className="mt-1 font-mono text-xs text-white/80">
