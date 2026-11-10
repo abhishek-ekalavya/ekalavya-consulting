@@ -35,7 +35,25 @@ export const LockTheTargetSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate submission
+    const message = [
+      'NEW LEAD - BOOK A CALL',
+      `Name: ${formData.name}`,
+      `Company: ${formData.company}`,
+      `Phone: ${formData.phone}`,
+      `Email: ${formData.email}`,
+      `Spend: ${formData.monthlySpend}`,
+      `Challenge: ${formData.biggestChallenge}`,
+    ].join('\n');
+
+    window.open('https://wa.me/919820049031?text=' + encodeURIComponent(message), '_blank');
+    window.open(
+      'mailto:connect@ekalavyaconsulting.com?subject=New Lead - Book a Call - ' +
+        encodeURIComponent(formData.company) +
+        '&body=' +
+        encodeURIComponent(message),
+      '_blank'
+    );
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -77,7 +95,7 @@ export const LockTheTargetSection: React.FC = () => {
                 Call Requested.
               </h3>
               <p className="mt-3 text-base text-white/80 font-medium leading-relaxed">
-                We'll be in touch in 24 hours.
+                WhatsApp + Email draft opened. We'll be in touch in 24 hours.
               </p>
               
               <div className="mt-6 rounded-lg border border-white/10 bg-white/[0.02] p-4 text-left font-mono text-xs text-white/70 space-y-1.5">
