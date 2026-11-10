@@ -7,6 +7,7 @@ interface ServicesPageProps {
   onLockTarget: () => void;
   onSelectLongGame?: () => void;
   onSelectShortGame?: () => void;
+  onSelectSmartGame?: () => void;
 }
 
 export const ServicesPage: React.FC<ServicesPageProps> = ({ onLockTarget }) => {
@@ -14,7 +15,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onLockTarget }) => {
     <div className="bg-[#0A1931] min-h-screen">
       {/* Infographics: The Challenge & The Answer */}
       <InfographicsSection />
-      {/* Exactly matches landing page starting from Two Paths... till lock the target button */}
+      {/* Exactly matches landing page starting from Two Paths... till Book a Call button */}
       <HowWeWork onLockTarget={onLockTarget} />
       {/* Detailed Services Arsenal */}
       <TheArsenal />
