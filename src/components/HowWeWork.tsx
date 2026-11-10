@@ -12,6 +12,7 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({ onLockTarget }) => {
   const hww = homeData.how_we_work;
   const path1 = hww?.path1;
   const path2 = hww?.path2;
+  const path3 = hww?.path3;
 
   const path1Items = path1?.items?.length
     ? path1.items
@@ -54,6 +55,36 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({ onLockTarget }) => {
         },
       ];
 
+  const path3Categories = path3?.categories?.length
+    ? path3.categories
+    : [
+        {
+          title: 'A. Lead capture and instant follow-up',
+          items: [
+            'Capture leads from your website, ads, WhatsApp and forms',
+            'WhatsApp and email follow-up in under 60 seconds',
+            'Lead scoring, routing and nurturing until a meeting is booked',
+            'No lead left cold. No follow-up missed.',
+          ],
+        },
+        {
+          title: 'B. Content and communication',
+          items: [
+            'AI-assisted content systems for social, email and WhatsApp',
+            'Drafts in your brand voice, with repurposing and scheduling',
+            'Founder and brand content at scale, without a content team',
+          ],
+        },
+        {
+          title: 'C. Reporting and revenue operations',
+          items: [
+            'Automated weekly reports on spend, leads, sales and ROI',
+            'CRM clean-up, pipeline tracking and sales dashboards',
+            'One dashboard. A clear view of what works.',
+          ],
+        },
+      ];
+
   return (
     <section id="how-we-work-section" className="relative border-b border-white/10 bg-[#0A1931] py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -68,8 +99,8 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({ onLockTarget }) => {
           </p>
         </div>
 
-        {/* 2 COLUMNS SIDE-BY-SIDE */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+        {/* 3 COLUMNS SIDE-BY-SIDE */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-8">
           
           {/* COLUMN 1: PATH 1 - THE LONG GAME */}
           <div 
@@ -101,25 +132,15 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({ onLockTarget }) => {
                   ))}
                 </ul>
               </div>
+            </div>
 
-              <div className="mt-8 rounded border border-white/10 bg-white/[0.02] p-4">
-                <span className="font-mono text-xs font-bold text-[#00D084] uppercase">
-                  {path1?.best_for_label || 'Best for:'}{' '}
-                </span>
-                <span className="text-sm text-white/80">
-                  {path1?.best_for_text || 'Scaling startups, mid-sized brands, and Pan-India / Middle East businesses preparing for next-stage growth.'}
-                </span>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-white/10">
-                <a 
-                  href="#path-2-short-game-card" 
-                  className="font-mono text-xs text-[#00D084] hover:underline inline-flex items-center gap-1.5 transition-colors"
-                >
-                  <span>{path1?.link_text || 'Need standalone project delivery? Explore Specialized Execution'}</span>
-                  <span>&rarr;</span>
-                </a>
-              </div>
+            <div className="mt-8 rounded border border-white/10 bg-white/[0.02] p-4">
+              <span className="font-mono text-xs font-bold text-[#00D084] uppercase">
+                {path1?.best_for_label || 'Best for:'}{' '}
+              </span>
+              <span className="text-sm text-white/80">
+                {path1?.best_for_text || 'Scaling startups, mid-sized brands, and Pan-India / Middle East businesses preparing for next-stage growth.'}
+              </span>
             </div>
           </div>
 
@@ -161,49 +182,56 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({ onLockTarget }) => {
                   </div>
                 ))}
               </div>
+            </div>
 
-              <div className="mt-8 rounded border border-white/10 bg-white/[0.02] p-4">
-                <span className="font-mono text-xs font-bold text-[#00D084] uppercase">
-                  {path2?.best_for_label || 'Best for:'}{' '}
-                </span>
-                <span className="text-sm text-white/80">
-                  {path2?.best_for_text || 'Businesses that need a specialized project or a time-bound campaign delivered to CMO-standards, without hiring an army.'}
-                </span>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-white/10">
-                <a 
-                  href="#path-1-long-game-card" 
-                  className="font-mono text-xs text-[#00D084] hover:underline inline-flex items-center gap-1.5 transition-colors"
-                >
-                  <span>{path2?.link_text || 'Need strategic direction & budget governance? Explore Fractional CMO'}</span>
-                  <span>&rarr;</span>
-                </a>
-              </div>
+            <div className="mt-8 rounded border border-white/10 bg-white/[0.02] p-4">
+              <span className="font-mono text-xs font-bold text-[#00D084] uppercase">
+                {path2?.best_for_label || 'Best for:'}{' '}
+              </span>
+              <span className="text-sm text-white/80">
+                {path2?.best_for_text || 'Businesses that need a specialized project or a time-bound campaign delivered to CMO-standards, without hiring an army.'}
+              </span>
             </div>
           </div>
 
-        </div>
+          {/* COLUMN 3: PATH 3 - THE SMART GAME */}
+          <div 
+            id="path-3-smart-game-card"
+            className="flex flex-col justify-between rounded-lg border border-white/15 bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#00D084]/40 hover:bg-white/[0.05] sm:p-8"
+          >
+            <div>
+              <div className="mb-2 font-mono text-xs font-bold tracking-widest text-[#00D084] uppercase">
+                {path3?.label || 'PATH 3 • THE SMART GAME'}
+              </div>
+              <h2 className="font-cinzel text-2xl font-bold text-white sm:text-3xl">
+                {path3?.title || 'AI Automation Systems'}
+              </h2>
+              
+              <p className="mt-4 text-sm leading-relaxed text-white/75 sm:text-base">
+                {path3?.description || 'For founders who want more output without adding headcount. You have the team and the direction. You need systems that keep working when your team is offline. We set up tested, ready-to-run AI automation that removes manual work. Set it once. It keeps working.'}
+              </p>
 
-        {/* Closing line below both columns (Center) */}
-        <div className="mt-16 text-center">
-          <p className="mx-auto max-w-3xl text-base font-semibold leading-relaxed text-white/90 sm:text-xl">
-            {hww?.closing_line || 'Both paths end the same way: No black boxes. No bloated markups. Institutional ownership of outcome.'}
-          </p>
+              <div className="mt-8 space-y-6">
+                <h3 className="font-mono text-xs font-bold tracking-wider text-white uppercase">
+                  {path3?.list_heading || 'What we automate:'}
+                </h3>
 
-          <div className="mt-8 flex justify-center">
-            <button
-              id="how-we-work-lock-target-btn"
-              onClick={onLockTarget}
-              className="group relative flex items-center justify-center gap-3 rounded bg-[#00D084] px-9 py-4 font-mono text-base font-bold tracking-wider text-black shadow-xl shadow-[#00D084]/25 transition-all duration-200 hover:bg-[#00ba76] hover:shadow-[#00D084]/40 active:scale-[0.99]"
-            >
-              <Crosshair className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90" />
-              <span>{heroCta}</span>
-            </button>
-          </div>
-        </div>
+                {path3Categories.map((cat, idx) => (
+                  <div key={idx} className="rounded border border-white/10 bg-white/[0.02] p-4">
+                    <h3 className="font-cinzel text-sm font-bold text-[#00D084]">
+                      {cat.title}
+                    </h3>
+                    <ul className="mt-2.5 space-y-1.5 text-sm text-white/80">
+                      {(cat.items || []).map((item, itemIdx) => (
+                        <li key={itemIdx} className="flex items-start gap-2">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00D084]" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-      </div>
-    </section>
-  );
-};
+            <div className="mt-8 rounded border border
