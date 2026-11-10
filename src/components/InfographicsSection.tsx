@@ -8,7 +8,7 @@ import {
 const pillars = [
   {
     title: 'THE LONG GAME',
-    subtitle: 'Fractional CMO',
+    subtitle: 'Fractional CMO Services',
     items: [
       { Icon: Compass, text: 'C-Suite GTM Strategy' },
       { Icon: Settings, text: 'System & Engine Building' },
@@ -17,7 +17,7 @@ const pillars = [
   },
   {
     title: 'THE SHORT GAME',
-    subtitle: 'Strategic Execution',
+    subtitle: 'Specialized Execution',
     items: [
       { Icon: Target, text: '360° Campaign Planning' },
       { Icon: Zap, text: 'High-Velocity Execution' },
@@ -26,7 +26,7 @@ const pillars = [
   },
   {
     title: 'THE SMART GAME',
-    subtitle: 'AI Automation',
+    subtitle: 'AI Automation Systems',
     items: [
       { Icon: Inbox, text: 'Capture Every Lead' },
       { Icon: Timer, text: 'Follow up in Under 60 Seconds' },
