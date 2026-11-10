@@ -1,15 +1,17 @@
 import React from 'react';
-import { Compass, Flame, ArrowRight, Check } from 'lucide-react';
+import { Compass, Flame, Zap, ArrowRight, Check } from 'lucide-react';
 import { getHomeContent } from '../data/contentLoader';
 
 interface EngagementBattleSectionProps {
   onSelectLongGame: () => void;
   onSelectShortGame: () => void;
+  onSelectSmartGame?: () => void;
 }
 
 export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = ({
   onSelectLongGame,
   onSelectShortGame,
+  onSelectSmartGame,
 }) => {
   const homeData = getHomeContent();
   const battle = homeData.engagement_battle;
@@ -19,6 +21,12 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
   const cardAPoints = cardA?.points?.length
     ? cardA.points
     : ['GTM Strategy', 'Audit Growth Leaks', 'Build 90-Day Roadmap'];
+
+  const cardCPoints = [
+    'Capture every lead',
+    'Follow up in under 60 seconds',
+    'One weekly report on spend, leads and ROI',
+  ];
 
   return (
     <section 
@@ -37,14 +45,14 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
             {battle?.title || 'WHICH BATTLE ARE WE FIGHTING?'}
           </h2>
           <p className="mt-4 text-base text-white/75 sm:text-lg">
-            {battle?.subtitle || 'Stop guessing. Lock direction or lock execution.'}
+            {battle?.subtitle || 'Stop guessing. Lock direction, execution, or automation.'}
           </p>
         </div>
 
-        {/* 2 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        {/* 3 Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
           
-          {/* CARD A - Active Style */}
+          {/* CARD A - The Long Game */}
           <div 
             id="card-engagement-a"
             className="group relative flex flex-col justify-between rounded-xl border border-white/15 bg-[#071326] p-6 sm:p-8 transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-[#00D080]/10"
@@ -90,7 +98,7 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
             </div>
           </div>
 
-          {/* CARD B - Active Style */}
+          {/* CARD B - The Short Game */}
           <div 
             id="card-engagement-b"
             className="group relative flex flex-col justify-between rounded-xl border border-white/15 bg-[#071326] p-6 sm:p-8 transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-[#00D080]/10"
@@ -132,6 +140,52 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
               </button>
               <p className="mt-3 text-center text-xs text-white/60">
                 Share your project brief. We reply with scope and cost.
+              </p>
+            </div>
+          </div>
+
+          {/* CARD C - The Smart Game */}
+          <div 
+            id="card-engagement-c"
+            className="group relative flex flex-col justify-between rounded-xl border border-white/15 bg-[#071326] p-6 sm:p-8 transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-[#00D080]/10"
+          >
+            <div>
+              <div className="flex items-center justify-between gap-4 mb-5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#00D080]/30 bg-[#00D080]/10 text-[#00D080]">
+                  <Zap className="h-5 w-5" />
+                </div>
+                <span className="font-mono text-xs font-bold tracking-widest text-[#00D080] uppercase">
+                  FORM C &bull; AI AUTOMATION
+                </span>
+              </div>
+
+              <h3 className="font-cinzel text-2xl font-bold text-white sm:text-3xl">
+                THE SMART GAME
+              </h3>
+
+              <ul className="mt-6 space-y-3 font-sans text-sm text-white/80">
+                {cardCPoints.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#00D080]/20 text-[#00D080]">
+                      <Check className="h-3 w-3 stroke-[3]" />
+                    </div>
+                    <span className="font-medium text-white/90">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <button
+                type="button"
+                onClick={onSelectSmartGame}
+                className="w-full py-4 px-6 rounded-lg bg-[#00D080] hover:bg-[#00ba76] text-black font-mono font-bold tracking-wider text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-[#00D080]/20 transition-all duration-200 active:scale-[0.99]"
+              >
+                <span>LOCK YOUR AUTOMATION</span>
+                <ArrowRight className="h-4 w-4" />
+              </button>
+              <p className="mt-3 text-center text-xs text-white/60">
+                Tell us how leads reach you today. We show you where they slip.
               </p>
             </div>
           </div>
