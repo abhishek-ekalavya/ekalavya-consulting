@@ -89,7 +89,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onLockTarget }) => {
 
               {/* Email */}
               <a
-                href={`mailto:${direct?.email_display || 'helloekalavya@gmail.com'}`}
+                href={`mailto:${direct?.email_display || 'connect@ekalavyaconsulting.com'}`}
                 className="group flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.02] p-4 transition-all hover:border-white/25 hover:bg-white/5"
               >
                 <div className="flex items-center gap-3.5">
@@ -101,7 +101,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onLockTarget }) => {
                       {direct?.email_label || 'Official Dossier Email'}
                     </div>
                     <div className="font-mono text-base font-bold text-white">
-                      {direct?.email_display || 'helloekalavya@gmail.com'}
+                      {direct?.email_display || 'connect@ekalavyaconsulting.com'}
                     </div>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onLockTarget }) => {
               </h2>
 
               <p className="mt-3 text-xs leading-relaxed text-white/70 sm:text-sm">
-                {brief?.description || 'If your requirement is already defined, launch the Target Chooser directly. Choose between fractional governance (Long Game) or specialized project execution (Short Game).'}
+                {brief?.description || 'If your requirement is already defined, launch the Target Chooser directly. Choose between fractional governance (Long Game), specialized project execution (Short Game), or AI automation (Smart Game).'}
               </p>
 
               <div className="mt-6 space-y-3 font-mono text-xs text-white/60">
@@ -147,7 +147,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onLockTarget }) => {
                 className="flex w-full items-center justify-center gap-2.5 rounded bg-[#10B65D] py-3.5 font-mono text-sm font-bold tracking-wider text-white shadow-xl shadow-[#10B65D]/25 transition-all hover:bg-[#0ea052]"
               >
                 <Crosshair className="h-4 w-4" />
-                <span>{brief?.cta_text || 'LOCK THE TARGET NOW'}</span>
+                <span>{brief?.cta_text || 'BOOK A CALL'}</span>
               </button>
             </div>
           </div>
