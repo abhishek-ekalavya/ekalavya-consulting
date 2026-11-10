@@ -19,7 +19,7 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onLockTarget }) => {
 
         {/* Title */}
         <h1 className="font-cinzel text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          BLOGS
+          BLOG
         </h1>
 
         {/* Subtitle */}
