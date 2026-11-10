@@ -84,6 +84,9 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
                 <span>{cardA?.cta || 'LOCK YOUR GROWTH DIRECTION'}</span>
                 <ArrowRight className="h-4 w-4" />
               </button>
+              <p className="mt-3 text-center text-xs text-white/60">
+                Book a 30-minute call with Abhishek.
+              </p>
             </div>
           </div>
 
@@ -127,6 +130,9 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
                 <span>{cardB?.cta || 'LOCK YOUR EXECUTION'}</span>
                 <ArrowRight className="h-4 w-4" />
               </button>
+              <p className="mt-3 text-center text-xs text-white/60">
+                Share your project brief. We reply with scope and cost.
+              </p>
             </div>
           </div>
 
