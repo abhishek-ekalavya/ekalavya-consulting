@@ -72,7 +72,6 @@ export interface HomeContent {
       items: string[];
       best_for_label: string;
       best_for_text: string;
-      link_text: string;
     };
     path2: {
       label: string;
@@ -85,7 +84,18 @@ export interface HomeContent {
       }>;
       best_for_label: string;
       best_for_text: string;
-      link_text: string;
+    };
+    path3?: {
+      label: string;
+      title: string;
+      description: string;
+      list_heading: string;
+      categories: Array<{
+        title: string;
+        items: string[];
+      }>;
+      best_for_label: string;
+      best_for_text: string;
     };
     closing_line: string;
   };
