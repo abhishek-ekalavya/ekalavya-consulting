@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Crosshair, Menu, X } from 'lucide-react';
 import { EkalavyaLogo } from './EkalavyaLogo';
+import { getHomeContent } from '../data/contentLoader';
 
 interface NavbarProps {
   onLockTarget: () => void;
@@ -25,6 +26,7 @@ const navItems: NavItem[] = [
 export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const ctaLabel = getHomeContent().hero_cta || 'BOOK A CALL';
 
   const handleMobileNavClick = () => {
     setMobileMenuOpen(false);
@@ -49,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
           <EkalavyaLogo className="h-10 sm:h-12 w-auto" />
         </Link>
 
-        {/* Desktop Navigation Menu (6 Links on right side of logo) + LOCK THE TARGET CTA */}
+        {/* Desktop Navigation Menu + CTA */}
         <div className="hidden items-center gap-6 xl:gap-8 lg:flex">
           <nav className="flex items-center gap-1 font-mono text-xs font-semibold tracking-wider">
             {navItems.map((item) => {
@@ -70,14 +72,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
             })}
           </nav>
 
-          {/* LOCK THE TARGET CTA Button */}
+          {/* Desktop CTA Button */}
           <button
             id="nav-lock-target-btn"
             onClick={handleLockTarget}
             className="group relative flex items-center gap-2 overflow-hidden rounded bg-[#00D084] px-4 py-2.5 font-mono text-xs font-bold tracking-wider text-black shadow-lg shadow-[#00D084]/20 transition-all duration-200 hover:bg-[#00ba76] hover:shadow-[#00D084]/40 active:translate-y-0.5 sm:px-5 sm:text-sm"
           >
             <Crosshair className="h-4 w-4 transition-transform duration-300 group-hover:rotate-90" />
-            <span>LOCK THE TARGET</span>
+            <span>{ctaLabel}</span>
           </button>
         </div>
 
@@ -88,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
             onClick={handleLockTarget}
             className="rounded bg-[#00D084] px-3 py-1.5 font-mono text-[11px] font-bold text-black shadow-sm sm:px-4 sm:py-2"
           >
-            LOCK TARGET
+            {ctaLabel}
           </button>
 
           <button
@@ -130,14 +132,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onLockTarget }) => {
             })}
           </nav>
 
-          {/* Full LOCK THE TARGET button in mobile drawer */}
+          {/* Full CTA button in mobile drawer */}
           <div className="mt-5 border-t border-white/10 pt-5">
             <button
               onClick={handleLockTarget}
               className="flex w-full items-center justify-center gap-2 rounded bg-[#00D084] py-3.5 font-mono text-sm font-bold tracking-wider text-black shadow-lg shadow-[#00D084]/20 transition-all hover:bg-[#00ba76]"
             >
               <Crosshair className="h-4 w-4" />
-              <span>LOCK THE TARGET</span>
+              <span>{ctaLabel}</span>
             </button>
           </div>
         </div>
