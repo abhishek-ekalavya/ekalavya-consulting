@@ -29,13 +29,13 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
   ];
 
   return (
-    <section 
-      id="engagement-battle-section" 
+    <section
+      id="engagement-battle-section"
       aria-label="Select Engagement Model - Which Battle Are We Fighting"
       className="w-full bg-[#0A1931] border-b border-white/10 py-12 sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="mx-auto mb-12 sm:mb-16 max-w-3xl text-center">
           <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#00D080] uppercase block mb-3">
@@ -51,9 +51,9 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
 
         {/* 3 Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
-          
+
           {/* CARD A - The Long Game */}
-          <div 
+          <div
             id="card-engagement-a"
             className="group relative flex flex-col justify-between rounded-xl border border-white/15 bg-[#071326] p-6 sm:p-8 transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-[#00D080]/10"
           >
@@ -99,7 +99,7 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
           </div>
 
           {/* CARD B - The Short Game */}
-          <div 
+          <div
             id="card-engagement-b"
             className="group relative flex flex-col justify-between rounded-xl border border-white/15 bg-[#071326] p-6 sm:p-8 transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-[#00D080]/10"
           >
@@ -122,7 +122,7 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
                   <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#00D080]/20 text-[#00D080]">
                     <Check className="h-3 w-3 stroke-[3]" />
                   </div>
-                  <span>
+                  <span className="font-medium text-white/90">
                     {cardB?.description || 'Corporate AV / Website / Packaging / Performance Ads / Event - One asset executed right'}
                   </span>
                 </div>
@@ -145,7 +145,7 @@ export const EngagementBattleSection: React.FC<EngagementBattleSectionProps> = (
           </div>
 
           {/* CARD C - The Smart Game */}
-          <div 
+          <div
             id="card-engagement-c"
             className="group relative flex flex-col justify-between rounded-xl border border-white/15 bg-[#071326] p-6 sm:p-8 transition-all duration-300 hover:border-[#00D080] hover:shadow-2xl hover:shadow-[#00D080]/10"
           >
